@@ -354,22 +354,31 @@
       padding: 48px;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 24px;
       text-decoration: none;
       transition: background 0.25s;
       position: relative;
       overflow: hidden;
     }
 
-
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--red);
+      transition: height 0.3s ease;
+    }
 
     .project-card:hover { background: var(--bg3); }
+    .project-card:hover::before { height: 100%; }
 
-    .project-header {
+    .project-meta {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
+      align-items: center;
     }
 
     .project-number {
@@ -390,27 +399,25 @@
     }
 
     .project-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 34px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
       font-weight: 400;
       color: var(--white);
       line-height: 1.15;
-      margin-bottom: 16px;
     }
 
     .project-subtitle {
-      font-family: 'DM Sans', sans-serif;
       font-size: 13px;
       color: var(--grey);
-      line-height: 1.7;
-      margin-bottom: 36px;
+      line-height: 1.6;
     }
 
     .project-links {
       display: flex;
-      gap: 0;
+      gap: 16px;
       flex-wrap: wrap;
       margin-top: auto;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
     }
 
@@ -424,26 +431,30 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      padding: 14px 20px 14px 0;
-      margin-right: 20px;
-      border-right: 1px solid var(--border);
       transition: color 0.2s;
-    }
-
-    .project-link:last-child {
-      border-right: none;
     }
 
     .project-link:hover { color: var(--white); }
 
-    .project-link.disabled {
-      opacity: 0.35;
-      pointer-events: none;
+    .project-link svg {
+      width: 12px;
+      height: 12px;
+      opacity: 0.6;
     }
 
-    .project-link svg {
-      width: 11px; height: 11px;
-      opacity: 0.5;
+    .project-arrow {
+      position: absolute;
+      bottom: 48px;
+      right: 48px;
+      font-family: 'DM Mono', monospace;
+      font-size: 20px;
+      color: var(--grey-dim);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover .project-arrow {
+      color: var(--white);
+      transform: translate(4px, -4px);
     }
 
     /* FEEDBACK */
@@ -562,7 +573,16 @@
     .footer-links a:hover { color: var(--white); }
 
     /* ANIMATIONS */
-.fade-up { opacity: 1; transform: none; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -622,7 +642,7 @@
         <div class="stat-number">1</div>
         <div class="stat-label">
           <strong>0-to-1 Build</strong>
-          Buddy: hypothesis, pivot, behavioral model, shipped on Vercel
+          MomentumBuddy: hypothesis, pivot, behavioral model, shipped on Vercel
         </div>
       </div>
       <div class="stat-row">
@@ -669,63 +689,103 @@
     <div class="projects-grid">
 
       <!-- Project 1 -->
-      <a href="netflix-discovery.html" class="project-card">
-        <div class="project-header">
+      <a href="netflix-discovery.html" class="project-card fade-up">
+        <div class="project-meta">
           <span class="project-number">01</span>
           <span class="project-tag">Discovery + Roadmap</span>
         </div>
         <div class="project-title">Netflix Content Discovery</div>
         <div class="project-subtitle">Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was. RICE prioritisation, three solutions, a 12-month roadmap.</div>
         <div class="project-links">
-          <a href="https://docs.google.com/presentation/d/1SvoWMvnLolejsHVpGf1ynNkV8MXVqUH7sPC-kQmwNrk/edit#slide=id.p1" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
-          <a href="#" class="project-link disabled" onclick="event.stopPropagation()">Live App (soon)</a>
-          <a href="#" class="project-link disabled" onclick="event.stopPropagation()">PRD (soon)</a>
+          <a href="https://docs.google.com/presentation/d/1SvoWMvnLolejsHVpGf1ynNkV8MXVqUH7sPC-kQmwNrk/edit#slide=id.p1" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Deck
+          </a>
+          <a href="#" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live App (coming soon)
+          </a>
+          <a href="#" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            PRD
+          </a>
         </div>
+        <div class="project-arrow">↗</div>
       </a>
 
       <!-- Project 2 -->
-      <a href="netflix-quickshortcut.html" class="project-card">
-        <div class="project-header">
+      <a href="netflix-quickshortcut.html" class="project-card fade-up" style="transition-delay:0.1s">
+        <div class="project-meta">
           <span class="project-number">02</span>
           <span class="project-tag">AI Prototype</span>
         </div>
         <div class="project-title">Netflix Quick Shortcut</div>
         <div class="project-subtitle">The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system deployed on Google Cloud Run. Decision time from 20 minutes to under three.</div>
         <div class="project-links">
-          <a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
-          <a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Prototype ↗</a>
-          <a href="#" class="project-link disabled" onclick="event.stopPropagation()">PRD (soon)</a>
+          <a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Deck
+          </a>
+          <a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Prototype
+          </a>
+          <a href="#" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            PRD
+          </a>
         </div>
+        <div class="project-arrow">↗</div>
       </a>
 
       <!-- Project 3 -->
-      <a href="smart-travel-groups.html" class="project-card">
-        <div class="project-header">
+      <a href="smart-travel-groups.html" class="project-card fade-up" style="transition-delay:0.2s">
+        <div class="project-meta">
           <span class="project-number">03</span>
           <span class="project-tag">Team Research + Design</span>
         </div>
         <div class="project-title">Smart Travel Groups</div>
         <div class="project-subtitle">170 respondents, 5 interviews, 8 platforms analysed. The hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system built around that insight.</div>
         <div class="project-links">
-          <a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
-          <a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live App ↗</a>
-          <a href="#" class="project-link disabled" onclick="event.stopPropagation()">PRD (soon)</a>
+          <a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Deck
+          </a>
+          <a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live App
+          </a>
+          <a href="#" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            PRD
+          </a>
         </div>
+        <div class="project-arrow">↗</div>
       </a>
 
       <!-- Project 4 -->
-      <a href="momentumbuddy.html" class="project-card">
-        <div class="project-header">
+      <a href="momentumbuddy.html" class="project-card fade-up" style="transition-delay:0.3s">
+        <div class="project-meta">
           <span class="project-number">04</span>
           <span class="project-tag">0-to-1 Build</span>
         </div>
         <div class="project-title">MomentumBuddy</div>
         <div class="project-subtitle">Started with an AI prioritization hypothesis. Research killed it. Pivoted to behavioral re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star, and shipped.</div>
         <div class="project-links">
-          <a href="https://docs.google.com/presentation/d/17TBrc9bLDIfyGpbInmREvPkIvR4fw1Na/edit#slide=id.p1" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
-          <a href="https://momentum-buddy.vercel.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live App ↗</a>
-          <a href="#" class="project-link disabled" onclick="event.stopPropagation()">PRD (soon)</a>
+          <a href="https://docs.google.com/presentation/d/17TBrc9bLDIfyGpbInmREvPkIvR4fw1Na/edit#slide=id.p1" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Deck
+          </a>
+          <a href="https://momentum-buddy.vercel.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live App
+          </a>
+          <a href="#" class="project-link" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            PRD
+          </a>
         </div>
+        <div class="project-arrow">↗</div>
       </a>
 
     </div>
@@ -775,11 +835,17 @@
   </footer>
 
   <script>
+    // Nav scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
-    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+
+    // Fade up on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 
 </body>
