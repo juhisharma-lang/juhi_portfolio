@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Content Discovery — Juhi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">JS</a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Work</a></li>
+      <li><a href="index.html#feedback">Feedback</a></li>
+      <li><a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <div>
+      <div class="project-eyebrow">
+        <a href="index.html" class="project-back">← Back</a>
+        <span class="eyebrow-sep">/</span>
+        <span class="project-number-label">Project 01</span>
+      </div>
+      <h1 class="project-hero-title">Netflix<br><em>Content Discovery</em></h1>
+      <p class="project-hero-subtitle">Solving decision fatigue before playback. Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was.</p>
+    </div>
+    <div class="hero-links">
+      <a href="https://docs.google.com/presentation/d/1SvoWMvnLolejsHVpGf1ynNkV8MXVqUH7sPC-kQmwNrk/edit#slide=id.p1" target="_blank" class="hero-link-btn primary">
+        View Deck <span class="link-arrow">↗</span>
+      </a>
+      <a href="#" class="hero-link-btn disabled">
+        Live App — Coming Soon <span class="link-arrow">↗</span>
+      </a>
+      <a href="#" class="hero-link-btn disabled">
+        PRD — Coming Soon <span class="link-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <div class="stat-big">32</div>
+      <div class="stat-desc">Research<br>Participants</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">35%</div>
+      <div class="stat-desc">Sessions ending<br>without playback</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">20m</div>
+      <div class="stat-desc">Avg browse time<br>before abandonment</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">2x</div>
+      <div class="stat-desc">Target watch-start<br>rate improvement</div>
+    </div>
+  </div>
+
+  <!-- NARRATIVE -->
+  <div class="narrative">
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">The Starting Question</div>
+      <h2>What if the problem was never the content?</h2>
+      <p>Netflix has one of the most sophisticated recommendation engines in the world. It knows your watch history, your genre preferences, the shows you abandoned at episode three. And yet <strong>35% of sessions end without anything being watched</strong>. Users open the app, browse for fifteen to twenty minutes, and leave.</p>
+      <p>The easy assumption is that this is a content problem. Not enough good titles. Wrong genres. Poor localisation. That assumption shaped how most product thinking around streaming had been framed. This project started with a different hypothesis: what if the content was fine, and the problem was something else entirely?</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Research</div>
+      <h2>Three hypotheses. One winner.</h2>
+      <p>Primary research across 32 participants: 10 in-depth interviews and a survey split across 22 general viewers and a follow-up vibe check cohort. The interviews focused on journey mapping from the moment a user opened Netflix to the moment they pressed play or gave up.</p>
+      <p>Three hypotheses were tested: content quality as the core problem, discoverability and surface area, and decision friction before playback. The research was designed to let any of the three win.</p>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <div class="finding-num">Hypothesis 01</div>
+          <div class="finding-title">Content Quality</div>
+          <div class="finding-desc">Not enough good titles, wrong genres, poor localisation. Tested but not validated as P0.</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Hypothesis 02</div>
+          <div class="finding-title">Discoverability</div>
+          <div class="finding-desc">Surface area and search quality failing users. Partially validated but not primary.</div>
+        </div>
+        <div class="finding-card" style="background: #1a0a0a;">
+          <div class="finding-num" style="color: #E50914;">Hypothesis 03 — Winner</div>
+          <div class="finding-title">Decision Friction</div>
+          <div class="finding-desc">Cognitive load of choosing was exhausting users before they reached content they would enjoy.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Key Finding</div>
+      <h2>The algorithm was not the bottleneck.</h2>
+      <p>Decision friction won clearly. Users were not leaving because they could not find content they would enjoy. They were leaving because <strong>the process of choosing was exhausting</strong>. The cognitive load of evaluating title after title, reading synopses, starting trailers, second-guessing choices, accumulated until abandonment felt easier than committing.</p>
+      <div class="callout">
+        <p>"Algorithm sophistication had outpaced the user's ability to process what the algorithm was surfacing."</p>
+      </div>
+      <p>The pattern was consistent across interview subjects: a user would open Netflix with genuine intent to watch something, spend fifteen to twenty minutes browsing, feel increasingly overwhelmed, and either settle for something already seen or close the app. The content was there. The decision was the problem.</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Prioritisation</div>
+      <h2>RICE scoring. Four solutions. One dropped.</h2>
+      <p>Four solutions were evaluated across Reach, Impact, Confidence, and Effort. Review Integration scored 4. Explore Toggle and Swipeable Reels both scored 9. AI Chat scored 2 and was deprioritised: effort was high, confidence in user adoption was low, and it addressed a different problem than the validated P0.</p>
+      <p>Adding a conversational interface to a platform people open wanting to relax was solving for a persona that did not appear strongly in the research.</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Solutions</div>
+      <h2>Three solutions targeting the moment before play.</h2>
+      <p><strong>Review Integration</strong> pulls social proof signals into the browsing experience. A user sees aggregated ratings and short reviews from people with similar watch history before committing to a title. It reduces the uncertainty of choosing something unknown without requiring the user to leave the platform.</p>
+      <p><strong>Explore Toggle</strong> gives users two modes: Quick Pick for users who want the algorithm to make a fast recommendation based on their current session, and Browse All for users who want to scan. The mode selection itself is a signal the algorithm can learn from over time.</p>
+      <p><strong>Swipeable Reels</strong> introduces a micro-preview format. Users swipe through short clips rather than reading synopses. Left swipe is an explicit negative signal, which is data Netflix currently does not collect systematically. The format reduces cognitive load by replacing text-based decision-making with immediate, visceral response.</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Metrics</div>
+      <h2>Before, after, and what we guard against.</h2>
+      <div class="metrics-block">
+        <div class="metrics-row">
+          <div class="metrics-label">North Star</div>
+          <div class="metrics-value"><strong>Time to Watch-Start</strong> — session open to play button press</div>
+        </div>
+        <div class="metrics-row">
+          <div class="metrics-label">Before</div>
+          <div class="metrics-value">20 min average browse time / 20% watch-start rate / 35% abandonment</div>
+        </div>
+        <div class="metrics-row">
+          <div class="metrics-label">Target</div>
+          <div class="metrics-value"><strong>Under 5 min</strong> browse time / <strong>40%+</strong> watch-start rate / <strong>under 20%</strong> abandonment</div>
+        </div>
+        <div class="metrics-row">
+          <div class="metrics-label">Guardrails</div>
+          <div class="metrics-value">Long-form completion rate must not drop. Rewatch rate must not rise disproportionately.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Roadmap</div>
+      <h2>12 months. 5 phases. One bet.</h2>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Months 1–2: P0 Foundation</div>
+            <div class="step-desc">Instrument session abandonment tracking, establish baselines, run qualitative validation with a small cohort.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Months 3–5: Review Integration</div>
+            <div class="step-desc">Build and launch review panels for the top 20% of catalog by viewing volume. Measure before expanding.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Months 4–6: Explore Toggle</div>
+            <div class="step-desc">Launch Quick Pick and Browse All modes. Instrument mode selection as a behavioural signal.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Months 6–9: Swipeable Reels</div>
+            <div class="step-desc">Launch micro-preview format for a content subset. Collect left-swipe data and validate as negative signal.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Months 9–12: Integration and Scale</div>
+            <div class="step-desc">Combine signals from all three solutions into a unified contextual layer. Expand to full catalog.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top: 32px;">
+        <p>"Reducing decision friction before playback will unlock more user and business value than adding more content or deepening personalisation."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT -->
+  <a href="netflix-quickshortcut.html" class="next-project">
+    <div>
+      <div class="next-label">Next Project</div>
+      <div class="next-title">Netflix Quick Shortcut</div>
+    </div>
+    <div class="next-arrow">→</div>
+  </a>
+
+  <footer>
+    <div class="footer-name">Juhi Sharma, Bengaluru</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

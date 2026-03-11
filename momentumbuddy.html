@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MomentumBuddy — Juhi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">JS</a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Work</a></li>
+      <li><a href="index.html#feedback">Feedback</a></li>
+      <li><a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <section class="project-hero">
+    <div>
+      <div class="project-eyebrow">
+        <a href="index.html" class="project-back">← Back</a>
+        <span class="eyebrow-sep">/</span>
+        <span class="project-number-label">Project 04</span>
+      </div>
+      <h1 class="project-hero-title">Momentum<br><em>Buddy</em></h1>
+      <p class="project-hero-subtitle">Started with an AI prioritization hypothesis. Research killed it. Pivoted to behavioral re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star, and shipped.</p>
+    </div>
+    <div class="hero-links">
+      <a href="https://momentum-buddy.vercel.app/" target="_blank" class="hero-link-btn primary">
+        Open Live App <span class="link-arrow">↗</span>
+      </a>
+      <a href="https://docs.google.com/presentation/d/17TBrc9bLDIfyGpbInmREvPkIvR4fw1Na/edit#slide=id.p1" target="_blank" class="hero-link-btn">
+        View Deck <span class="link-arrow">↗</span>
+      </a>
+      <a href="#" class="hero-link-btn disabled">
+        PRD — Coming Soon <span class="link-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <div class="stat-big">20</div>
+      <div class="stat-desc">Survey responses<br>that changed direction</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">4</div>
+      <div class="stat-desc">Behavioral states<br>in the model</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">40%</div>
+      <div class="stat-desc">Recovery speed improvement<br>target by day 30</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">0→1</div>
+      <div class="stat-desc">Solo build,<br>deployed on Vercel</div>
+    </div>
+  </div>
+
+  <div class="narrative">
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">The Original Hypothesis</div>
+      <h2>A reasonable assumption that research killed cleanly.</h2>
+      <p>The starting point was a reasonable assumption. Working professionals and students preparing for career milestones carve out time to learn. When something urgent comes up, that learning time is the first to disappear. The frustration, the assumption went, came from not knowing how to reprioritize. So the original plan was a GenAI assistant that would reason through those tradeoffs.</p>
+      <p>20 survey responses, 3 in-depth interviews, a behavioral science review, and a competitive scan later: <strong>research killed that hypothesis cleanly.</strong></p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">What Research Found</div>
+      <h2>Not a prioritization problem. A re-entry problem.</h2>
+      <p>People were not struggling with the "what to prioritize" question. They were struggling with the "how do I start again" question. The pattern was almost identical across respondents: miss a day, feel guilty, avoid the app, lose a week, eventually attempt to restart with emotional overhead attached.</p>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <div class="finding-num">Signal 01</div>
+          <div class="finding-title">Collapse, not disruption</div>
+          <div class="finding-desc">When a disrupted day hit, learning collapsed for days or a week, not just one day.</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Signal 02</div>
+          <div class="finding-title">Emotional pattern</div>
+          <div class="finding-desc">Frustration, guilt, overwhelm. The feeling of having to start over from zero, even when objectively they were not.</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Signal 03</div>
+          <div class="finding-title">What they wanted</div>
+          <div class="finding-desc">Respondents pointed toward nudges and structure, not AI reasoning. Something that said: your day broke, here is the smallest useful step.</div>
+        </div>
+      </div>
+      <p style="margin-top: 24px;">Behavioral science reinforced the findings. Unfinished tasks stay mentally active after the day ends, creating cognitive drag. Forming a specific if-then plan significantly reduces that mental interference. The science was describing exactly the re-entry problem respondents were living.</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">The Pivot</div>
+      <h2>From decision-support tool to re-entry support system.</h2>
+      <p>The GenAI reprioritization concept was dropped. The new core question was not "what should you do today?" It was: <strong>when you fell off, how fast did you come back?</strong></p>
+      <p>That reframe sounds small. It changed every design decision that followed. Completion rate was the obvious north star for a habit app. The problem is that it is binary and punitive. A user who missed three days but returned the next day is doing better, in the sense that matters, than a user who has not missed yet but is slowly losing engagement. <strong>Completion rate cannot tell those two users apart. Recovery speed can.</strong></p>
+      <div class="callout">
+        <p>"Five products reviewed. All of them track completion. None of them track what happens after you do not complete."</p>
+      </div>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">The Model</div>
+      <h2>Four states. One pure function. No streaks.</h2>
+      <p>The product is not built around a streak. It is built around four states, each of which calls for a different response from the system.</p>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num" style="color: #4CAF50;">A</div>
+          <div class="step-content">
+            <div class="step-title">On Track</div>
+            <div class="step-desc">Checking in consistently. Dashboard is calm and affirming. No friction introduced.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="color: #E50914;">B</div>
+          <div class="step-content">
+            <div class="step-title">Missed Yesterday, No Plan</div>
+            <div class="step-desc">Highest-risk state. Dashboard surfaces a low-friction restart prompt, not a reminder of what was missed. No guilt.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="color: #C9A84C;">C</div>
+          <div class="step-content">
+            <div class="step-title">Restart Committed</div>
+            <div class="step-desc">User has set a specific return date and time. The system holds the intention so the user does not have to carry it mentally.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="color: #888;">D</div>
+          <div class="step-content">
+            <div class="step-title">Deliberate Pause</div>
+            <div class="step-desc">User has proactively flagged a busy period. This is not a failure state. Treated as a planned interruption. Re-entry managed when the pause expires.</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 24px;">All four states are driven by a single pure function, <code style="font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gold); background: var(--bg3); padding: 2px 6px;">getDashboardState()</code>, which determines message, prompt, and tone at any given moment. Grounded in implementation intention research.</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">What Was Built</div>
+      <h2>Mobile-first. Deployed. Beta-ready.</h2>
+      <p>MomentumBuddy is a web-based mobile-first app deployed on Vercel. Stack: Vite, React, TypeScript, Tailwind CSS. No native app — an intentional decision to test core behavior without app store friction or distribution overhead.</p>
+      <p>Core features: milestone setup; daily check-in under 60 seconds; dashboard with recovery speed as the <strong>hero metric displayed as a large prominent number</strong>; pattern cards surfacing longest gap, most fragile day of week, and personal best recovery time; pause and commit flow; pulse feedback card every seven days.</p>
+      <p>All data currently stored locally. Deliberate beta constraint to keep onboarding frictionless. Supabase migration planned for Phase 2. Telegram nudge architecture is designed and partially built.</p>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">Metrics</div>
+      <h2>The north star maps to what the user feels.</h2>
+      <div class="metrics-block">
+        <div class="metrics-row">
+          <div class="metrics-label">North Star</div>
+          <div class="metrics-value"><strong>40% of active users show recovery speed improvement by day 30</strong></div>
+        </div>
+        <div class="metrics-row">
+          <div class="metrics-label">Why Not Completion</div>
+          <div class="metrics-value">Binary and punitive. Cannot distinguish a user recovering well from one slowly disengaging.</div>
+        </div>
+        <div class="metrics-row">
+          <div class="metrics-label">Phase 1 Signal</div>
+          <div class="metrics-value">Do users return after missing without being prompted? Does the metric mean something to them?</div>
+        </div>
+        <div class="metrics-row">
+          <div class="metrics-label">Phase 2 Goal</div>
+          <div class="metrics-value">50–100 users from PM and upskilling communities. Live Telegram nudge delivery. Supabase backend.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section fade-up">
+      <div class="section-tag">The Judgment Call</div>
+      <h2>Killing something you already designed.</h2>
+      <p>The most interesting PM moment in this project is not the pivot itself. It is the discipline the pivot required. By the time the research came back pointing away from the original hypothesis, the GenAI reprioritization concept had already been designed. There was investment in the idea. Killing it was uncomfortable.</p>
+      <div class="callout">
+        <p>"Treating research as a genuine input that can and should change direction, not as validation material for a decision already made, is the most transferable thing this project demonstrates."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="next-project">
+    <div>
+      <div class="next-label">Back to</div>
+      <div class="next-title">All Projects</div>
+    </div>
+    <div class="next-arrow">→</div>
+  </a>
+
+  <footer>
+    <div class="footer-name">Juhi Sharma, Bengaluru</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
