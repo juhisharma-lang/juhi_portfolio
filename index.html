@@ -569,16 +569,7 @@
     .footer-links a:hover { color: var(--white); }
 
     /* ANIMATIONS */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.fade-up { opacity: 1; transform: none; }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -638,7 +629,7 @@
         <div class="stat-number">1</div>
         <div class="stat-label">
           <strong>0-to-1 Build</strong>
-          MomentumBuddy: hypothesis, pivot, behavioral model, shipped on Vercel
+          Buddy: hypothesis, pivot, behavioral model, shipped on Vercel
         </div>
       </div>
       <div class="stat-row">
@@ -730,7 +721,7 @@
       </a>
 
       <!-- Project 4 -->
-      <a href="momentumbuddy.html" class="project-card fade-up" style="transition-delay:0.3s">
+      <a href="momentumbuddy.html" class="project-card">
         <div class="project-header">
           <span class="project-number">04</span>
           <span class="project-tag">0-to-1 Build</span>
