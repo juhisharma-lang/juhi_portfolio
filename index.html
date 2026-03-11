@@ -21,7 +21,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,63 +32,33 @@
       overflow-x: hidden;
     }
 
-    /* NOISE OVERLAY */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.4;
-    }
-
     /* NAV */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       padding: 24px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, background 0.3s;
-    }
-
-    nav.scrolled {
       background: rgba(10,10,10,0.95);
-      border-bottom-color: var(--border);
+      border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
-
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 300;
+      font-size: 20px; font-weight: 300;
       letter-spacing: 0.08em;
-      color: var(--white);
-      text-decoration: none;
+      color: var(--white); text-decoration: none;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 40px;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 40px; list-style: none; }
     .nav-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.15em;
+      font-size: 11px; letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
+      color: var(--grey); text-decoration: none;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--white); }
 
     /* HERO */
@@ -100,161 +69,74 @@
       align-items: center;
       padding: 120px 60px 80px;
       gap: 80px;
-      position: relative;
     }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40%;
-      height: 100%;
-      background: radial-gradient(ellipse at top right, rgba(229,9,20,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-left {
-      max-width: 580px;
-    }
-
     .hero-label {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.2em;
+      font-size: 11px; letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 32px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      color: var(--red); margin-bottom: 32px;
+      display: flex; align-items: center; gap: 12px;
     }
-
     .hero-label::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--red);
+      content: ''; display: block;
+      width: 32px; height: 1px; background: var(--red);
     }
-
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(64px, 8vw, 100px);
-      font-weight: 300;
-      line-height: 0.95;
+      font-weight: 300; line-height: 0.95;
       letter-spacing: -0.02em;
-      margin-bottom: 40px;
-      color: var(--white);
+      margin-bottom: 40px; color: var(--white);
     }
-
-    .hero-name em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
+    .hero-name em { font-style: italic; color: var(--gold); }
     .hero-intro {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--grey);
-      margin-bottom: 48px;
-      max-width: 480px;
+      font-size: 17px; line-height: 1.8;
+      color: var(--grey); margin-bottom: 48px; max-width: 480px;
     }
-
-    .hero-intro strong {
-      color: var(--white);
-      font-weight: 400;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .hero-intro strong { color: var(--white); font-weight: 400; }
+    .hero-cta { display: flex; gap: 20px; flex-wrap: wrap; }
 
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      background: var(--red);
-      color: var(--white);
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px; background: var(--red);
+      color: var(--white); text-decoration: none;
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: #c4080f;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border: 1px solid var(--border);
-      color: var(--grey);
-      text-decoration: none;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--grey);
-      color: var(--white);
-    }
-
-    /* HERO RIGHT — STATS */
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      border: 1px solid var(--border);
-    }
-
-    .stat-row {
-      display: flex;
-      padding: 28px 32px;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-      gap: 24px;
-      align-items: flex-start;
+      font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
       transition: background 0.2s;
     }
+    .btn-primary:hover { background: #c4080f; }
 
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px; border: 1px solid var(--border);
+      color: var(--grey); text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--grey); color: var(--white); }
+
+    /* STATS */
+    .hero-right {
+      display: flex; flex-direction: column;
+      border: 1px solid var(--border);
+    }
+    .stat-row {
+      display: flex; padding: 28px 32px;
+      background: var(--bg2); border-bottom: 1px solid var(--border);
+      gap: 24px; align-items: flex-start;
+    }
     .stat-row:last-child { border-bottom: none; }
     .stat-row:hover { background: var(--bg3); }
-
     .stat-number {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--red);
-      line-height: 1;
-      min-width: 80px;
+      font-size: 48px; font-weight: 300;
+      color: var(--red); line-height: 1; min-width: 80px;
     }
-
-    .stat-label {
-      font-size: 13px;
-      color: var(--grey);
-      line-height: 1.6;
-      padding-top: 4px;
-    }
-
+    .stat-label { font-size: 13px; color: var(--grey); line-height: 1.6; padding-top: 4px; }
     .stat-label strong {
-      display: block;
-      color: var(--white);
-      font-weight: 400;
-      font-size: 14px;
-      margin-bottom: 4px;
+      display: block; color: var(--white); font-weight: 400;
+      font-size: 14px; margin-bottom: 4px;
     }
 
     /* WHAT TO EXPECT */
@@ -262,316 +144,170 @@
       padding: 100px 60px;
       border-top: 1px solid var(--border);
     }
-
     .section-label {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--red);
+      font-size: 11px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--red);
       margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      display: flex; align-items: center; gap: 12px;
     }
-
     .section-label::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--red);
+      content: ''; display: block;
+      width: 32px; height: 1px; background: var(--red);
     }
-
     .expect-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
     }
-
     .expect-card {
-      background: var(--bg2);
-      padding: 40px;
-      transition: background 0.2s;
+      background: var(--bg2); padding: 40px;
     }
-
     .expect-card:hover { background: var(--bg3); }
-
     .expect-icon {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 20px;
+      font-size: 11px; letter-spacing: 0.2em;
+      color: var(--gold); margin-bottom: 20px;
     }
-
     .expect-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 12px;
-      line-height: 1.2;
+      font-size: 26px; font-weight: 400;
+      color: var(--white); margin-bottom: 12px; line-height: 1.2;
     }
-
-    .expect-desc {
-      font-size: 13px;
-      color: var(--grey);
-      line-height: 1.7;
-    }
+    .expect-desc { font-size: 13px; color: var(--grey); line-height: 1.7; }
 
     /* PROJECTS */
     .projects-section {
       padding: 100px 60px;
       border-top: 1px solid var(--border);
     }
-
-    .projects-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 60px;
-    }
-
+    .projects-header { margin-bottom: 60px; }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 4vw, 52px);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--white);
+      font-weight: 300; line-height: 1.1; color: var(--white);
     }
-
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--border);
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--border);
     }
 
+    /* PROJECT CARD — no ::before, no animations, no overflow hidden */
     .project-card {
       background: var(--bg2);
       padding: 48px;
       display: flex;
       flex-direction: column;
-      gap: 0;
       text-decoration: none;
-      transition: background 0.25s;
-      position: relative;
-      
     }
-
-    
-
     .project-card:hover { background: var(--bg3); }
-    
 
-    .project-header {
+    .project-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 20px;
     }
-
     .project-number {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.2em;
+      font-size: 11px; letter-spacing: 0.2em;
       color: var(--grey-dim);
     }
-
     .project-tag {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      padding: 4px 10px;
-      border: 1px solid var(--red-dim);
+      font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--red);
+      padding: 4px 10px; border: 1px solid var(--red-dim);
     }
-
     .project-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 34px;
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 16px;
+      font-size: 34px; font-weight: 400;
+      color: var(--white); line-height: 1.15; margin-bottom: 16px;
     }
-
-    .project-subtitle {
-      font-size: 13px;
-      color: var(--grey);
-      line-height: 1.7;
-      margin-bottom: 36px;
+    .project-desc {
+      font-size: 13px; color: var(--grey);
+      line-height: 1.7; margin-bottom: 36px;
+      flex: 1;
     }
-
     .project-links {
       display: flex;
-      gap: 0;
-      flex-wrap: wrap;
-      margin-top: auto;
       border-top: 1px solid var(--border);
+      padding-top: 20px;
+      gap: 24px;
+      flex-wrap: wrap;
     }
-
     .project-link {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--grey);
+      font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--grey);
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 14px 20px 14px 0;
-      margin-right: 20px;
-      border-right: 1px solid var(--border);
       transition: color 0.2s;
     }
-
-    .project-link:last-child {
-      border-right: none;
-    }
-
     .project-link:hover { color: var(--white); }
-
-    .project-link.disabled {
-      opacity: 0.35;
-      pointer-events: none;
-    }
-
-    .project-link svg {
-      width: 11px; height: 11px;
-      opacity: 0.5;
-    }
+    .project-link.disabled { opacity: 0.35; pointer-events: none; }
 
     /* FEEDBACK */
     .feedback-section {
       padding: 100px 60px;
       border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
     }
-
-    .feedback-left {}
-
     .feedback-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 4vw, 52px);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 24px;
+      font-weight: 300; line-height: 1.1;
+      color: var(--white); margin-bottom: 24px;
     }
-
-    .feedback-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
+    .feedback-title em { font-style: italic; color: var(--gold); }
     .feedback-body {
-      font-size: 15px;
-      color: var(--grey);
-      line-height: 1.8;
-      margin-bottom: 16px;
+      font-size: 15px; color: var(--grey);
+      line-height: 1.8; margin-bottom: 16px;
     }
-
-    .feedback-body strong {
-      color: var(--white);
-      font-weight: 400;
-    }
-
-    .feedback-cta {
-      margin-top: 40px;
-    }
-
+    .feedback-body strong { color: var(--white); font-weight: 400; }
+    .feedback-cta { margin-top: 40px; }
     .feedback-right {
       border: 1px solid var(--border);
-      padding: 48px;
-      background: var(--bg2);
+      padding: 48px; background: var(--bg2);
     }
-
     .feedback-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--white);
-      line-height: 1.6;
-      margin-bottom: 32px;
-      padding-left: 24px;
-      border-left: 2px solid var(--red);
+      font-size: 22px; font-weight: 300; font-style: italic;
+      color: var(--white); line-height: 1.6; margin-bottom: 32px;
+      padding-left: 24px; border-left: 2px solid var(--red);
     }
-
-    .feedback-prompts {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
+    .feedback-prompts { display: flex; flex-direction: column; gap: 12px; }
     .feedback-prompt {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      color: var(--grey);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      font-size: 11px; letter-spacing: 0.1em; color: var(--grey);
+      display: flex; align-items: flex-start; gap: 12px;
     }
-
-    .feedback-prompt::before {
-      content: '—';
-      color: var(--red);
-      flex-shrink: 0;
-    }
+    .feedback-prompt::before { content: '—'; color: var(--red); flex-shrink: 0; }
 
     /* FOOTER */
     footer {
       padding: 40px 60px;
       border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
     .footer-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--grey);
+      font-size: 16px; font-weight: 300; color: var(--grey);
     }
-
-    .footer-links {
-      display: flex;
-      gap: 32px;
-    }
-
+    .footer-links { display: flex; gap: 32px; }
     .footer-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--grey-dim);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--grey-dim);
+      text-decoration: none; transition: color 0.2s;
     }
-
     .footer-links a:hover { color: var(--white); }
 
-
-
-    /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 20px 24px; }
       .nav-links { display: none; }
       .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 48px; }
-      .hero::after { display: none; }
       .expect-section, .projects-section, .feedback-section { padding: 60px 24px; }
-      .expect-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .expect-grid, .projects-grid { grid-template-columns: 1fr; }
       .feedback-section { grid-template-columns: 1fr; }
       footer { padding: 32px 24px; flex-direction: column; gap: 16px; text-align: center; }
     }
@@ -579,7 +315,7 @@
 </head>
 <body>
 
-  <nav id="navbar">
+  <nav>
     <a href="index.html" class="nav-logo">JS</a>
     <ul class="nav-links">
       <li><a href="#projects">Work</a></li>
@@ -643,12 +379,12 @@
         <div class="expect-title">Problem first, always</div>
         <div class="expect-desc">Every project starts with a hypothesis that research either validated or killed. You will see both the question and the answer, including the cases where the answer was inconvenient.</div>
       </div>
-      <div class="expect-card" style="transition-delay:0.1s">
+      <div class="expect-card">
         <div class="expect-icon">02 / Decisions</div>
         <div class="expect-title">Tradeoffs made visible</div>
         <div class="expect-desc">Prioritisation calls, metric choices, design decisions that went against the obvious path. The reasoning is here, not just the outcome.</div>
       </div>
-      <div class="expect-card" style="transition-delay:0.2s">
+      <div class="expect-card">
         <div class="expect-icon">03 / Build</div>
         <div class="expect-title">Things that actually work</div>
         <div class="expect-desc">Two live prototypes, one deployed app, one roadmap-stage product. Not mockups. Real systems you can open and use.</div>
@@ -659,22 +395,19 @@
   <!-- PROJECTS -->
   <section class="projects-section" id="projects">
     <div class="projects-header">
-      <div>
-        <div class="section-label">Selected Work</div>
-        <h2 class="section-title">Four Projects.<br>One Thread.</h2>
-      </div>
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Four Projects.<br>One Thread.</h2>
     </div>
 
     <div class="projects-grid">
 
-      <!-- Project 1 -->
       <a href="netflix-discovery.html" class="project-card">
-        <div class="project-header">
+        <div class="project-top">
           <span class="project-number">01</span>
           <span class="project-tag">Discovery + Roadmap</span>
         </div>
         <div class="project-title">Netflix Content Discovery</div>
-        <div class="project-subtitle">Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was. RICE prioritisation, three solutions, a 12-month roadmap.</div>
+        <div class="project-desc">Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was. RICE prioritisation, three solutions, a 12-month roadmap.</div>
         <div class="project-links">
           <a href="https://docs.google.com/presentation/d/1SvoWMvnLolejsHVpGf1ynNkV8MXVqUH7sPC-kQmwNrk/edit#slide=id.p1" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
           <a href="#" class="project-link disabled" onclick="event.stopPropagation()">Live App (soon)</a>
@@ -682,14 +415,13 @@
         </div>
       </a>
 
-      <!-- Project 2 -->
-      <a href="netflix-quickshortcut.html" class="project-card" style="transition-delay:0.1s">
-        <div class="project-header">
+      <a href="netflix-quickshortcut.html" class="project-card">
+        <div class="project-top">
           <span class="project-number">02</span>
           <span class="project-tag">AI Prototype</span>
         </div>
         <div class="project-title">Netflix Quick Shortcut</div>
-        <div class="project-subtitle">The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system deployed on Google Cloud Run. Decision time from 20 minutes to under three.</div>
+        <div class="project-desc">The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system deployed on Google Cloud Run. Decision time from 20 minutes to under three.</div>
         <div class="project-links">
           <a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
           <a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Prototype ↗</a>
@@ -697,14 +429,13 @@
         </div>
       </a>
 
-      <!-- Project 3 -->
-      <a href="smart-travel-groups.html" class="project-card" style="transition-delay:0.2s">
-        <div class="project-header">
+      <a href="smart-travel-groups.html" class="project-card">
+        <div class="project-top">
           <span class="project-number">03</span>
           <span class="project-tag">Team Research + Design</span>
         </div>
         <div class="project-title">Smart Travel Groups</div>
-        <div class="project-subtitle">170 respondents, 5 interviews, 8 platforms analysed. The hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system built around that insight.</div>
+        <div class="project-desc">170 respondents, 5 interviews, 8 platforms analysed. The hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system built around that insight.</div>
         <div class="project-links">
           <a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
           <a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live App ↗</a>
@@ -712,14 +443,13 @@
         </div>
       </a>
 
-      <!-- Project 4 -->
-      <a href="momentumbuddy.html" class="project-card" style="transition-delay:0.3s">
-        <div class="project-header">
+      <a href="momentumbuddy.html" class="project-card">
+        <div class="project-top">
           <span class="project-number">04</span>
           <span class="project-tag">0-to-1 Build</span>
         </div>
         <div class="project-title">MomentumBuddy</div>
-        <div class="project-subtitle">Started with an AI prioritization hypothesis. Research killed it. Pivoted to behavioral re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star, and shipped.</div>
+        <div class="project-desc">Started with an AI prioritization hypothesis. Research killed it. Pivoted to behavioral re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star, and shipped.</div>
         <div class="project-links">
           <a href="https://docs.google.com/presentation/d/17TBrc9bLDIfyGpbInmREvPkIvR4fw1Na/edit#slide=id.p1" target="_blank" class="project-link" onclick="event.stopPropagation()">Deck ↗</a>
           <a href="https://momentum-buddy.vercel.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live App ↗</a>
@@ -774,11 +504,10 @@
   </footer>
 
   <script>
-    const navbar = document.getElementById('navbar');
+    const navbar = document.querySelector('nav');
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      navbar.style.borderBottomColor = window.scrollY > 40 ? 'var(--border)' : 'var(--border)';
     });
-
   </script>
 
 </body>
