@@ -1,383 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juhi Sharma — Product Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: #0A0A0A;
-      color: #F0EDE8;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* NAV */
-    nav {
-      padding: 24px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #222220;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; font-weight: 300;
-      letter-spacing: 0.08em;
-    }
-    .nav-links { display: flex; gap: 40px; list-style: none; }
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: #888880;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #F0EDE8; }
-
-    /* HERO */
-    .hero {
-      padding: 80px 60px;
-      border-bottom: 1px solid #222220;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .hero-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: #E50914;
-      margin-bottom: 24px;
-    }
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 80px; font-weight: 300;
-      line-height: 0.95; margin-bottom: 32px;
-    }
-    .hero-name em { font-style: italic; color: #C9A84C; }
-    .hero-intro {
-      font-size: 16px; color: #888880;
-      line-height: 1.8; margin-bottom: 40px;
-    }
-    .hero-intro strong { color: #F0EDE8; font-weight: 400; }
-    .hero-btn {
-      display: inline-block;
-      padding: 13px 28px;
-      background: #E50914;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: #F0EDE8;
-      margin-right: 16px;
-    }
-    .hero-btn-sec {
-      display: inline-block;
-      padding: 13px 28px;
-      border: 1px solid #222220;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: #888880;
-    }
-
-    /* STATS */
-    .stats {
-      display: flex; flex-direction: column;
-      border: 1px solid #222220;
-    }
-    .stat {
-      display: flex; gap: 24px; align-items: flex-start;
-      padding: 24px 28px;
-      border-bottom: 1px solid #222220;
-      background: #111111;
-    }
-    .stat:last-child { border-bottom: none; }
-    .stat-n {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 44px; font-weight: 300;
-      color: #E50914; line-height: 1; min-width: 72px;
-    }
-    .stat-t { font-size: 13px; color: #888880; padding-top: 4px; }
-    .stat-t strong { display: block; color: #F0EDE8; font-weight: 400; font-size: 14px; margin-bottom: 2px; }
-
-    /* SECTION HEADER */
-    .section-head {
-      padding: 60px 60px 40px;
-      border-bottom: 1px solid #222220;
-    }
-    .section-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: #E50914;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px; font-weight: 300; color: #F0EDE8;
-    }
-
-    /* PROJECT ROW */
-    .project {
-      padding: 48px 60px;
-      border-bottom: 1px solid #222220;
-    }
-    .project:hover { background: #0f0f0f; }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 16px;
-    }
-    .project-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.2em;
-      color: #444440; margin-bottom: 8px;
-    }
-    .project-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 36px; font-weight: 400; color: #F0EDE8;
-      line-height: 1.1;
-    }
-    .project-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: #E50914;
-      padding: 5px 12px; border: 1px solid #991010;
-      white-space: nowrap; margin-top: 4px;
-    }
-    .project-desc {
-      font-size: 15px; color: #888880;
-      line-height: 1.75; max-width: 720px;
-      margin-bottom: 28px;
-    }
-    .project-links {
-      display: flex; gap: 0; flex-wrap: wrap;
-      border-top: 1px solid #222220;
-      padding-top: 20px;
-    }
-    .plink {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: #888880;
-      padding-right: 24px; margin-right: 24px;
-      border-right: 1px solid #222220;
-      transition: color 0.2s;
-    }
-    .plink:last-child { border-right: none; }
-    .plink:hover { color: #F0EDE8; }
-    .plink.dim { opacity: 0.4; pointer-events: none; }
-
-    /* FEEDBACK */
-    .feedback {
-      padding: 80px 60px;
-      border-bottom: 1px solid #222220;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-    }
-    .feedback-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 44px; font-weight: 300; color: #F0EDE8;
-      line-height: 1.1; margin-bottom: 24px;
-    }
-    .feedback-title em { font-style: italic; color: #C9A84C; }
-    .feedback-body { font-size: 15px; color: #888880; line-height: 1.8; margin-bottom: 14px; }
-    .feedback-body strong { color: #F0EDE8; font-weight: 400; }
-    .feedback-box {
-      border: 1px solid #222220;
-      padding: 40px; background: #111111;
-    }
-    .feedback-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; font-style: italic; font-weight: 300;
-      color: #F0EDE8; line-height: 1.6;
-      padding-left: 20px; border-left: 2px solid #E50914;
-      margin-bottom: 28px;
-    }
-    .feedback-item {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.1em;
-      color: #888880; margin-bottom: 10px;
-    }
-    .feedback-item::before { content: '— '; color: #E50914; }
-
-    /* FOOTER */
-    footer {
-      padding: 32px 60px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .footer-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px; color: #888880;
-    }
-    .footer-links { display: flex; gap: 32px; }
-    .footer-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: #444440;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: #F0EDE8; }
-
-    @media (max-width: 800px) {
-      nav { padding: 20px 24px; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
-      .hero-name { font-size: 56px; }
-      .section-head, .project { padding: 40px 24px; }
-      .project-top { flex-direction: column; gap: 12px; }
-      .feedback { grid-template-columns: 1fr; padding: 60px 24px; }
-      footer { padding: 24px; flex-direction: column; gap: 12px; }
-    }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    body {background-color: #0a0a0a}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2; min-height: 23.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html" class="nav-logo">JS</a>
-    <ul class="nav-links">
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#feedback">Feedback</a></li>
-      <li><a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
-
-  <section class="hero">
-    <div>
-      <div class="hero-tag">Product Portfolio</div>
-      <h1 class="hero-name">Juhi<br><em>Sharma</em></h1>
-      <p class="hero-intro">
-        I think about <strong>why products break down before they reach users</strong>, and what it takes to fix that. Here you will find research, prototypes, and a 0-to-1 build.
-      </p>
-      <a href="#projects" class="hero-btn">View Work</a>
-      <a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank" class="hero-btn-sec">LinkedIn</a>
-    </div>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-n">170+</div>
-        <div class="stat-t"><strong>Research Respondents</strong>Across surveys, interviews, and user testing across all four projects</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">4</div>
-        <div class="stat-t"><strong>Products Built</strong>From discovery and roadmapping to live deployed prototypes</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">1</div>
-        <div class="stat-t"><strong>0-to-1 Build</strong>MomentumBuddy: hypothesis, pivot, behavioral model, shipped on Vercel</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">2</div>
-        <div class="stat-t"><strong>Live Prototypes</strong>Netflix Quick Shortcut on Cloud Run, Smart Travel Groups on Lovable</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-head" id="projects">
-    <div class="section-tag">Selected Work</div>
-    <div class="section-title">Four Projects. One Thread.</div>
-  </div>
-
-  <div class="project">
-    <div class="project-top">
-      <div>
-        <div class="project-num">01</div>
-        <div class="project-name">Netflix Content Discovery</div>
-      </div>
-      <span class="project-tag">Discovery + Roadmap</span>
-    </div>
-    <p class="project-desc">Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was. RICE prioritisation, three solutions, a 12-month roadmap.</p>
-    <div class="project-links">
-      <a href="https://docs.google.com/presentation/d/1SvoWMvnLolejsHVpGf1ynNkV8MXVqUH7sPC-kQmwNrk/edit#slide=id.p1" target="_blank" class="plink">Deck ↗</a>
-      <a href="netflix-discovery.html" class="plink">Case Study ↗</a>
-      <span class="plink dim">Live App (soon)</span>
-      <span class="plink dim">PRD (soon)</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-top">
-      <div>
-        <div class="project-num">02</div>
-        <div class="project-name">Netflix Quick Shortcut</div>
-      </div>
-      <span class="project-tag">AI Prototype</span>
-    </div>
-    <p class="project-desc">The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system deployed on Google Cloud Run. Decision time from 20 minutes to under three.</p>
-    <div class="project-links">
-      <a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="plink">Deck ↗</a>
-      <a href="netflix-quickshortcut.html" class="plink">Case Study ↗</a>
-      <a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="plink">Live Prototype ↗</a>
-      <span class="plink dim">PRD (soon)</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-top">
-      <div>
-        <div class="project-num">03</div>
-        <div class="project-name">Smart Travel Groups</div>
-      </div>
-      <span class="project-tag">Team Research + Design</span>
-    </div>
-    <p class="project-desc">170 respondents, 5 interviews, 8 platforms analysed. The hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system built around that insight.</p>
-    <div class="project-links">
-      <a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j" target="_blank" class="plink">Deck ↗</a>
-      <a href="smart-travel-groups.html" class="plink">Case Study ↗</a>
-      <a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="plink">Live App ↗</a>
-      <span class="plink dim">PRD (soon)</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-top">
-      <div>
-        <div class="project-num">04</div>
-        <div class="project-name">MomentumBuddy</div>
-      </div>
-      <span class="project-tag">0-to-1 Build</span>
-    </div>
-    <p class="project-desc">Started with an AI prioritization hypothesis. Research killed it. Pivoted to behavioral re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star, and shipped.</p>
-    <div class="project-links">
-      <a href="https://docs.google.com/presentation/d/17TBrc9bLDIfyGpbInmREvPkIvR4fw1Na/edit#slide=id.p1" target="_blank" class="plink">Deck ↗</a>
-      <a href="momentumbuddy.html" class="plink">Case Study ↗</a>
-      <a href="https://momentum-buddy.vercel.app/" target="_blank" class="plink">Live App ↗</a>
-      <span class="plink dim">PRD (soon)</span>
-    </div>
-  </div>
-
-  <section class="feedback" id="feedback">
-    <div>
-      <div class="section-tag">Open to Feedback</div>
-      <h2 class="feedback-title">This portfolio is a work in progress.<br><em>So is every product.</em></h2>
-      <p class="feedback-body">No good product was built in a silo. If something here made you think, <strong>pushed back on your assumptions</strong>, or raised a question worth exploring, I want to hear it.</p>
-      <p class="feedback-body">A sharp observation about a research gap, a prioritisation call you would have made differently, a metric you think misses the point: <strong>that kind of input makes the thinking better</strong>.</p>
-      <br>
-      <a href="https://forms.google.com" target="_blank" class="hero-btn">Leave Feedback</a>
-    </div>
-    <div class="feedback-box">
-      <div class="feedback-quote">"No products are built in silos. Your contribution helps assess thinking, sharpen tradeoffs, and build something better."</div>
-      <div class="feedback-item">A research gap you spotted</div>
-      <div class="feedback-item">A prioritisation call you would have made differently</div>
-      <div class="feedback-item">A metric you think misses the point</div>
-      <div class="feedback-item">A question the case study did not answer</div>
-      <div class="feedback-item">Anything else worth saying</div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-name">Juhi Sharma, Bengaluru</div>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank">LinkedIn</a>
-      <a href="#projects">Work</a>
-      <a href="#feedback">Feedback</a>
-    </div>
-  </footer>
-
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;!DOCTYPE html&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;html lang="en"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;head&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;title&gt;Juhi Sharma — Product Portfolio&lt;/title&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;family=DM+Sans:wght@300;400&amp;family=DM+Mono:wght@400&amp;display=swap" rel="stylesheet"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;style&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>* { box-sizing: border-box; margin: 0; padding: 0; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>html { scroll-behavior: smooth; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>body { background: #0A0A0A; color: #F0EDE8; font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>a { color: inherit; text-decoration: none; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>nav { padding: 24px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222220; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; letter-spacing: 0.08em; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.nav-links { display: flex; gap: 40px; list-style: none; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #888880; transition: color 0.2s; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.nav-links a:hover { color: #F0EDE8; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero { padding: 80px 60px; border-bottom: 1px solid #222220; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #E50914; margin-bottom: 24px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-identity { display: flex; align-items: center; gap: 28px; margin-bottom: 32px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top; border: 1px solid #C9A84C; flex-shrink: 0; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-identity .hero-name { margin-bottom: 0; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-name { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; line-height: 0.95; margin-bottom: 32px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-name em { font-style: italic; color: #C9A84C; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-intro { font-size: 16px; color: #888880; line-height: 1.8; margin-bottom: 40px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-intro strong { color: #F0EDE8; font-weight: 400; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-btn { display: inline-block; padding: 13px 28px; background: #E50914; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #F0EDE8; margin-right: 16px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-btn-sec { display: inline-block; padding: 13px 28px; border: 1px solid #222220; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #888880; margin-right: 16px; transition: border-color 0.2s, color 0.2s; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.hero-btn-sec:hover { border-color: #888880; color: #F0EDE8; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.stats { display: flex; flex-direction: column; border: 1px solid #222220; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.stat { display: flex; gap: 24px; align-items: flex-start; padding: 24px 28px; border-bottom: 1px solid #222220; background: #111111; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.stat:last-child { border-bottom: none; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.stat-n { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: #E50914; line-height: 1; min-width: 72px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.stat-t { font-size: 13px; color: #888880; padding-top: 4px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.stat-t strong { display: block; color: #F0EDE8; font-weight: 400; font-size: 14px; margin-bottom: 2px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.section-head { padding: 60px 60px 40px; border-bottom: 1px solid #222220; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.section-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #E50914; margin-bottom: 12px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.section-title { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: #F0EDE8; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project { padding: 48px 60px; border-bottom: 1px solid #222220; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project:hover { background: #0f0f0f; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project-num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: #444440; margin-bottom: 8px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project-name { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 400; color: #F0EDE8; line-height: 1.1; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #E50914; padding: 5px 12px; border: 1px solid #991010; white-space: nowrap; margin-top: 4px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project-desc { font-size: 15px; color: #888880; line-height: 1.75; max-width: 720px; margin-bottom: 28px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.project-links { display: flex; gap: 0; flex-wrap: wrap; border-top: 1px solid #222220; padding-top: 20px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.plink { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888880; padding-right: 24px; margin-right: 24px; border-right: 1px solid #222220; transition: color 0.2s; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.plink:last-child { border-right: none; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.plink:hover { color: #F0EDE8; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.plink.dim { opacity: 0.4; pointer-events: none; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback { padding: 80px 60px; border-bottom: 1px solid #222220; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-title { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: #F0EDE8; line-height: 1.1; margin-bottom: 24px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-title em { font-style: italic; color: #C9A84C; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-body { font-size: 15px; color: #888880; line-height: 1.8; margin-bottom: 14px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-body strong { color: #F0EDE8; font-weight: 400; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-box { border: 1px solid #222220; padding: 40px; background: #111111; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-quote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; color: #F0EDE8; line-height: 1.6; padding-left: 20px; border-left: 2px solid #E50914; margin-bottom: 28px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-item { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #888880; margin-bottom: 10px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.feedback-item::before { content: '— '; color: #E50914; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>footer { padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.footer-name { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: #888880; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.footer-links { display: flex; gap: 32px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.footer-links a { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #444440; transition: color 0.2s; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>.footer-links a:hover { color: #F0EDE8; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>@media (max-width: 800px) {</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>nav { padding: 20px 24px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.nav-links { display: none; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.hero { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.hero-name { font-size: 56px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.hero-identity { gap: 20px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.hero-photo { width: 72px; height: 72px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.section-head, .project { padding: 40px 24px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.project-top { flex-direction: column; gap: 12px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>.feedback { grid-template-columns: 1fr; padding: 60px 24px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>footer { padding: 24px; flex-direction: column; gap: 12px; }</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>}</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/style&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;/head&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;body&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;nav&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;a href="index.html" class="nav-logo"&gt;JS&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;ul class="nav-links"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#projects"&gt;Work&lt;/a&gt;&lt;/li&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#feedback"&gt;Feedback&lt;/a&gt;&lt;/li&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;section class="hero"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="hero-tag"&gt;Product Portfolio&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="hero-identity"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;h1 class="hero-name"&gt;Juhi&lt;br&gt;&lt;em&gt;Sharma&lt;/em&gt;&lt;/h1&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;img src="juhi.jpg" alt="Juhi Sharma" class="hero-photo" /&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;p class="hero-intro"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>I think about &lt;strong&gt;why products break down before they reach users&lt;/strong&gt;, and what it takes to fix that. Here you will find research, prototypes, and a 0-to-1 build.</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="#projects" class="hero-btn"&gt;View Work&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank" class="hero-btn-sec"&gt;LinkedIn&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="YOUR_RESUME_LINK" target="_blank" class="hero-btn-sec"&gt;Resume&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="stats"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-n"&gt;170+&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-t"&gt;&lt;strong&gt;Research Respondents&lt;/strong&gt;Across surveys, interviews, and user testing across all four projects&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-n"&gt;4&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-t"&gt;&lt;strong&gt;Products Built&lt;/strong&gt;From discovery and roadmapping to live deployed prototypes&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-n"&gt;1&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-t"&gt;&lt;strong&gt;0-to-1 Build&lt;/strong&gt;MomentumBuddy: hypothesis, pivot, behavioral model, shipped on Vercel&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-n"&gt;2&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="stat-t"&gt;&lt;strong&gt;Live Prototypes&lt;/strong&gt;Netflix Quick Shortcut on Cloud Run, Smart Travel Groups on Lovable&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/section&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;div class="section-head" id="projects"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="section-tag"&gt;Selected Work&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;Four Projects. One Thread.&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/div&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;div class="project"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-top"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-num"&gt;01&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-name"&gt;Netflix Content Discovery&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="project-tag"&gt;Discovery + Roadmap&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;p class="project-desc"&gt;Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was. RICE prioritisation, three solutions, a 12-month roadmap.&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-links"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://docs.google.com/presentation/d/1SvoWMvnLolejsHVpGf1ynNkV8MXVqUH7sPC-kQmwNrk/edit#slide=id.p1" target="_blank" class="plink"&gt;Deck ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="netflix-discovery.html" class="plink"&gt;Case Study ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="plink dim"&gt;Live App (soon)&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="plink dim"&gt;PRD (soon)&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/div&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;div class="project"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-top"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-num"&gt;02&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-name"&gt;Netflix Quick Shortcut&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="project-tag"&gt;AI Prototype&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;p class="project-desc"&gt;The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system deployed on Google Cloud Run. Decision time from 20 minutes to under three.&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-links"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="plink"&gt;Deck ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="netflix-quickshortcut.html" class="plink"&gt;Case Study ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="plink"&gt;Live Prototype ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="plink dim"&gt;PRD (soon)&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/div&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;div class="project"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-top"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-num"&gt;03&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-name"&gt;Smart Travel Groups&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="project-tag"&gt;Team Research + Design&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;p class="project-desc"&gt;170 respondents, 5 interviews, 8 platforms analysed. The hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system built around that insight.&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-links"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j" target="_blank" class="plink"&gt;Deck ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="smart-travel-groups.html" class="plink"&gt;Case Study ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="plink"&gt;Live App ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="plink dim"&gt;PRD (soon)&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/div&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;div class="project"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-top"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-num"&gt;04&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">        </span>&lt;div class="project-name"&gt;MomentumBuddy&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="project-tag"&gt;0-to-1 Build&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;p class="project-desc"&gt;Started with an AI prioritization hypothesis. Research killed it. Pivoted to behavioral re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star, and shipped.&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="project-links"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://docs.google.com/presentation/d/17TBrc9bLDIfyGpbInmREvPkIvR4fw1Na/edit#slide=id.p1" target="_blank" class="plink"&gt;Deck ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="momentumbuddy.html" class="plink"&gt;Case Study ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://momentum-buddy.vercel.app/" target="_blank" class="plink"&gt;Live App ↗&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;span class="plink dim"&gt;PRD (soon)&lt;/span&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/div&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;section class="feedback" id="feedback"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="section-tag"&gt;Open to Feedback&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;h2 class="feedback-title"&gt;This portfolio is a work in progress.&lt;br&gt;&lt;em&gt;So is every product.&lt;/em&gt;&lt;/h2&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;p class="feedback-body"&gt;No good product was built in a silo. If something here made you think, &lt;strong&gt;pushed back on your assumptions&lt;/strong&gt;, or raised a question worth exploring, I want to hear it.&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;p class="feedback-body"&gt;A sharp observation about a research gap, a prioritisation call you would have made differently, a metric you think misses the point: &lt;strong&gt;that kind of input makes the thinking better&lt;/strong&gt;.&lt;/p&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;br&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://forms.google.com" target="_blank" class="hero-btn"&gt;Leave Feedback&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="feedback-box"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="feedback-quote"&gt;"No products are built in silos. Your contribution helps assess thinking, sharpen tradeoffs, and build something better."&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="feedback-item"&gt;A research gap you spotted&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="feedback-item"&gt;A prioritisation call you would have made differently&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="feedback-item"&gt;A metric you think misses the point&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="feedback-item"&gt;A question the case study did not answer&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;div class="feedback-item"&gt;Anything else worth saying&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/section&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;footer&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="footer-name"&gt;Juhi Sharma, Bengaluru&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;div class="footer-links"&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="https://www.linkedin.com/in/juhi-alok-sharma/" target="_blank"&gt;LinkedIn&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="#projects"&gt;Work&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">      </span>&lt;a href="#feedback"&gt;Feedback&lt;/a&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">    </span>&lt;/div&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</a></span></p>
+<p class="p2"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html"></a></span><br></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;/body&gt;</a></span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/juhisharma/Downloads/juhi_portfolio/index.html">&lt;/html&gt;</a></span></p>
 </body>
 </html>
