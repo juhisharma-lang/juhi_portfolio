@@ -1,244 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Travel Groups - Juhi Sharma</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Travel Groups - Juhi Sharma</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+              "error-container": "#ffdad6",
+              "outline": "#906f6a",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#b8110c",
+              "surface": "#fef9f0",
+              "surface-container": "#f3ede5"
+      },
+      "fontFamily": {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Be Vietnam Pro"]
+      }
+    },
+  },
+}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .mesh-gradient {
+      background-color: #fef9f0;
+      background-image: 
+          radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
+      background-size: 100% 100%;
+      background-attachment: fixed;
+  }
+  .noise-overlay::before {
+      content: "";
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0.04; z-index: -1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+</style>
 </head>
-<body>
+<body class="mesh-gradient noise-overlay text-stone-900 overflow-x-hidden">
 
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">JS</a>
-    <ul class="nav-links">
-      <li><a href="index.html#projects">Work</a></li>
-      <li><a href="index.html#feedback">Feedback</a></li>
-      <li><a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
-
-  <section class="project-hero">
-    <div>
-      <div class="project-eyebrow">
-        <a href="netflix-quickshortcut.html" class="project-back">← Previous Project</a>
-        <span class="eyebrow-sep">/</span>
-        <span class="project-number-label">Project 03</span>
-      </div>
-      <h1 class="project-hero-title">Smart<br><em>Travel Groups</em></h1>
-      <p class="project-hero-subtitle">170 respondents told us the hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system designed around that insight.</p>
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/30">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">JS</a>
+    <div class="hidden md:flex gap-12 items-center">
+      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 transition" href="index.html#projects">Work</a>
     </div>
-    <div class="hero-links">
-      <a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j?mode=doc" target="_blank" class="hero-link-btn primary">
-        View Deck <span class="link-arrow">↗</span>
-      </a>
-      <a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="hero-link-btn primary">
-        Prototype <span class="link-arrow">↗</span>
-      </a>
+  </div>
+</nav>
+
+<main class="relative min-h-screen pt-32 pb-20 overflow-hidden max-w-[1400px] mx-auto px-8 md:px-16">
+  
+  <div class="absolute top-[20%] -right-48 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10 mix-blend-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="mt-12 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-8 flex flex-col justify-center">
+      <div class="flex items-center gap-4 mb-6">
+        <a href="netflix-quickshortcut.html" class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-500 hover:text-primary transition">← Previous Project</a>
+        <span class="text-stone-300">/</span>
+        <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">Project 03</span>
+      </div>
+      <h1 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-stone-900 mb-8 leading-[0.9]">
+          Smart<br/><span class="text-primary pr-4">Travel Groups</span>
+      </h1>
+      <p class="font-body text-lg md:text-xl text-stone-700 font-medium leading-relaxed max-w-2xl mb-10">
+        170 respondents told us the hardest part of group travel is not finding a destination. It is committing to people. An 8-step confidence-building system designed around that insight.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://gamma.app/docs/Smart-Travel-Groups--631c9yicn4ja68j?mode=doc" target="_blank" class="bg-primary text-white border border-primary px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+          View Deck ↗
+        </a>
+        <a href="https://kindred-paths-builder.lovable.app/" target="_blank" class="bg-white/50 text-stone-900 border border-stone-300 px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-colors shadow-sm">
+          Prototype ↗
+        </a>
+      </div>
     </div>
   </section>
 
-  <div class="stats-bar">
-    <div class="stat-cell">
-      <div class="stat-big">170+</div>
-      <div class="stat-desc">Survey<br>respondents</div>
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">170+</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Survey<br>respondents</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">70%</div>
-      <div class="stat-desc">Hesitate at commitment,<br>not ideation</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">70%</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Hesitate at commitment,<br>not ideation</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">8</div>
-      <div class="stat-desc">Confidence-building<br>steps</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">8</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Confidence-building<br>steps</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">&lt;5%</div>
-      <div class="stat-desc">Uncomfortable experience<br>guardrail</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2"><5%</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Uncomfortable experience<br>guardrail</span>
     </div>
   </div>
 
-  <div class="narrative">
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Question Nobody Was Asking</div>
-      <h2>Every platform solved the wrong problem.</h2>
-      <p>Every travel platform is built around the same assumption: the hard part is finding the right destination. Get that right and the rest follows. So platforms optimise for discovery: better search, better filters, better inspiration feeds.</p>
-      <p>The research said something different. Across 170 respondents and 5 in-depth interviews, the finding was consistent enough to be uncomfortable: <strong>the hardest part of group travel is not finding a destination. It is deciding who to travel with</strong>, and more specifically, committing to those people before you know enough to be sure.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Research</div>
-      <h2>Two surveys, five interviews, eight platforms.</h2>
-      <p>Survey A reached 140 respondents and focused on travel preferences, pace, and compatibility signals. Survey B reached 30 respondents and went deeper on friction points, safety behaviour, and emotional drivers. Five in-depth interviews with solo and semi-solo travellers covered journey mapping from discovery through post-trip reflection. Competitive analysis spanned eight platforms including GAFFL, Tourlina, Backpackr, and TripGiraffe.</p>
-      <p>The research focus was deliberately narrow: not how people book, not where people want to go - specifically, <strong>how do people decide who to travel with, and where does that decision break down?</strong></p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Three Findings</div>
-      <h2>What the research would not let us ignore.</h2>
-      <div class="findings-grid">
-        <div class="finding-card">
-          <div class="finding-num">Finding 01</div>
-          <div class="finding-title">Commitment, not ideation</div>
-          <div class="finding-desc">70% hesitate when money, time, and people get locked in together. Designing for faster discovery solves the wrong problem.</div>
-        </div>
-        <div class="finding-card">
-          <div class="finding-num">Finding 02</div>
-          <div class="finding-title">Same destination is a weak proxy</div>
-          <div class="finding-desc">Platforms match on where and when. Users fail on how - pace, energy, budget, activities. Entirely predictable upfront if you capture the right signals.</div>
-        </div>
-        <div class="finding-card">
-          <div class="finding-num">Finding 03</div>
-          <div class="finding-title">Safety is a baseline</div>
-          <div class="finding-desc">3 in 4 women did manual trust vetting outside platforms. Users were already doing the work. No platform supported it.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Core Insight</div>
-      <h2>Social friction, not technical friction.</h2>
-      <div class="callout">
-        <p>"Tools for booking exist. Tools for aligning humans before commitment do not."</p>
-      </div>
-      <p>Planning friction in group travel is social, not technical. The opportunity is not a better discovery feed. It is a pre-commitment decision system that helps users accumulate enough signal about the people they might travel with to say yes confidently, or no early enough that it does not cost them anything.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Who We Designed For</div>
-      <h2>Riya needs confidence. Priya needs safety. Both need the platform to do the trust work.</h2>
-      <p><strong>Riya</strong> is 26, a Product Manager in Bengaluru. She wants weekend trips to Coorg and Goa. Her friends have moved away. The problem is not finding people. The problem is knowing whether those people are the right ones before it is too late to back out. Her words: "I do not need more matches. I need to know if we will actually get along on the trip."</p>
-      <p><strong>Priya</strong> is 35, a teacher in Mumbai. She needs clear intent before she engages. She prefers public meetings before any commitment. One uncomfortable experience is enough to leave a platform entirely. Both personas represent the same underlying need at different intensity levels. Both need the platform to do the trust work that is currently happening manually outside any app.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The System</div>
-      <h2>8 steps. One recurring question: do I have enough confidence to move forward?</h2>
-      <div class="steps-list">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <div class="step-title">Onboarding</div>
-            <div class="step-desc">Travel style, budget bands, pace, social energy. Non-negotiables captured privately as silent hard filters. Riya never has to be the difficult one.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <div class="step-title">Compatibility Engine</div>
-            <div class="step-desc">Runs across travel style, pace, budget, activity preferences, lifestyle signals. Compatibility is how people travel, not where they want to go.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <div class="step-title">Intent Declaration</div>
-            <div class="step-desc">Users declare a specific trip with destination, dates, and rough budget. Gates access to matching. Filters casual browsers before any matching resources are spent.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <div class="step-title">Matching with Reasons</div>
-            <div class="step-desc">Maximum five matches per intent. Every match comes with an explicit explanation. Quality replaces volume.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">5</div>
-          <div class="step-content">
-            <div class="step-title">Structured Chat</div>
-            <div class="step-desc">Unlocks only after mutual acceptance. Responses are time-bound with a 72-hour expiry. Filters users who match but never follow through.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">6</div>
-          <div class="step-content">
-            <div class="step-title">Public-First Meeting</div>
-            <div class="step-desc">Enforced structurally. Private addresses are blocked. The platform prompts public venue suggestions. Safety enforced structurally, not socially.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">7</div>
-          <div class="step-content">
-            <div class="step-title">Active Trip Safety</div>
-            <div class="step-desc">One-tap SOS, pre-loaded emergency contacts, optional live location sharing, automated check-ins.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">8</div>
-          <div class="step-content">
-            <div class="step-title">Feedback Loop</div>
-            <div class="step-desc">Post-trip ratings feed the algorithm, build trust scores, improve match quality over time.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Three Design Decisions</div>
-      <h2>The calls worth explaining.</h2>
-      <p><strong>Verification improves visibility but does not gate participation.</strong> Verified users appear first in matches and get a trust badge, but unverified users can still participate. Safety through transparency, not gatekeeping.</p>
-      <p><strong>Maximum five matches per intent.</strong> Every competing platform optimises for volume. The research showed the opposite: too many matches without enough signal creates the same commitment anxiety the platform is trying to solve.</p>
-      <p><strong>Non-negotiables are silent.</strong> Captured privately and run as hard filters. Users get the filtering benefit without the social cost of disclosure.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Metrics</div>
-      <h2>North Star: real-world meetings, not app engagement.</h2>
-      <div class="metrics-block">
-        <div class="metrics-row">
-          <div class="metrics-label">North Star</div>
-          <div class="metrics-value"><strong>Successful First Meetings per Month</strong> - real-world meetings completed without safety incidents</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Activation</div>
-          <div class="metrics-value">60% of users complete profile and publish first trip intent</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Match Speed</div>
-          <div class="metrics-value">Under 48 hours to first match for 85% of users</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Quality</div>
-          <div class="metrics-value">30% match-to-connect rate / 70% meeting completion rate</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Retention</div>
-          <div class="metrics-value">40% repeat intent rate within 90 days</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Guardrails</div>
-          <div class="metrics-value">Under 5% uncomfortable experience rate / Under 30% no-show rate</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <a href="momentumbuddy.html" class="next-project">
+  <!-- Narrative -->
+  <div class="mt-32 max-w-4xl flex flex-col gap-32">
+    
     <div>
-      <div class="next-label">Next Project</div>
-      <div class="next-title">Learners Buddy</div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Question Nobody Was Asking</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Every platform solved the wrong problem.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Every travel platform is built around the same assumption: the hard part is finding the right destination. Get that right and the rest follows. So platforms optimise for discovery: better search, better filters, better inspiration feeds.</p>
+        <p>The research said something different. Across 170 respondents and 5 in-depth interviews, the finding was consistent enough to be uncomfortable: <strong>the hardest part of group travel is not finding a destination. It is deciding who to travel with</strong>, and more specifically, committing to those people before you know enough to be sure.</p>
+      </div>
     </div>
-    <div class="next-arrow">→</div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Research</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Two surveys, five interviews, eight platforms.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed mb-10">
+        <p>Survey A reached 140 respondents and focused on travel preferences, pace, and compatibility signals. Survey B reached 30 respondents and went deeper on friction points, safety behaviour, and emotional drivers. Five in-depth interviews with solo and semi-solo travellers covered journey mapping from discovery through post-trip reflection. Competitive analysis spanned eight platforms including GAFFL, Tourlina, Backpackr, and TripGiraffe.</p>
+        <p>The research focus was deliberately narrow: not how people book, not where people want to go - specifically, <strong>how do people decide who to travel with, and where does that decision break down?</strong></p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Three Findings</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">What the research would not let us ignore.</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Finding 01</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Commitment, not ideation</div>
+          <div class="font-body text-sm text-stone-600">70% hesitate when money, time, and people get locked in together. Designing for faster discovery solves the wrong problem.</div>
+        </div>
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Finding 02</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Same destination is a weak proxy</div>
+          <div class="font-body text-sm text-stone-600">Platforms match on where and when. Users fail on how - pace, energy, budget, activities. Entirely predictable upfront if you capture the right signals.</div>
+        </div>
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Finding 03</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Safety is a baseline</div>
+          <div class="font-body text-sm text-stone-600">3 in 4 women did manual trust vetting outside platforms. Users were already doing the work. No platform supported it.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Core Insight</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Social friction, not technical friction.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl my-4">
+          <p class="font-headline italic text-xl text-stone-800">"Tools for booking exist. Tools for aligning humans before commitment do not."</p>
+        </div>
+        <p>Planning friction in group travel is social, not technical. The opportunity is not a better discovery feed. It is a pre-commitment decision system that helps users accumulate enough signal about the people they might travel with to say yes confidently, or no early enough that it does not cost them anything.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Who We Designed For</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Riya needs confidence. Priya needs safety.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p><strong>Riya</strong> is 26, a Product Manager in Bengaluru. She wants weekend trips to Coorg and Goa. Her friends have moved away. The problem is not finding people. The problem is knowing whether those people are the right ones before it is too late to back out. Her words: "I do not need more matches. I need to know if we will actually get along on the trip."</p>
+        <p><strong>Priya</strong> is 35, a teacher in Mumbai. She needs clear intent before she engages. She prefers public meetings before any commitment. One uncomfortable experience is enough to leave a platform entirely. Both personas represent the same underlying need at different intensity levels. Both need the platform to do the trust work that is currently happening manually outside any app.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The System</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">8 steps. One recurring question: do I have enough confidence to move forward?</h2>
+      
+      <div class="flex flex-col gap-4">
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">1</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Onboarding</div>
+            <div class="text-stone-600 font-body text-sm">Travel style, budget bands, pace, social energy. Non-negotiables captured privately as silent hard filters. Riya never has to be the difficult one.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">2</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Compatibility Engine</div>
+            <div class="text-stone-600 font-body text-sm">Runs across travel style, pace, budget, activity preferences, lifestyle signals. Compatibility is how people travel, not where they want to go.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">3</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Intent Declaration</div>
+            <div class="text-stone-600 font-body text-sm">Users declare a specific trip with destination, dates, and rough budget. Gates access to matching. Filters casual browsers before any matching resources are spent.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">4</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Matching with Reasons</div>
+            <div class="text-stone-600 font-body text-sm">Maximum five matches per intent. Every match comes with an explicit explanation. Quality replaces volume.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">5</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Structured Chat</div>
+            <div class="text-stone-600 font-body text-sm">Unlocks only after mutual acceptance. Responses are time-bound with a 72-hour expiry. Filters users who match but never follow through.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">6</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Public-First Meeting</div>
+            <div class="text-stone-600 font-body text-sm">Enforced structurally. Private addresses are blocked. The platform prompts public venue suggestions. Safety enforced structurally, not socially.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">7</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Active Trip Safety</div>
+            <div class="text-stone-600 font-body text-sm">One-tap SOS, pre-loaded emergency contacts, optional live location sharing, automated check-ins.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary w-8">8</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Feedback Loop</div>
+            <div class="text-stone-600 font-body text-sm">Post-trip ratings feed the algorithm, build trust scores, improve match quality over time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Three Design Decisions</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">The calls worth explaining.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p><strong>Verification improves visibility but does not gate participation.</strong> Verified users appear first in matches and get a trust badge, but unverified users can still participate. Safety through transparency, not gatekeeping.</p>
+        <p><strong>Maximum five matches per intent.</strong> Every competing platform optimises for volume. The research showed the opposite: too many matches without enough signal creates the same commitment anxiety the platform is trying to solve.</p>
+        <p><strong>Non-negotiables are silent.</strong> Captured privately and run as hard filters. Users get the filtering benefit without the social cost of disclosure.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Metrics</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">North Star: real-world meetings, not app engagement.</h2>
+      
+      <div class="bg-white/60 border border-white rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">North Star</div>
+          <div class="text-stone-800 font-medium"><strong>Successful First Meetings per Month</strong> - real-world meetings completed without safety incidents</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Activation</div>
+          <div class="text-stone-800">60% of users complete profile and publish first trip intent</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Match Speed</div>
+          <div class="text-stone-800">Under 48 hours to first match for 85% of users</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Quality</div>
+          <div class="text-stone-800">30% match-to-connect rate / 70% meeting completion rate</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Retention</div>
+          <div class="text-stone-800">40% repeat intent rate within 90 days</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Guardrails</div>
+          <div class="text-stone-800">Under 5% uncomfortable experience rate / Under 30% no-show rate</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT (Glassmorphic) -->
+  <a href="momentumbuddy.html" class="block w-full mt-32 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/60 transition-colors relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+        <div class="font-label uppercase tracking-widest text-primary font-bold text-xs mb-4">Next Project</div>
+        <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-stone-900">Learners Buddy</h3>
+      </div>
+      <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </div>
+    </div>
   </a>
 
-  <footer>
-    <div class="footer-name">Juhi Sharma, Bengaluru</div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
+</main>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
+<footer class="w-full mt-10 bg-white/30 backdrop-blur-2xl border-t border-white/40">
+  <div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
+    <div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+      <div class="text-4xl font-black text-stone-900 tracking-tighter italic">JUHI SHARMA</div>
+      <div class="text-stone-600 font-medium font-body">Bengaluru</div>
+      <div class="flex gap-8">
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="index.html">Home</a>
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

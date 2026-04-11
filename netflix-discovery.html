@@ -1,218 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Content Discovery - Juhi Sharma</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Netflix Content Discovery - Juhi Sharma</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+              "error-container": "#ffdad6",
+              "outline": "#906f6a",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#e5e2e1",
+              "on-tertiary-fixed": "#1c1b1b",
+              "inverse-surface": "#32302b",
+              "background": "#fef9f0",
+              "secondary-container": "#fed977",
+              "on-surface": "#1d1b17",
+              "primary-fixed-dim": "#ffb4a9",
+              "outline-variant": "#e5bdb7",
+              "surface-tint": "#bc150e",
+              "surface-variant": "#e7e2da",
+              "on-secondary-fixed-variant": "#584400",
+              "surface-container-high": "#ede7df",
+              "tertiary": "#5d5c5b",
+              "on-tertiary-fixed-variant": "#474646",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f5f0e8",
+              "secondary-fixed": "#ffe08f",
+              "on-background": "#1d1b17",
+              "on-primary-fixed-variant": "#930002",
+              "on-surface-variant": "#5c403c",
+              "on-secondary-container": "#785d00",
+              "secondary": "#755b00",
+              "on-primary-container": "#fffbff",
+              "inverse-primary": "#ffb4a9",
+              "on-secondary-fixed": "#241a00",
+              "surface-container": "#f3ede5",
+              "surface-container-low": "#f8f3eb",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#410000",
+              "on-primary": "#ffffff",
+              "primary": "#b8110c",
+              "surface": "#fef9f0",
+              "surface-bright": "#fef9f0",
+              "surface-dim": "#ded9d2",
+              "primary-fixed": "#ffdad5",
+              "surface-container-highest": "#e7e2da",
+              "on-error-container": "#93000a",
+              "primary-container": "#dd3123",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#e6c364",
+              "tertiary-fixed-dim": "#c9c6c5",
+              "tertiary-container": "#767474",
+              "on-tertiary-container": "#f7feff"
+      },
+      "fontFamily": {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Be Vietnam Pro"]
+      }
+    },
+  },
+}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .mesh-gradient {
+      background-color: #fef9f0;
+      background-image: 
+          radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
+      background-size: 100% 100%;
+      background-attachment: fixed;
+  }
+  .noise-overlay::before {
+      content: "";
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0.04; z-index: -1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+</style>
 </head>
-<body>
+<body class="mesh-gradient noise-overlay text-on-surface overflow-x-hidden">
 
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">JS</a>
-    <ul class="nav-links">
-      <li><a href="index.html#projects">Work</a></li>
-      <li><a href="index.html#feedback">Feedback</a></li>
-      <li><a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="project-hero">
-    <div>
-      <div class="project-eyebrow">
-        <a href="index.html" class="project-back">← Back</a>
-        <span class="eyebrow-sep">/</span>
-        <span class="project-number-label">Project 01</span>
-      </div>
-      <h1 class="project-hero-title">Netflix<br><em>Content Discovery</em></h1>
-      <p class="project-hero-subtitle">Solving decision fatigue before playback. Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was.</p>
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/30">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">JS</a>
+    <div class="hidden md:flex gap-12 items-center">
+      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 transition" href="index.html#projects">Work</a>
     </div>
-    <div class="hero-links">
-      <a href="https://docs.google.com/presentation/d/e/2PACX-1vTmnSPwHeRCI0o-RYswwAw7Sv_nOahFlpCq_kxYK29tAmcNGvI7VRFaaaYsKy5fqEwgfCRU99rPliUf/pub?start=false&loop=false&delayms=3000" target="_blank" class="hero-link-btn primary">
-        View Deck <span class="link-arrow">↗</span>
-      </a>
-      <a href="https://netflix-content-discovery.vercel.app/" target="_blank" class="hero-link-btn primary">
-        Prototype <span class="link-arrow">↗</span>
-      </a>
+  </div>
+</nav>
+
+<main class="relative min-h-screen pt-32 pb-20 overflow-hidden max-w-[1400px] mx-auto px-8 md:px-16">
+  
+  <div class="absolute top-[20%] -right-48 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10 mix-blend-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="mt-12 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-8 flex flex-col justify-center">
+      <div class="flex items-center gap-4 mb-6">
+        <a href="index.html" class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-500 hover:text-primary transition">← Back</a>
+        <span class="text-stone-300">/</span>
+        <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">Project 01</span>
+      </div>
+      <h1 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-on-surface mb-8 leading-[0.9]">
+          Netflix<br/><span class="text-primary pr-4">Content Discovery</span>
+      </h1>
+      <p class="font-body text-lg md:text-xl text-on-surface/80 font-medium leading-relaxed max-w-2xl mb-10">
+        Solving decision fatigue before playback. Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://docs.google.com/presentation/d/e/2PACX-1vTmnSPwHeRCI0o-RYswwAw7Sv_nOahFlpCq_kxYK29tAmcNGvI7VRFaaaYsKy5fqEwgfCRU99rPliUf/pub?start=false&loop=false&delayms=3000" target="_blank" class="bg-primary text-white border border-primary px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+          View Deck ↗
+        </a>
+        <a href="https://netflix-content-discovery.vercel.app/" target="_blank" class="bg-white/50 text-stone-900 border border-stone-300 px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-colors shadow-sm">
+          Prototype ↗
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat-cell">
-      <div class="stat-big">32</div>
-      <div class="stat-desc">Research<br>Participants</div>
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">32</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Research<br>Participants</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">35%</div>
-      <div class="stat-desc">Sessions ending<br>without playback</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">35%</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Sessions ending<br>without playback</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">20m</div>
-      <div class="stat-desc">Avg browse time<br>before abandonment</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">20m</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Avg browse time<br>before abandonment</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">2x</div>
-      <div class="stat-desc">Target watch-start<br>rate improvement</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">2x</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Target watch-start<br>rate improvement</span>
     </div>
   </div>
 
-  <!-- NARRATIVE -->
-  <div class="narrative">
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Starting Question</div>
-      <h2>What if the problem was never the content?</h2>
-      <p>Netflix has one of the most sophisticated recommendation engines in the world. It knows your watch history, your genre preferences, the shows you abandoned at episode three. And yet <strong>35% of sessions end without anything being watched</strong>. Users open the app, browse for fifteen to twenty minutes, and leave.</p>
-      <p>The easy assumption is that this is a content problem. Not enough good titles. Wrong genres. Poor localisation. That assumption shaped how most product thinking around streaming had been framed. This project started with a different hypothesis: what if the content was fine, and the problem was something else entirely?</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Research</div>
-      <h2>Three hypotheses. One winner.</h2>
-      <p>Primary research across 32 participants: 10 in-depth interviews and a survey split across 22 general viewers and a follow-up vibe check cohort. The interviews focused on journey mapping from the moment a user opened Netflix to the moment they pressed play or gave up.</p>
-      <p>Three hypotheses were tested: content quality as the core problem, discoverability and surface area, and decision friction before playback. The research was designed to let any of the three win.</p>
-      <div class="findings-grid">
-        <div class="finding-card">
-          <div class="finding-num">Hypothesis 01</div>
-          <div class="finding-title">Content Quality</div>
-          <div class="finding-desc">Not enough good titles, wrong genres, poor localisation. Tested but not validated as P0.</div>
-        </div>
-        <div class="finding-card">
-          <div class="finding-num">Hypothesis 02</div>
-          <div class="finding-title">Discoverability</div>
-          <div class="finding-desc">Surface area and search quality failing users. Partially validated but not primary.</div>
-        </div>
-        <div class="finding-card" style="background: #1a0a0a;">
-          <div class="finding-num" style="color: #E50914;">Hypothesis 03 - Winner</div>
-          <div class="finding-title">Decision Friction</div>
-          <div class="finding-desc">Cognitive load of choosing was exhausting users before they reached content they would enjoy.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Key Finding</div>
-      <h2>The algorithm was not the bottleneck.</h2>
-      <p>Decision friction won clearly. Users were not leaving because they could not find content they would enjoy. They were leaving because <strong>the process of choosing was exhausting</strong>. The cognitive load of evaluating title after title, reading synopses, starting trailers, second-guessing choices, accumulated until abandonment felt easier than committing.</p>
-      <div class="callout">
-        <p>"Algorithm sophistication had outpaced the user's ability to process what the algorithm was surfacing."</p>
-      </div>
-      <p>The pattern was consistent across interview subjects: a user would open Netflix with genuine intent to watch something, spend fifteen to twenty minutes browsing, feel increasingly overwhelmed, and either settle for something already seen or close the app. The content was there. The decision was the problem.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Prioritisation</div>
-      <h2>RICE scoring. Four solutions. One dropped.</h2>
-      <p>Four solutions were evaluated across Reach, Impact, Confidence, and Effort. Review Integration scored 4. Explore Toggle and Swipeable Reels both scored 9. AI Chat scored 2 and was deprioritised: effort was high, confidence in user adoption was low, and it addressed a different problem than the validated P0.</p>
-      <p>Adding a conversational interface to a platform people open wanting to relax was solving for a persona that did not appear strongly in the research.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Solutions</div>
-      <h2>Three solutions targeting the moment before play.</h2>
-      <p><strong>Review Integration</strong> pulls social proof signals into the browsing experience. A user sees aggregated ratings and short reviews from people with similar watch history before committing to a title. It reduces the uncertainty of choosing something unknown without requiring the user to leave the platform.</p>
-      <p><strong>Explore Toggle</strong> gives users two modes: Quick Pick for users who want the algorithm to make a fast recommendation based on their current session, and Browse All for users who want to scan. The mode selection itself is a signal the algorithm can learn from over time.</p>
-      <p><strong>Swipeable Reels</strong> introduces a micro-preview format. Users swipe through short clips rather than reading synopses. Left swipe is an explicit negative signal, which is data Netflix currently does not collect systematically. The format reduces cognitive load by replacing text-based decision-making with immediate, visceral response.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Metrics</div>
-      <h2>Before, after, and what we guard against.</h2>
-      <div class="metrics-block">
-        <div class="metrics-row">
-          <div class="metrics-label">North Star</div>
-          <div class="metrics-value"><strong>Time to Watch-Start</strong> - session open to play button press</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Before</div>
-          <div class="metrics-value">20 min average browse time / 20% watch-start rate / 35% abandonment</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Target</div>
-          <div class="metrics-value"><strong>Under 5 min</strong> browse time / <strong>40%+</strong> watch-start rate / <strong>under 20%</strong> abandonment</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Guardrails</div>
-          <div class="metrics-value">Long-form completion rate must not drop. Rewatch rate must not rise disproportionately.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Roadmap</div>
-      <h2>12 months. 5 phases. One bet.</h2>
-      <div class="steps-list">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <div class="step-title">Months 1-2: P0 Foundation</div>
-            <div class="step-desc">Instrument session abandonment tracking, establish baselines, run qualitative validation with a small cohort.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <div class="step-title">Months 3-5: Review Integration</div>
-            <div class="step-desc">Build and launch review panels for the top 20% of catalog by viewing volume. Measure before expanding.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <div class="step-title">Months 4-6: Explore Toggle</div>
-            <div class="step-desc">Launch Quick Pick and Browse All modes. Instrument mode selection as a behavioural signal.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <div class="step-title">Months 6-9: Swipeable Reels</div>
-            <div class="step-desc">Launch micro-preview format for a content subset. Collect left-swipe data and validate as negative signal.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">5</div>
-          <div class="step-content">
-            <div class="step-title">Months 9-12: Integration and Scale</div>
-            <div class="step-desc">Combine signals from all three solutions into a unified contextual layer. Expand to full catalog.</div>
-          </div>
-        </div>
-      </div>
-      <div class="callout" style="margin-top: 32px;">
-        <p>"Reducing decision friction before playback will unlock more user and business value than adding more content or deepening personalisation."</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- NEXT PROJECT -->
-  <a href="netflix-quickshortcut.html" class="next-project">
+  <!-- Narrative -->
+  <div class="mt-32 max-w-4xl flex flex-col gap-32">
+    
     <div>
-      <div class="next-label">Next Project</div>
-      <div class="next-title">Netflix Quick Shortcut</div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Starting Question</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">What if the problem was never the content?</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Netflix has one of the most sophisticated recommendation engines in the world. It knows your watch history, your genre preferences, the shows you abandoned at episode three. And yet <strong>35% of sessions end without anything being watched</strong>. Users open the app, browse for fifteen to twenty minutes, and leave.</p>
+        <p>The easy assumption is that this is a content problem. Not enough good titles. Wrong genres. Poor localisation. That assumption shaped how most product thinking around streaming had been framed. This project started with a different hypothesis: what if the content was fine, and the problem was something else entirely?</p>
+      </div>
     </div>
-    <div class="next-arrow">→</div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Research</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Three hypotheses. One winner.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed mb-10">
+        <p>Primary research across 32 participants: 10 in-depth interviews and a survey split across 22 general viewers and a follow-up vibe check cohort. The interviews focused on journey mapping from the moment a user opened Netflix to the moment they pressed play or gave up.</p>
+        <p>Three hypotheses were tested: content quality as the core problem, discoverability and surface area, and decision friction before playback. The research was designed to let any of the three win.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-stone-500 font-bold mb-3">Hypothesis 01</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Content Quality</div>
+          <div class="font-body text-sm text-stone-600">Not enough good titles, wrong genres, poor localisation. Tested but not validated as P0.</div>
+        </div>
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-stone-500 font-bold mb-3">Hypothesis 02</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Discoverability</div>
+          <div class="font-body text-sm text-stone-600">Surface area and search quality failing users. Partially validated but not primary.</div>
+        </div>
+        <div class="bg-stone-900 rounded-3xl p-8 shadow-xl transform scale-105">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Hypothesis 03 - Winner</div>
+          <div class="font-headline text-xl font-bold mb-3 text-white">Decision Friction</div>
+          <div class="font-body text-sm text-stone-300">Cognitive load of choosing was exhausting users before they reached content they would enjoy.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Key Finding</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">The algorithm was not the bottleneck.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Decision friction won clearly. Users were not leaving because they could not find content they would enjoy. They were leaving because <strong>the process of choosing was exhausting</strong>. The cognitive load of evaluating title after title, reading synopses, starting trailers, second-guessing choices, accumulated until abandonment felt easier than committing.</p>
+        <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl my-4">
+          <p class="font-headline italic text-xl text-stone-800">"Algorithm sophistication had outpaced the user's ability to process what the algorithm was surfacing."</p>
+        </div>
+        <p>The pattern was consistent across interview subjects: a user would open Netflix with genuine intent to watch something, spend fifteen to twenty minutes browsing, feel increasingly overwhelmed, and either settle for something already seen or close the app. The content was there. The decision was the problem.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Prioritisation</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">RICE scoring. Four solutions. One dropped.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Four solutions were evaluated across Reach, Impact, Confidence, and Effort. Review Integration scored 4. Explore Toggle and Swipeable Reels both scored 9. AI Chat scored 2 and was deprioritised: effort was high, confidence in user adoption was low, and it addressed a different problem than the validated P0.</p>
+        <p>Adding a conversational interface to a platform people open wanting to relax was solving for a persona that did not appear strongly in the research.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Solutions</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Three solutions targeting the moment before play.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p><strong>Review Integration</strong> pulls social proof signals into the browsing experience. A user sees aggregated ratings and short reviews from people with similar watch history before committing to a title. It reduces the uncertainty of choosing something unknown without requiring the user to leave the platform.</p>
+        <p><strong>Explore Toggle</strong> gives users two modes: Quick Pick for users who want the algorithm to make a fast recommendation based on their current session, and Browse All for users who want to scan. The mode selection itself is a signal the algorithm can learn from over time.</p>
+        <p><strong>Swipeable Reels</strong> introduces a micro-preview format. Users swipe through short clips rather than reading synopses. Left swipe is an explicit negative signal, which is data Netflix currently does not collect systematically. The format reduces cognitive load by replacing text-based decision-making with immediate, visceral response.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Metrics</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Before, after, and what we guard against.</h2>
+      
+      <div class="bg-white/60 border border-white rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">North Star</div>
+          <div class="text-stone-800 font-medium"><strong>Time to Watch-Start</strong> - session open to play button press</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Before</div>
+          <div class="text-stone-800">20 min average browse time / 20% watch-start rate / 35% abandonment</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Target</div>
+          <div class="text-stone-800"><strong>Under 5 min</strong> browse time / <strong>40%+</strong> watch-start rate / <strong>under 20%</strong> abandonment</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Guardrails</div>
+          <div class="text-stone-800">Long-form completion rate must not drop. Rewatch rate must not rise disproportionately.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Roadmap</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">12 months. 5 phases. One bet.</h2>
+      
+      <div class="flex flex-col gap-4">
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary">1</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Months 1-2: P0 Foundation</div>
+            <div class="text-stone-600 font-body text-sm">Instrument session abandonment tracking, establish baselines, run qualitative validation with a small cohort.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary">2</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Months 3-5: Review Integration</div>
+            <div class="text-stone-600 font-body text-sm">Build and launch review panels for the top 20% of catalog by viewing volume. Measure before expanding.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary">3</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Months 4-6: Explore Toggle</div>
+            <div class="text-stone-600 font-body text-sm">Launch Quick Pick and Browse All modes. Instrument mode selection as a behavioural signal.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary">4</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Months 6-9: Swipeable Reels</div>
+            <div class="text-stone-600 font-body text-sm">Launch micro-preview format for a content subset. Collect left-swipe data and validate as negative signal.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-2xl font-black text-primary">5</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Months 9-12: Integration and Scale</div>
+            <div class="text-stone-600 font-body text-sm">Combine signals from all three solutions into a unified contextual layer. Expand to full catalog.</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl">
+        <p class="font-headline italic text-xl text-stone-800">"Reducing decision friction before playback will unlock more user and business value than adding more content or deepening personalisation."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT (Glassmorphic) -->
+  <a href="netflix-quickshortcut.html" class="block w-full mt-32 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/60 transition-colors relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+        <div class="font-label uppercase tracking-widest text-primary font-bold text-xs mb-4">Next Project</div>
+        <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-stone-900">Netflix Quick Shortcut</h3>
+      </div>
+      <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </div>
+    </div>
   </a>
 
-  <footer>
-    <div class="footer-name">Juhi Sharma, Bengaluru</div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
+</main>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
+<footer class="w-full mt-10 bg-white/30 backdrop-blur-2xl border-t border-white/40">
+  <div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
+    <div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+      <div class="text-4xl font-black text-stone-900 tracking-tighter italic">JUHI SHARMA</div>
+      <div class="text-stone-600 font-medium font-body">Bengaluru</div>
+      <div class="flex gap-8">
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="index.html">Home</a>
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -1,215 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learners Buddy - Juhi Sharma</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learners Buddy - Juhi Sharma</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+              "error-container": "#ffdad6",
+              "outline": "#906f6a",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#e5e2e1",
+              "on-tertiary-fixed": "#1c1b1b",
+              "inverse-surface": "#32302b",
+              "background": "#fef9f0",
+              "secondary-container": "#fed977",
+              "on-surface": "#1d1b17",
+              "primary-fixed-dim": "#ffb4a9",
+              "outline-variant": "#e5bdb7",
+              "surface-tint": "#bc150e",
+              "surface-variant": "#e7e2da",
+              "on-secondary-fixed-variant": "#584400",
+              "surface-container-high": "#ede7df",
+              "tertiary": "#5d5c5b",
+              "on-tertiary-fixed-variant": "#474646",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f5f0e8",
+              "secondary-fixed": "#ffe08f",
+              "on-background": "#1d1b17",
+              "on-primary-fixed-variant": "#930002",
+              "on-surface-variant": "#5c403c",
+              "on-secondary-container": "#785d00",
+              "secondary": "#755b00",
+              "on-primary-container": "#fffbff",
+              "inverse-primary": "#ffb4a9",
+              "on-secondary-fixed": "#241a00",
+              "surface-container": "#f3ede5",
+              "surface-container-low": "#f8f3eb",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#410000",
+              "on-primary": "#ffffff",
+              "primary": "#b8110c",
+              "surface": "#fef9f0",
+              "surface-bright": "#fef9f0",
+              "surface-dim": "#ded9d2",
+              "primary-fixed": "#ffdad5",
+              "surface-container-highest": "#e7e2da",
+              "on-error-container": "#93000a",
+              "primary-container": "#dd3123",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#e6c364",
+              "tertiary-fixed-dim": "#c9c6c5",
+              "tertiary-container": "#767474",
+              "on-tertiary-container": "#f7feff"
+      },
+      "fontFamily": {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Be Vietnam Pro"]
+      }
+    },
+  },
+}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .mesh-gradient {
+      background-color: #fef9f0;
+      background-image: 
+          radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
+      background-size: 100% 100%;
+      background-attachment: fixed;
+  }
+  .noise-overlay::before {
+      content: "";
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0.04; z-index: -1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+</style>
 </head>
-<body>
+<body class="mesh-gradient noise-overlay text-on-surface overflow-x-hidden">
 
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">JS</a>
-    <ul class="nav-links">
-      <li><a href="index.html#projects">Work</a></li>
-      <li><a href="index.html#feedback">Feedback</a></li>
-      <li><a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
-
-  <section class="project-hero">
-    <div>
-      <div class="project-eyebrow">
-        <a href="smart-travel-groups.html" class="project-back">← Previous Project</a>
-        <span class="eyebrow-sep">/</span>
-        <span class="project-number-label">Project 04</span>
-      </div>
-      <h1 class="project-hero-title">Learners<br><em>Buddy</em></h1>
-      <p class="project-hero-subtitle">Started with an AI prioritisation hypothesis. Research killed it. Pivoted to behavioural re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star. V2 shipped with journey templates, plant-based emotional feedback, and background push notifications via Supabase Edge Functions.</p>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/30">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">JS</a>
+    <div class="hidden md:flex gap-12 items-center">
+      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 transition-transform duration-300" href="index.html#projects">Work</a>
     </div>
-    <div class="hero-links">
-      <a href="https://docs.google.com/presentation/d/e/2PACX-1vTS9M-5THTgg1SyGw8bSp2tGYEOkc2EyGsxCiScAqMiZjOPC2svBQiVEQZKEBPlBxeMsXiam7uT-gqI/pub?start=false&loop=false&delayms=3000" target="_blank" class="hero-link-btn primary">
-        View Deck <span class="link-arrow">↗</span>
-      </a>
-      <a href="https://learnersbuddy.vercel.app/welcome" target="_blank" class="hero-link-btn primary">
-        Prototype <span class="link-arrow">↗</span>
-      </a>
+  </div>
+</nav>
+
+<main class="relative min-h-screen pt-32 pb-20 overflow-hidden max-w-[1400px] mx-auto px-8 md:px-16">
+  
+  <div class="absolute top-[20%] -right-48 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10 mix-blend-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="mt-12 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-8 flex flex-col justify-center">
+      <div class="flex items-center gap-4 mb-6">
+        <a href="smart-travel-groups.html" class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-500 hover:text-primary transition">← Previous Project</a>
+        <span class="text-stone-300">/</span>
+        <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">Project 04</span>
+      </div>
+      <h1 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-on-surface mb-8 leading-[0.9]">
+          Learners<br/><span class="text-primary pr-4">Buddy</span>
+      </h1>
+      <p class="font-body text-lg md:text-xl text-on-surface/80 font-medium leading-relaxed max-w-2xl mb-10">
+        Started with an AI prioritisation hypothesis. Research killed it. Pivoted to behavioural re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star. V2 shipped with journey templates, plant-based emotional feedback, and background push notifications via Supabase Edge Functions.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://docs.google.com/presentation/d/e/2PACX-1vTS9M-5THTgg1SyGw8bSp2tGYEOkc2EyGsxCiScAqMiZjOPC2svBQiVEQZKEBPlBxeMsXiam7uT-gqI/pub?start=false&loop=false&delayms=3000" target="_blank" class="bg-primary text-white border border-primary px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+          View Deck ↗
+        </a>
+        <a href="https://learnersbuddy.vercel.app/welcome" target="_blank" class="bg-white/50 text-stone-900 border border-stone-300 px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-colors shadow-sm">
+          Prototype ↗
+        </a>
+      </div>
     </div>
   </section>
 
-  <div class="stats-bar">
-    <div class="stat-cell">
-      <div class="stat-big">20</div>
-      <div class="stat-desc">Survey responses<br>that changed direction</div>
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">20</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Survey responses<br>that changed direction</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">4</div>
-      <div class="stat-desc">Behavioural states<br>in the model</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">4</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Behavioural states<br>in the model</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">40%</div>
-      <div class="stat-desc">Recovery speed improvement<br>target by day 30</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">40%</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Recovery speed improvement<br>target by day 30</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">V2</div>
-      <div class="stat-desc">Learner-first experience<br>live in beta</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">V2</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Learner-first experience<br>live in beta</span>
     </div>
   </div>
 
-  <div class="narrative">
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Original Hypothesis</div>
-      <h2>A reasonable assumption that research killed cleanly.</h2>
-      <p>The starting point was a reasonable assumption. Working professionals and students preparing for career milestones carve out time to learn. When something urgent comes up, that learning time is the first to disappear. The frustration, the assumption went, came from not knowing how to reprioritize. So the original plan was a GenAI assistant that would reason through those tradeoffs.</p>
-      <p>20 survey responses, 3 in-depth interviews, a behavioural science review, and a competitive scan later: <strong>research killed that hypothesis cleanly.</strong></p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">What Research Found</div>
-      <h2>Not a prioritisation problem. A re-entry problem.</h2>
-      <p>People were not struggling with the "what to prioritize" question. They were struggling with the "how do I start again" question. The pattern was almost identical across respondents: miss a day, feel guilty, avoid the app, lose a week, eventually attempt to restart with emotional overhead attached.</p>
-      <div class="findings-grid">
-        <div class="finding-card">
-          <div class="finding-num">Signal 01</div>
-          <div class="finding-title">Collapse, not disruption</div>
-          <div class="finding-desc">When a disrupted day hit, learning collapsed for days or a week, not just one day.</div>
-        </div>
-        <div class="finding-card">
-          <div class="finding-num">Signal 02</div>
-          <div class="finding-title">Emotional pattern</div>
-          <div class="finding-desc">Frustration, guilt, overwhelm. The feeling of having to start over from zero, even when objectively they were not.</div>
-        </div>
-        <div class="finding-card">
-          <div class="finding-num">Signal 03</div>
-          <div class="finding-title">What they wanted</div>
-          <div class="finding-desc">Respondents pointed toward nudges and structure, not AI reasoning. Something that said: your day broke, here is the smallest useful step.</div>
-        </div>
-      </div>
-      <p style="margin-top: 24px;">Behavioural science reinforced the findings. Unfinished tasks stay mentally active after the day ends, creating cognitive drag. Forming a specific if-then plan significantly reduces that mental interference. The science was describing exactly the re-entry problem respondents were living.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Pivot</div>
-      <h2>From decision-support tool to re-entry support system.</h2>
-      <p>The GenAI reprioritisation concept was dropped. The new core question was not "what should you do today?" It was: <strong>when you fell off, how fast did you come back?</strong></p>
-      <p>That reframe sounds small. It changed every design decision that followed. Completion rate was the obvious north star for a habit app. The problem is that it is binary and punitive. A user who missed three days but returned the next day is doing better, in the sense that matters, than a user who has not missed yet but is slowly losing engagement. <strong>Completion rate cannot tell those two users apart. Recovery speed can.</strong></p>
-      <div class="callout">
-        <p>"Five products reviewed. All of them track completion. None of them track what happens after you do not complete."</p>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">What Changed in V2</div>
-      <h2>A focus shift, not a rebuild.</h2>
-      <p>V1 was Telegram-first and generic. Expert review surfaced four clear pivots: remove the Telegram dependency, add journey structure, make recovery speed the visible metric, and build a miss recovery UX. V2 delivered all four.</p>
-      <p>The sharpened persona: <strong>learners working toward structured milestones</strong> — certifications, career transitions, skill-building programs — where the cost of falling off is higher and the re-entry problem is more acute. The milestone creates urgency, which is the product's leverage. The 4-state model holds. Recovery speed as north star holds. What changed is the journey templates, the plant-based emotional feedback layer, and background push notifications designed around how learners actually structure their goals.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Model</div>
-      <h2>Four states. One pure function. No streaks.</h2>
-      <p>The product is not built around a streak. It is built around four states, each of which calls for a different response from the system.</p>
-      <div class="steps-list">
-        <div class="step-item">
-          <div class="step-num" style="color: #4CAF50;">A</div>
-          <div class="step-content">
-            <div class="step-title">On Track</div>
-            <div class="step-desc">Checking in consistently. Dashboard is calm and affirming. No friction introduced.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num" style="color: #E50914;">B</div>
-          <div class="step-content">
-            <div class="step-title">Missed Yesterday, No Plan</div>
-            <div class="step-desc">Highest-risk state. Dashboard surfaces a low-friction restart prompt, not a reminder of what was missed. No guilt.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num" style="color: #C9A84C;">C</div>
-          <div class="step-content">
-            <div class="step-title">Restart Committed</div>
-            <div class="step-desc">User has set a specific return date and time. The system holds the intention so the user does not have to carry it mentally.</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num" style="color: #888;">D</div>
-          <div class="step-content">
-            <div class="step-title">Deliberate Pause</div>
-            <div class="step-desc">User has proactively flagged a busy period. This is not a failure state. Treated as a planned interruption. Re-entry managed when the pause expires.</div>
-          </div>
-        </div>
-      </div>
-      <p style="margin-top: 24px;">All four states are driven by a single pure function, <code style="font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gold); background: var(--bg3); padding: 2px 6px;">getDashboardState()</code>, which determines message, prompt, and tone at any given moment. Grounded in implementation intention research.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">What Was Built</div>
-      <h2>Mobile-first. Deployed. Beta-ready.</h2>
-      <p>Learners Buddy is a web-based mobile-first app. Stack: Vite, React, TypeScript, Tailwind CSS, shadcn/ui. No native app — an intentional decision to test core behaviour without app store friction or distribution overhead.</p>
-      <p>Core features: 10 pre-built journey templates plus a custom builder; daily check-in under 60 seconds; <strong>plant visual that grows on sessions, wilts on 2+ consecutive misses, and recovers the moment a session is logged</strong>; dashboard with recovery speed as the hero metric; miss recovery ladder with escalating copy (banner → recovery sheet → feedback mode at 7+ misses); editable weekly goals with push-to-next-week and replace flows; pause flow that suspends miss streak counting.</p>
-      <p>Backend is live. Supabase mirrors all user state in real time — every check-in, pause, and goal edit is persisted to the cloud. <strong>Push notifications fire even when the browser is closed</strong>, delivered via Supabase Edge Function on a 30-minute cron schedule using Web Push (VAPID).</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Metrics</div>
-      <h2>The north star maps to what the user feels.</h2>
-      <div class="metrics-block">
-        <div class="metrics-row">
-          <div class="metrics-label">North Star</div>
-          <div class="metrics-value"><strong>40% of active users show recovery speed improvement by day 30</strong></div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Why Not Completion</div>
-          <div class="metrics-value">Binary and punitive. Cannot distinguish a user recovering well from one slowly disengaging.</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Phase 1 Signal</div>
-          <div class="metrics-value">Do users return after missing without being prompted? Does the metric mean something to them?</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Phase 2 Goal</div>
-          <div class="metrics-value">50-100 learners from certification and upskilling communities. Cross-device sync read layer. PostHog analytics integration.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Judgment Call</div>
-      <h2>Killing something you already designed.</h2>
-      <p>The most interesting PM moment in this project is not the pivot itself. It is the discipline the pivot required. By the time the research came back pointing away from the original hypothesis, the GenAI reprioritisation concept had already been designed. There was investment in the idea. Killing it was uncomfortable.</p>
-      <div class="callout">
-        <p>"Treating research as a genuine input that can and should change direction, not as validation material for a decision already made, is the most transferable thing this project demonstrates."</p>
-      </div>
-    </div>
-
-  </div>
-
-  <a href="index.html" class="next-project">
+  <!-- Narrative -->
+  <div class="mt-32 max-w-4xl max-w-4xl flex flex-col gap-32">
+    
     <div>
-      <div class="next-label">Back to</div>
-      <div class="next-title">All Projects</div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Original Hypothesis</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">A reasonable assumption that research killed cleanly.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>The starting point was a reasonable assumption. Working professionals and students preparing for career milestones carve out time to learn. When something urgent comes up, that learning time is the first to disappear. The frustration, the assumption went, came from not knowing how to reprioritize. So the original plan was a GenAI assistant that would reason through those tradeoffs.</p>
+        <p>20 survey responses, 3 in-depth interviews, a behavioural science review, and a competitive scan later: <strong>research killed that hypothesis cleanly.</strong></p>
+      </div>
     </div>
-    <div class="next-arrow">→</div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">What Research Found</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Not a prioritisation problem. A re-entry problem.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed mb-10">
+        <p>People were not struggling with the "what to prioritize" question. They were struggling with the "how do I start again" question. The pattern was almost identical across respondents: miss a day, feel guilty, avoid the app, lose a week, eventually attempt to restart with emotional overhead attached.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Signal 01</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Collapse, not disruption</div>
+          <div class="font-body text-sm text-stone-600">When a disrupted day hit, learning collapsed for days or a week, not just one day.</div>
+        </div>
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Signal 02</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Emotional pattern</div>
+          <div class="font-body text-sm text-stone-600">Frustration, guilt, overwhelm. The feeling of having to start over from zero, even when objectively they were not.</div>
+        </div>
+        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
+          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Signal 03</div>
+          <div class="font-headline text-xl font-bold mb-3 text-stone-900">What they wanted</div>
+          <div class="font-body text-sm text-stone-600">Respondents pointed toward nudges and structure, not AI reasoning. Something that said: your day broke, here is the smallest useful step.</div>
+        </div>
+      </div>
+      <p class="font-body text-lg text-stone-700 leading-relaxed">Behavioural science reinforced the findings. Unfinished tasks stay mentally active after the day ends, creating cognitive drag. Forming a specific if-then plan significantly reduces that mental interference. The science was describing exactly the re-entry problem respondents were living.</p>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Pivot</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">From decision-support tool to re-entry support system.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>The GenAI reprioritisation concept was dropped. The new core question was not "what should you do today?" It was: <strong>when you fell off, how fast did you come back?</strong></p>
+        <p>That reframe sounds small. It changed every design decision that followed. Completion rate was the obvious north star for a habit app. The problem is that it is binary and punitive. A user who missed three days but returned the next day is doing better, in the sense that matters, than a user who has not missed yet but is slowly losing engagement. <strong>Completion rate cannot tell those two users apart. Recovery speed can.</strong></p>
+      </div>
+      <div class="mt-8 bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl">
+        <p class="font-headline italic text-xl text-stone-800">"Five products reviewed. All of them track completion. None of them track what happens after you do not complete."</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">What Changed in V2</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">A focus shift, not a rebuild.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>V1 was Telegram-first and generic. Expert review surfaced four clear pivots: remove the Telegram dependency, add journey structure, make recovery speed the visible metric, and build a miss recovery UX. V2 delivered all four.</p>
+        <p>The sharpened persona: <strong>learners working toward structured milestones</strong> — certifications, career transitions, skill-building programs — where the cost of falling off is higher and the re-entry problem is more acute. The milestone creates urgency, which is the product's leverage. The 4-state model holds. Recovery speed as north star holds. What changed is the journey templates, the plant-based emotional feedback layer, and background push notifications designed around how learners actually structure their goals.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Model</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Four states. One pure function. No streaks.</h2>
+      <p class="font-body text-lg text-stone-700 leading-relaxed mb-10">The product is not built around a streak. It is built around four states, each of which calls for a different response from the system.</p>
+      
+      <div class="flex flex-col gap-6">
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex items-start gap-6 shadow-sm">
+          <div class="font-headline text-4xl font-black text-green-600">A</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">On Track</div>
+            <div class="text-stone-600 font-body text-sm">Checking in consistently. Dashboard is calm and affirming. No friction introduced.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex items-start gap-6 shadow-sm">
+          <div class="font-headline text-4xl font-black text-red-600">B</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Missed Yesterday, No Plan</div>
+            <div class="text-stone-600 font-body text-sm">Highest-risk state. Dashboard surfaces a low-friction restart prompt, not a reminder of what was missed. No guilt.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex items-start gap-6 shadow-sm">
+          <div class="font-headline text-4xl font-black text-yellow-600">C</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Restart Committed</div>
+            <div class="text-stone-600 font-body text-sm">User has set a specific return date and time. The system holds the intention so the user does not have to carry it mentally.</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex items-start gap-6 shadow-sm">
+          <div class="font-headline text-4xl font-black text-stone-400">D</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">Deliberate Pause</div>
+            <div class="text-stone-600 font-body text-sm">User has proactively flagged a busy period. This is not a failure state. Treated as a planned interruption. Re-entry managed when the pause expires.</div>
+          </div>
+        </div>
+      </div>
+      <p class="font-body text-lg text-stone-700 leading-relaxed mt-8">All four states are driven by a single pure function, <code class="bg-stone-200 text-stone-800 px-2 rounded font-mono text-sm">getDashboardState()</code>, which determines message, prompt, and tone at any given moment. Grounded in implementation intention research.</p>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">What Was Built</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Mobile-first. Deployed. Beta-ready.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Learners Buddy is a web-based mobile-first app. Stack: Vite, React, TypeScript, Tailwind CSS, shadcn/ui. No native app — an intentional decision to test core behaviour without app store friction or distribution overhead.</p>
+        <p>Core features: 10 pre-built journey templates plus a custom builder; daily check-in under 60 seconds; <strong>plant visual that grows on sessions, wilts on 2+ consecutive misses, and recovers the moment a session is logged</strong>; dashboard with recovery speed as the hero metric; miss recovery ladder with escalating copy (banner → recovery sheet → feedback mode at 7+ misses); editable weekly goals with push-to-next-week and replace flows; pause flow that suspends miss streak counting.</p>
+        <p>Backend is live. Supabase mirrors all user state in real time — every check-in, pause, and goal edit is persisted to the cloud. <strong>Push notifications fire even when the browser is closed</strong>, delivered via Supabase Edge Function on a 30-minute cron schedule using Web Push (VAPID).</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Metrics</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">The north star maps to what the user feels.</h2>
+      
+      <div class="bg-white/60 border border-white rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">North Star</div>
+          <div class="text-stone-800 font-medium"><strong>40% of active users show recovery speed improvement by day 30</strong></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Why Not Completion</div>
+          <div class="text-stone-800">Binary and punitive. Cannot distinguish a user recovering well from one slowly disengaging.</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Phase 1 Signal</div>
+          <div class="text-stone-800">Do users return after missing without being prompted? Does the metric mean something to them?</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Phase 2 Goal</div>
+          <div class="text-stone-800">50-100 learners from certification and upskilling communities. Cross-device sync read layer. PostHog analytics integration.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Judgment Call</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Killing something you already designed.</h2>
+      <p class="font-body text-lg text-stone-700 leading-relaxed mb-6">The most interesting PM moment in this project is not the pivot itself. It is the discipline the pivot required. By the time the research came back pointing away from the original hypothesis, the GenAI reprioritisation concept had already been designed. There was investment in the idea. Killing it was uncomfortable.</p>
+      <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl">
+        <p class="font-headline italic text-xl text-stone-800">"Treating research as a genuine input that can and should change direction, not as validation material for a decision already made, is the most transferable thing this project demonstrates."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT (Glassmorphic) -->
+  <a href="index.html" class="block w-full mt-32 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/60 transition-colors relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+        <div class="font-label uppercase tracking-widest text-primary font-bold text-xs mb-4">Back to</div>
+        <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-stone-900">All Projects</h3>
+      </div>
+      <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </div>
+    </div>
   </a>
 
-  <footer>
-    <div class="footer-name">Juhi Sharma, Bengaluru</div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
+</main>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
+<footer class="w-full mt-10 bg-white/30 backdrop-blur-2xl border-t border-white/40">
+  <div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
+    <div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+      <div class="text-4xl font-black text-stone-900 tracking-tighter italic">JUHI SHARMA</div>
+      <div class="text-stone-600 font-medium font-body">Bengaluru</div>
+      <div class="flex gap-8">
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="index.html">Home</a>
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

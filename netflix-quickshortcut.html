@@ -1,181 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Quick Shortcut - Juhi Sharma</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Netflix Quick Shortcut - Juhi Sharma</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+              "error-container": "#ffdad6",
+              "outline": "#906f6a",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#b8110c",
+              "surface": "#fef9f0",
+              "surface-container": "#f3ede5"
+      },
+      "fontFamily": {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Be Vietnam Pro"]
+      }
+    },
+  },
+}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .mesh-gradient {
+      background-color: #fef9f0;
+      background-image: 
+          radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
+      background-size: 100% 100%;
+      background-attachment: fixed;
+  }
+  .noise-overlay::before {
+      content: "";
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0.04; z-index: -1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+</style>
 </head>
-<body>
+<body class="mesh-gradient noise-overlay text-stone-900 overflow-x-hidden">
 
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">JS</a>
-    <ul class="nav-links">
-      <li><a href="index.html#projects">Work</a></li>
-      <li><a href="index.html#feedback">Feedback</a></li>
-      <li><a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
-
-  <section class="project-hero">
-    <div>
-      <div class="project-eyebrow">
-        <a href="netflix-discovery.html" class="project-back">← Previous Project</a>
-        <span class="eyebrow-sep">/</span>
-        <span class="project-number-label">Project 02</span>
-      </div>
-      <h1 class="project-hero-title">Netflix<br><em>Quick Shortcut</em></h1>
-      <p class="project-hero-subtitle">The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system, deployed on Google Cloud Run, that cut decision time from 20 minutes to under three.</p>
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/30">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">JS</a>
+    <div class="hidden md:flex gap-12 items-center">
+      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 transition" href="index.html#projects">Work</a>
     </div>
-    <div class="hero-links">
-      <a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="hero-link-btn primary">
-        View Deck <span class="link-arrow">↗</span>
-      </a>
-      <a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="hero-link-btn primary">
-        Prototype <span class="link-arrow">↗</span>
-      </a>
+  </div>
+</nav>
+
+<main class="relative min-h-screen pt-32 pb-20 overflow-hidden max-w-[1400px] mx-auto px-8 md:px-16">
+  
+  <div class="absolute top-[20%] -right-48 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10 mix-blend-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="mt-12 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-8 flex flex-col justify-center">
+      <div class="flex items-center gap-4 mb-6">
+        <a href="netflix-discovery.html" class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-500 hover:text-primary transition">← Previous Project</a>
+        <span class="text-stone-300">/</span>
+        <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">Project 02</span>
+      </div>
+      <h1 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-stone-900 mb-8 leading-[0.9]">
+          Netflix<br/><span class="text-primary pr-4">Quick Shortcut</span>
+      </h1>
+      <p class="font-body text-lg md:text-xl text-stone-700 font-medium leading-relaxed max-w-2xl mb-10">
+        The algorithm knows your history. It has no mechanism for your present moment. A two-step intent capture system, deployed on Google Cloud Run, that cut decision time from 20 minutes to under three.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://gamma.app/docs/Netflix-Prototype-160ruuunlwxzvfv?mode=doc" target="_blank" class="bg-primary text-white border border-primary px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+          View Deck ↗
+        </a>
+        <a href="https://quick-shortcut-ai-418210598856.us-west1.run.app/" target="_blank" class="bg-white/50 text-stone-900 border border-stone-300 px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-colors shadow-sm">
+          Prototype ↗
+        </a>
+      </div>
     </div>
   </section>
 
-  <div class="stats-bar">
-    <div class="stat-cell">
-      <div class="stat-big">20m</div>
-      <div class="stat-desc">Decision time<br>before</div>
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">20m</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Decision time<br>before</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">&lt;3m</div>
-      <div class="stat-desc">Decision time<br>after</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2"><3m</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Decision time<br>after</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">50+</div>
-      <div class="stat-desc">Mood combinations<br>covered</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">50+</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Mood combinations<br>covered</span>
     </div>
-    <div class="stat-cell">
-      <div class="stat-big">2Q</div>
-      <div class="stat-desc">Questions to capture<br>full intent</div>
+    <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
+      <span class="font-headline text-4xl font-black text-primary mb-2">2Q</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-stone-600 font-bold">Questions to capture<br>full intent</span>
     </div>
   </div>
 
-  <div class="narrative">
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Gap</div>
-      <h2>Part 1 solved discovery. Not context.</h2>
-      <p>Part 1 ended with a roadmap. Three solutions, five phases, a north star metric. On paper it was complete. But there was a problem none of those solutions fully resolved. The Explore Toggle helps users who know their mood. Swipeable Reels helps users who need to browse faster. Review Integration helps users who need social proof. <strong>All three reduce friction after the algorithm has already made its recommendations. None of them change what the algorithm is working from.</strong></p>
-      <p>Netflix's recommendation engine is sophisticated at learning long-term taste. What it cannot do is read the session a user is in right now. It does not know if they have 40 minutes or three hours. It does not know if they are exhausted or alert. The algorithm knows history. It has no mechanism for the present moment.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Problem</div>
-      <h2>Taste problem vs. context problem.</h2>
-      <p>The recommendation system operates on revealed preference: what you have watched and rated before. It asks: given everything this person has chosen in the past, what should they choose next? That is a reasonable question. But it is the wrong question when what a user needs is: <strong>given how I feel right now and how much time I have, what should I watch tonight?</strong></p>
-      <div class="callout">
-        <p>"Netflix solves taste well. Nobody solves context. That gap is the specific failure mode Quick Shortcut was designed to close."</p>
-      </div>
-      <p>Users who know roughly what kind of experience they want - something light, under 90 minutes, low concentration - cannot efficiently surface it because the interface is organised around historical taste rather than present-moment state.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Solution</div>
-      <h2>Removal, not addition.</h2>
-      <p>Quick Shortcut is a context-aware discovery layer that sits between the user's stated intent and Netflix's catalog. It is not a search bar. It is not a chatbot. It is not a replacement for existing recommendation rows. It is a lightweight intent-capture and matching engine that asks one question: <strong>what kind of session is this?</strong></p>
-      <p>The design principle is removal, not addition. The goal is not to give users more options. It is to give them fewer, better ones, calibrated to right now rather than to their entire watch history.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Design Decision</div>
-      <h2>Why two structured questions beat a text box.</h2>
-      <p>The first instinct when designing an intent-capture system is to give users a text box. That feels more powerful and more flexible. The prototype made a different call: two structured questions instead of an open prompt.</p>
-      <div class="steps-list">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <div class="step-title">How much time do you have?</div>
-            <div class="step-desc">Quick (15-30 min) / Episode (30-60 min) / Movie (90 min+) / Not Sure Yet</div>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <div class="step-title">What vibe are you going for?</div>
-            <div class="step-desc">Light and Fun / Thrilling and Intense / Romantic / Action-Packed / Thought-Provoking / Surprise Me</div>
-          </div>
-        </div>
-      </div>
-      <p style="margin-top: 24px;">Three reasons this was the right call. First, most users arriving at a streaming platform do not have a precisely articulated intent - they have a rough feeling. Structured options meet them where they are. Second, free text creates enormous variance in how people express intent, making AI matching less reliable. Third, <strong>the two-question flow takes under 20 seconds</strong> versus the friction of a thoughtful text prompt.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">What Was Built</div>
-      <h2>A live system, not a mockup.</h2>
-      <p>The prototype was built and deployed on Google Cloud Run. Users move through the two-step intent capture, see an AI scanning transition, and arrive at a results page surfacing a hero recommendation with a match percentage, a vibe label, and a row of additional AI picks. The results page is intentionally Netflix-native in look and feel.</p>
-      <div class="callout">
-        <p>"AI picked these based on your moment."</p>
-      </div>
-      <p>The framing on every result reinforces the core promise: this is not your history speaking, it is your right now. Decision time in prototype testing moved from a baseline of approximately 20 minutes to <strong>under three minutes</strong>.</p>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">Metrics</div>
-      <h2>What success looks like and what it cannot cost.</h2>
-      <div class="metrics-block">
-        <div class="metrics-row">
-          <div class="metrics-label">North Star</div>
-          <div class="metrics-value"><strong>Decision Time</strong> - session open to play. Target: 20 min to under 3 min.</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Intent Capture</div>
-          <div class="metrics-value">% of sessions where user engages with Quick Shortcut prompt rather than dismissing it</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Prediction Quality</div>
-          <div class="metrics-value">Accuracy across vibe and time combinations, validated via post-session ratings</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Fallback Rate</div>
-          <div class="metrics-value">% engaging with Quick Shortcut then returning to manual browse - clearest signal that filtering is failing</div>
-        </div>
-        <div class="metrics-row">
-          <div class="metrics-label">Guardrail</div>
-          <div class="metrics-value">Long-form completion rate must not drop - Quick Shortcut cannot optimise for low-commitment picks</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="narrative-section fade-up">
-      <div class="section-tag">The Bigger Picture</div>
-      <h2>Quick Shortcut is Phase 4 of the Part 1 roadmap.</h2>
-      <p>Quick Shortcut is not a parallel product. It is the intelligent evolution of the discovery system designed in Part 1. The explicit feedback signals from Swipeable Reels feed the vibe matching layer. The intent signals from the Explore Toggle reveal which sessions are high-certainty versus exploratory.</p>
-      <p>In the Part 1 roadmap, Phases 1 through 3 build the feedback infrastructure. <strong>Quick Shortcut is what that infrastructure makes possible</strong>: a system that has enough signal to stop asking users to navigate and start anticipating what they need.</p>
-    </div>
-
-  </div>
-
-  <a href="smart-travel-groups.html" class="next-project">
+  <!-- Narrative -->
+  <div class="mt-32 max-w-4xl flex flex-col gap-32">
+    
     <div>
-      <div class="next-label">Next Project</div>
-      <div class="next-title">Smart Travel Groups</div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Gap</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Part 1 solved discovery. Not context.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Part 1 ended with a roadmap. Three solutions, five phases, a north star metric. On paper it was complete. But there was a problem none of those solutions fully resolved. The Explore Toggle helps users who know their mood. Swipeable Reels helps users who need to browse faster. Review Integration helps users who need social proof. <strong>All three reduce friction after the algorithm has already made its recommendations. None of them change what the algorithm is working from.</strong></p>
+        <p>Netflix's recommendation engine is sophisticated at learning long-term taste. What it cannot do is read the session a user is in right now. It does not know if they have 40 minutes or three hours. It does not know if they are exhausted or alert. The algorithm knows history. It has no mechanism for the present moment.</p>
+      </div>
     </div>
-    <div class="next-arrow">→</div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Problem</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Taste problem vs. context problem.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>The recommendation system operates on revealed preference: what you have watched and rated before. It asks: given everything this person has chosen in the past, what should they choose next? That is a reasonable question. But it is the wrong question when what a user needs is: <strong>given how I feel right now and how much time I have, what should I watch tonight?</strong></p>
+        <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl my-4">
+          <p class="font-headline italic text-xl text-stone-800">"Netflix solves taste well. Nobody solves context. That gap is the specific failure mode Quick Shortcut was designed to close."</p>
+        </div>
+        <p>Users who know roughly what kind of experience they want - something light, under 90 minutes, low concentration - cannot efficiently surface it because the interface is organised around historical taste rather than present-moment state.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Solution</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Removal, not addition.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>Quick Shortcut is a context-aware discovery layer that sits between the user's stated intent and Netflix's catalog. It is not a search bar. It is not a chatbot. It is not a replacement for existing recommendation rows. It is a lightweight intent-capture and matching engine that asks one question: <strong>what kind of session is this?</strong></p>
+        <p>The design principle is removal, not addition. The goal is not to give users more options. It is to give them fewer, better ones, calibrated to right now rather than to their entire watch history.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Design Decision</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Why two structured questions beat a text box.</h2>
+      <p class="font-body text-lg text-stone-700 leading-relaxed mb-8">The first instinct when designing an intent-capture system is to give users a text box. That feels more powerful and more flexible. The prototype made a different call: two structured questions instead of an open prompt.</p>
+      
+      <div class="flex flex-col gap-6">
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-4xl font-black text-primary">1</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">How much time do you have?</div>
+            <div class="text-stone-600 font-body text-sm">Quick (15-30 min) / Episode (30-60 min) / Movie (90 min+) / Not Sure Yet</div>
+          </div>
+        </div>
+        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
+          <div class="font-headline text-4xl font-black text-primary">2</div>
+          <div>
+            <div class="font-bold text-lg text-stone-900 mb-1">What vibe are you going for?</div>
+            <div class="text-stone-600 font-body text-sm">Light and Fun / Thrilling and Intense / Romantic / Action-Packed / Thought-Provoking / Surprise Me</div>
+          </div>
+        </div>
+      </div>
+      <p class="font-body text-lg text-stone-700 leading-relaxed mt-8">Three reasons this was the right call. First, most users arriving at a streaming platform do not have a precisely articulated intent - they have a rough feeling. Structured options meet them where they are. Second, free text creates enormous variance in how people express intent, making AI matching less reliable. Third, <strong>the two-question flow takes under 20 seconds</strong> versus the friction of a thoughtful text prompt.</p>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">What Was Built</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">A live system, not a mockup.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
+        <p>The prototype was built and deployed on Google Cloud Run. Users move through the two-step intent capture, see an AI scanning transition, and arrive at a results page surfacing a hero recommendation with a match percentage, a vibe label, and a row of additional AI picks. The results page is intentionally Netflix-native in look and feel.</p>
+        <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl my-4">
+          <p class="font-headline italic text-xl text-stone-800">"AI picked these based on your moment."</p>
+        </div>
+        <p>The framing on every result reinforces the core promise: this is not your history speaking, it is your right now. Decision time in prototype testing moved from a baseline of approximately 20 minutes to <strong>under three minutes</strong>.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Metrics</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">What success looks like and what it cannot cost.</h2>
+      
+      <div class="bg-white/60 border border-white rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">North Star</div>
+          <div class="text-stone-800 font-medium"><strong>Decision Time</strong> - session open to play. Target: 20 min to under 3 min.</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Intent Capture</div>
+          <div class="text-stone-800">% of sessions where user engages with Quick Shortcut prompt rather than dismissing it</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Prediction Quality</div>
+          <div class="text-stone-800">Accuracy across vibe and time combinations, validated via post-session ratings</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Fallback Rate</div>
+          <div class="text-stone-800">% engaging with Quick Shortcut then returning to manual browse - clearest signal that filtering is failing</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Guardrail</div>
+          <div class="text-stone-800">Long-form completion rate must not drop - Quick Shortcut cannot optimise for low-commitment picks</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Bigger Picture</div>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Quick Shortcut is Phase 4 of the Part 1 roadmap.</h2>
+      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4 mb-4">
+        <p>Quick Shortcut is not a parallel product. It is the intelligent evolution of the discovery system designed in Part 1. The explicit feedback signals from Swipeable Reels feed the vibe matching layer. The intent signals from the Explore Toggle reveal which sessions are high-certainty versus exploratory.</p>
+        <p>In the Part 1 roadmap, Phases 1 through 3 build the feedback infrastructure. <strong>Quick Shortcut is what that infrastructure makes possible</strong>: a system that has enough signal to stop asking users to navigate and start anticipating what they need.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT (Glassmorphic) -->
+  <a href="smart-travel-groups.html" class="block w-full mt-32 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/60 transition-colors relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+        <div class="font-label uppercase tracking-widest text-primary font-bold text-xs mb-4">Next Project</div>
+        <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-stone-900">Smart Travel Groups</h3>
+      </div>
+      <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </div>
+    </div>
   </a>
 
-  <footer>
-    <div class="footer-name">Juhi Sharma, Bengaluru</div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
+</main>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
+<footer class="w-full mt-10 bg-white/30 backdrop-blur-2xl border-t border-white/40">
+  <div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
+    <div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+      <div class="text-4xl font-black text-stone-900 tracking-tighter italic">JUHI SHARMA</div>
+      <div class="text-stone-600 font-medium font-body">Bengaluru</div>
+      <div class="flex gap-8">
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="index.html">Home</a>
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
