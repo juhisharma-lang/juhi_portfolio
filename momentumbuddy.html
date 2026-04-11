@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MomentumBuddy - Juhi Sharma</title>
+  <title>Learners Buddy - Juhi Sharma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
@@ -26,14 +26,14 @@
         <span class="eyebrow-sep">/</span>
         <span class="project-number-label">Project 04</span>
       </div>
-      <h1 class="project-hero-title">Momentum<br><em>Buddy</em></h1>
-      <p class="project-hero-subtitle">Started with an AI prioritisation hypothesis. Research killed it. Pivoted to behavioural re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star. Now evolving toward a learner-first experience with deeper persona integration.</p>
+      <h1 class="project-hero-title">Learners<br><em>Buddy</em></h1>
+      <p class="project-hero-subtitle">Started with an AI prioritisation hypothesis. Research killed it. Pivoted to behavioural re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star. V2 shipped with journey templates, plant-based emotional feedback, and background push notifications via Supabase Edge Functions.</p>
     </div>
     <div class="hero-links">
-      <a href="https://docs.google.com/presentation/d/e/2PACX-1vRTeZgw0v9ooAV_vAPKFvRVJnhMyPvR9PFNPlWlJ6-ztUlb7p1aMSfsosyj-aV3vg/pub?start=false&loop=false&delayms=3000" target="_blank" class="hero-link-btn primary">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vTS9M-5THTgg1SyGw8bSp2tGYEOkc2EyGsxCiScAqMiZjOPC2svBQiVEQZKEBPlBxeMsXiam7uT-gqI/pub?start=false&loop=false&delayms=3000" target="_blank" class="hero-link-btn primary">
         View Deck <span class="link-arrow">↗</span>
       </a>
-      <a href="https://momentum-buddy.vercel.app/" target="_blank" class="hero-link-btn primary">
+      <a href="https://momentum-buddy-z1zm.vercel.app" target="_blank" class="hero-link-btn primary">
         Prototype <span class="link-arrow">↗</span>
       </a>
     </div>
@@ -54,7 +54,7 @@
     </div>
     <div class="stat-cell">
       <div class="stat-big">V2</div>
-      <div class="stat-desc">Learner-first experience<br>in progress</div>
+      <div class="stat-desc">Learner-first experience<br>live in beta</div>
     </div>
   </div>
 
@@ -102,10 +102,10 @@
     </div>
 
     <div class="narrative-section fade-up">
-      <div class="section-tag">Where It Is Heading</div>
-      <h2>A learner-first pivot, not a rebuild.</h2>
-      <p>The V1 model was built around working professionals recovering from missed learning days. The research pointed to a more specific and underserved persona: <strong>learners working toward structured goals</strong>, like certifications, career transitions, or skill-building programs, where the cost of falling off is higher and the re-entry problem is more acute.</p>
-      <p>V2 is not a rebuild. It is a focus shift. The 4-state model holds. Recovery speed as north star holds. What changes is the persona, the journey templates, and the nudge integration, designed around how learners actually structure their goals rather than generic habit tracking.</p>
+      <div class="section-tag">What Changed in V2</div>
+      <h2>A focus shift, not a rebuild.</h2>
+      <p>V1 was Telegram-first and generic. Expert review surfaced four clear pivots: remove the Telegram dependency, add journey structure, make recovery speed the visible metric, and build a miss recovery UX. V2 delivered all four.</p>
+      <p>The sharpened persona: <strong>learners working toward structured milestones</strong> — certifications, career transitions, skill-building programs — where the cost of falling off is higher and the re-entry problem is more acute. The milestone creates urgency, which is the product's leverage. The 4-state model holds. Recovery speed as north star holds. What changed is the journey templates, the plant-based emotional feedback layer, and background push notifications designed around how learners actually structure their goals.</p>
     </div>
 
     <div class="narrative-section fade-up">
@@ -148,9 +148,9 @@
     <div class="narrative-section fade-up">
       <div class="section-tag">What Was Built</div>
       <h2>Mobile-first. Deployed. Beta-ready.</h2>
-      <p>MomentumBuddy is a web-based mobile-first prototype. Stack: Vite, React, TypeScript, Tailwind CSS. No native app - an intentional decision to test core behavior without app store friction or distribution overhead.</p>
-      <p>Core features: milestone setup; daily check-in under 60 seconds; dashboard with recovery speed as the <strong>hero metric displayed as a large prominent number</strong>; pattern cards surfacing longest gap, most fragile day of week, and personal best recovery time; pause and commit flow; pulse feedback card every seven days.</p>
-      <p>All data currently stored locally. Deliberate beta constraint to keep onboarding frictionless. Supabase migration planned for Phase 2. Nudge architecture is designed and partially built.</p>
+      <p>Learners Buddy is a web-based mobile-first app. Stack: Vite, React, TypeScript, Tailwind CSS, shadcn/ui. No native app — an intentional decision to test core behaviour without app store friction or distribution overhead.</p>
+      <p>Core features: 10 pre-built journey templates plus a custom builder; daily check-in under 60 seconds; <strong>plant visual that grows on sessions, wilts on 2+ consecutive misses, and recovers the moment a session is logged</strong>; dashboard with recovery speed as the hero metric; miss recovery ladder with escalating copy (banner → recovery sheet → feedback mode at 7+ misses); editable weekly goals with push-to-next-week and replace flows; pause flow that suspends miss streak counting.</p>
+      <p>Backend is live. Supabase mirrors all user state in real time — every check-in, pause, and goal edit is persisted to the cloud. <strong>Push notifications fire even when the browser is closed</strong>, delivered via Supabase Edge Function on a 30-minute cron schedule using Web Push (VAPID).</p>
     </div>
 
     <div class="narrative-section fade-up">
@@ -171,7 +171,7 @@
         </div>
         <div class="metrics-row">
           <div class="metrics-label">Phase 2 Goal</div>
-          <div class="metrics-value">50-100 learners from certification and upskilling communities. Live nudge delivery. Supabase backend.</div>
+          <div class="metrics-value">50-100 learners from certification and upskilling communities. Cross-device sync read layer. PostHog analytics integration.</div>
         </div>
       </div>
     </div>
