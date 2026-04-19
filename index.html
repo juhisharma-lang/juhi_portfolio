@@ -102,7 +102,6 @@ tailwind.config = {
           radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%), 
           radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
       background-size: 100% 100%;
-      background-attachment: fixed;
   }
 
   /* Noise Texture */
@@ -256,62 +255,62 @@ tailwind.config = {
       <div>
         <p class="font-label text-primary font-bold tracking-[0.3em] uppercase mb-4">Selected Work</p>
         <h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-on-surface drop-shadow-sm">
-            Four Projects.<br/><span class="text-outline">One Thread.</span>
+            Three Projects.<br/><span class="text-outline">One Thread.</span>
         </h2>
       </div>
       <p class="font-label text-on-surface/50 text-right uppercase tracking-widest font-black text-sm">
-          01 - 04
+          01 - 03
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
-      
-      <!-- Project 01 (Lead) -->
-      <a href="netflix-discovery.html" class="md:col-span-8 bg-surface-container rounded-[2.5rem] overflow-hidden group relative h-[500px] shadow-xl block cursor-pointer">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="netflix-cover.png" alt="Project background 1">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-        <div class="absolute top-8 right-8 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-          <span class="font-label uppercase tracking-widest text-[10px] text-white font-bold">01 / 01 · Discovery, Prototype</span>
-        </div>
-        <div class="absolute bottom-12 left-10 md:left-12 text-white pr-12">
-          <h3 class="font-headline text-4xl md:text-5xl font-bold uppercase mb-4 drop-shadow-lg">Netflix Content Discovery</h3>
-          <p class="font-body text-base md:text-lg text-white/90 font-medium max-w-xl mb-6">The algorithm wasn't the bottleneck. The moment before play was. Primary research across 32 respondents reframed the problem entirely and shaped a working prototype deployed on Vercel.</p>
-          <div class="inline-flex w-14 h-14 rounded-full bg-white text-on-surface items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shadow-lg">
-            <span class="material-symbols-outlined" data-icon="east">east</span>
-          </div>
-        </div>
-      </a>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
 
-      <!-- Project 02 (MomentumBuddy) -->
-      <a href="momentumbuddy.html" class="md:col-span-4 bg-secondary-container/40 backdrop-blur-md rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-between group border border-white/30 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-secondary-container/60 transition-colors">
-        <div class="relative z-10">
-          <div class="font-label uppercase tracking-widest text-[10px] text-on-secondary-container font-bold mb-6">02 / 01 · 0-to-1 Build</div>
-          <h3 class="font-headline text-3xl md:text-4xl font-bold uppercase leading-tight mb-4 text-on-secondary-container">MomentumBuddy</h3>
-          <p class="font-body text-on-secondary-container/80 font-medium text-base">Behavioural learning in real-time. A 0-to-1 build that shipped live. Three weeks from user interviews to production deployment on Vercel.</p>
-        </div>
-        <div class="flex items-center justify-between border-t border-on-secondary-container/20 pt-6 mt-8 relative z-10">
-          <span class="font-label font-bold uppercase tracking-widest text-[10px] text-on-secondary-container">View Case Study</span>
-          <div class="w-10 h-10 rounded-full bg-on-secondary-container text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Project 03 (Smart Travel) -->
-      <a href="smart-travel-groups.html" class="md:col-span-12 bg-surface-container-highest rounded-[2.5rem] relative overflow-hidden group h-[400px] shadow-xl block cursor-pointer">
-        <img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" src="smart-travel-cover.png" alt="Project background 3">
-        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 to-transparent"></div>
-        <div class="absolute inset-0 p-10 flex flex-col justify-end">
-          <div class="font-label uppercase tracking-widest text-[10px] text-white/70 font-bold mb-3">03 / 01 · Team Research, Design</div>
-          <h3 class="font-headline text-3xl font-bold uppercase mb-3 text-white drop-shadow-md">Smart Travel Groups</h3>
-          <p class="font-body text-white/80 text-sm max-w-sm mb-6">170 respondents confirmed it: the hardest part of group travel isn't finding a destination. It's committing to the people.</p>
-          <div class="flex items-center gap-2 text-primary font-label uppercase text-[10px] tracking-widest font-bold">
-            Read Case <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-          </div>
-        </div>
-      </a>
-
+  <!-- Project 01 (LearnersBuddy - Lead) -->
+  <a href="momentumbuddy.html" class="md:col-span-8 bg-secondary-container/40 backdrop-blur-md rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-between group border border-white/30 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-secondary-container/60 transition-colors h-[500px]">
+    <div class="relative z-10">
+      <div class="font-label uppercase tracking-widest text-[10px] text-on-secondary-container font-bold mb-6">01 · 0-to-1 Build</div>
+      <h3 class="font-headline text-5xl md:text-6xl font-bold uppercase leading-tight mb-6 text-on-secondary-container">LearnersBuddy</h3>
+      <p class="font-body text-on-secondary-container/80 font-medium text-lg max-w-xl">Started with an AI prioritisation hypothesis. Research killed it. Pivoted to behavioural re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star. V2 shipped with journey templates, plant-based emotional feedback, and background push notifications via Supabase Edge Functions.</p>
     </div>
+    <div class="flex items-center justify-between border-t border-on-secondary-container/20 pt-6 mt-8 relative z-10">
+      <span class="font-label font-bold uppercase tracking-widest text-[10px] text-on-secondary-container">View Case Study</span>
+      <div class="w-10 h-10 rounded-full bg-on-secondary-container text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Project 02 (Netflix) -->
+  <a href="netflix-discovery.html" class="md:col-span-4 bg-surface-container rounded-[2.5rem] overflow-hidden group relative h-[500px] shadow-xl block cursor-pointer">
+    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="netflix-cover.png" alt="Project background 1">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+    <div class="absolute top-8 right-8 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+      <span class="font-label uppercase tracking-widest text-[10px] text-white font-bold">02 · Discovery, Prototype</span>
+    </div>
+    <div class="absolute bottom-12 left-10 text-white pr-6">
+      <h3 class="font-headline text-3xl font-bold uppercase mb-3 drop-shadow-lg">Netflix Content Discovery</h3>
+      <p class="font-body text-sm text-white/90 font-medium max-w-xs mb-6">The algorithm knows your history. It has no mechanism for your present moment.</p>
+      <div class="inline-flex w-12 h-12 rounded-full bg-white text-on-surface items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shadow-lg">
+        <span class="material-symbols-outlined" data-icon="east">east</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Project 03 (Smart Travel) -->
+  <a href="smart-travel-groups.html" class="md:col-span-12 bg-surface-container-highest rounded-[2.5rem] relative overflow-hidden group h-[400px] shadow-xl block cursor-pointer">
+    <img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" src="smart-travel-cover.png" alt="Project background 3">
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 to-transparent"></div>
+    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+      <div class="font-label uppercase tracking-widest text-[10px] text-white/70 font-bold mb-3">03 · Team Research, Design</div>
+      <h3 class="font-headline text-3xl font-bold uppercase mb-3 text-white drop-shadow-md">Smart Travel Groups</h3>
+      <p class="font-body text-white/80 text-sm max-w-sm mb-6">170 respondents confirmed it: the hardest part of group travel isn't finding a destination. It's committing to the people.</p>
+      <div class="flex items-center gap-2 text-primary font-label uppercase text-[10px] tracking-widest font-bold">
+        Read Case <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+      </div>
+    </div>
+  </a>
+
+</div>
   </section>
 
   <!-- Collaboration Section -->
