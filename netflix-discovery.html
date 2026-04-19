@@ -117,19 +117,19 @@ tailwind.config = {
       <div class="flex items-center gap-4 mb-6">
         <a href="index.html" class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-500 hover:text-primary transition">← Back</a>
         <span class="text-stone-300">/</span>
-        <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">Project 01</span>
+        <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">01 / 01 · Discovery, Prototype</span>
       </div>
       <h1 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-on-surface mb-8 leading-[0.9]">
           Netflix<br/><span class="text-primary pr-4">Content Discovery</span>
       </h1>
       <p class="font-body text-lg md:text-xl text-on-surface/80 font-medium leading-relaxed max-w-2xl mb-10">
-        Solving decision fatigue before playback. Primary research across 32 respondents reframed the problem entirely. The algorithm was not the bottleneck. The moment before play was.
+        The algorithm wasn't the bottleneck. The moment before play was. Primary research across 32 respondents reframed the problem entirely and shaped a working prototype deployed on Vercel.
       </p>
       <div class="flex flex-wrap gap-4">
         <a href="https://docs.google.com/presentation/d/e/2PACX-1vTmnSPwHeRCI0o-RYswwAw7Sv_nOahFlpCq_kxYK29tAmcNGvI7VRFaaaYsKy5fqEwgfCRU99rPliUf/pub?start=false&loop=false&delayms=3000" target="_blank" class="bg-primary text-white border border-primary px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
           View Deck ↗
         </a>
-        <a href="https://netflix-content-discovery.vercel.app/" target="_blank" class="bg-white/50 text-stone-900 border border-stone-300 px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-colors shadow-sm">
+        <a href="https://streamdiscover.vercel.app/" target="_blank" class="bg-white/50 text-stone-900 border border-stone-300 px-6 py-3 rounded-full font-label uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-colors shadow-sm">
           Prototype ↗
         </a>
       </div>
@@ -151,166 +151,217 @@ tailwind.config = {
       <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Avg browse time<br>before abandonment</span>
     </div>
     <div class="bg-white/40 backdrop-blur-xl border border-white/40 p-6 rounded-3xl flex flex-col justify-center">
-      <span class="font-headline text-4xl font-black text-primary mb-2">2x</span>
-      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Target watch-start<br>rate improvement</span>
+      <span class="font-headline text-4xl font-black text-primary mb-2">&lt;3m</span>
+      <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface/70 font-bold">Decision time<br>after prototype</span>
     </div>
   </div>
 
-  <!-- Narrative -->
-  <div class="mt-32 max-w-4xl flex flex-col gap-32">
-    
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">The Starting Question</div>
+  <!-- Section: Starting Question -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">THE STARTING QUESTION</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
       <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">What if the problem was never the content?</h2>
-      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
-        <p>Netflix has one of the most sophisticated recommendation engines in the world. It knows your watch history, your genre preferences, the shows you abandoned at episode three. And yet <strong>35% of sessions end without anything being watched</strong>. Users open the app, browse for fifteen to twenty minutes, and leave.</p>
-        <p>The easy assumption is that this is a content problem. Not enough good titles. Wrong genres. Poor localisation. That assumption shaped how most product thinking around streaming had been framed. This project started with a different hypothesis: what if the content was fine, and the problem was something else entirely?</p>
-      </div>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Netflix has one of the most sophisticated recommendation engines in the world. It knows your watch history, your genre preferences, the shows you abandoned at episode three. And yet <strong>35% of sessions end without anything being watched</strong>. Users open the app, browse for fifteen to twenty minutes, and leave.</p>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">The easy assumption is that this is a content problem. Not enough good titles. Wrong genres. Poor localisation. That assumption shaped how most product thinking around streaming had been framed. This project started with a different hypothesis: what if the content was fine, and the problem was something else entirely?</p>
     </div>
+  </section>
 
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Research</div>
+  <!-- Section: Research -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">RESEARCH</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
       <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Three hypotheses. One winner.</h2>
-      <div class="font-body text-lg text-stone-700 leading-relaxed mb-10">
-        <p>Primary research across 32 participants: 10 in-depth interviews and a survey split across 22 general viewers and a follow-up vibe check cohort. The interviews focused on journey mapping from the moment a user opened Netflix to the moment they pressed play or gave up.</p>
-        <p>Three hypotheses were tested: content quality as the core problem, discoverability and surface area, and decision friction before playback. The research was designed to let any of the three win.</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
-          <div class="font-label text-[10px] tracking-widest uppercase text-stone-500 font-bold mb-3">Hypothesis 01</div>
-          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Content Quality</div>
-          <div class="font-body text-sm text-stone-600">Not enough good titles, wrong genres, poor localisation. Tested but not validated as P0.</div>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Primary research across 32 participants: 10 in-depth interviews and a survey split across 22 general viewers and a follow-up vibe check cohort. The interviews focused on journey mapping from the moment a user opened Netflix to the moment they pressed play or gave up.</p>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Three hypotheses were tested: content quality as the core problem, discoverability and surface area, and decision friction before playback. The research was designed to let any of the three win.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-3">HYPOTHESIS 01</div>
+          <h3 class="font-headline text-xl font-bold text-stone-900 mb-4">Content Quality</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Not enough good titles, wrong genres, poor localisation. Tested but not validated as P0.</p>
         </div>
-        <div class="bg-surface-container rounded-3xl p-8 border border-white/50 shadow-md">
-          <div class="font-label text-[10px] tracking-widest uppercase text-stone-500 font-bold mb-3">Hypothesis 02</div>
-          <div class="font-headline text-xl font-bold mb-3 text-stone-900">Discoverability</div>
-          <div class="font-body text-sm text-stone-600">Surface area and search quality failing users. Partially validated but not primary.</div>
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-3">HYPOTHESIS 02</div>
+          <h3 class="font-headline text-xl font-bold text-stone-900 mb-4">Discoverability</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Surface area and search quality failing users. Partially validated but not primary.</p>
         </div>
-        <div class="bg-stone-900 rounded-3xl p-8 shadow-xl transform scale-105">
-          <div class="font-label text-[10px] tracking-widest uppercase text-primary font-bold mb-3">Hypothesis 03 - Winner</div>
-          <div class="font-headline text-xl font-bold mb-3 text-white">Decision Friction</div>
-          <div class="font-body text-sm text-stone-300">Cognitive load of choosing was exhausting users before they reached content they would enjoy.</div>
+        <div class="bg-primary/5 border border-primary/30 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-primary mb-3">HYPOTHESIS 03 — WINNER</div>
+          <h3 class="font-headline text-xl font-bold text-stone-900 mb-4">Decision Friction</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Cognitive load of choosing was exhausting users before they reached content they would enjoy.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Key Finding</div>
+  <!-- Section: Key Finding -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">KEY FINDING</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
       <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">The algorithm was not the bottleneck.</h2>
-      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
-        <p>Decision friction won clearly. Users were not leaving because they could not find content they would enjoy. They were leaving because <strong>the process of choosing was exhausting</strong>. The cognitive load of evaluating title after title, reading synopses, starting trailers, second-guessing choices, accumulated until abandonment felt easier than committing.</p>
-        <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl my-4">
-          <p class="font-headline italic text-xl text-stone-800">"Algorithm sophistication had outpaced the user's ability to process what the algorithm was surfacing."</p>
-        </div>
-        <p>The pattern was consistent across interview subjects: a user would open Netflix with genuine intent to watch something, spend fifteen to twenty minutes browsing, feel increasingly overwhelmed, and either settle for something already seen or close the app. The content was there. The decision was the problem.</p>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Decision friction won clearly. Users were not leaving because they could not find content they would enjoy. They were leaving because <strong>the process of choosing was exhausting</strong>. The cognitive load of evaluating title after title, reading synopses, starting trailers, second-guessing choices, accumulated until abandonment felt easier than committing.</p>
+      <div class="bg-stone-100 border-l-4 border-primary p-6 my-8 rounded-r-xl">
+        <p class="text-stone-700 italic text-lg leading-relaxed">"Algorithm sophistication had outpaced the user's ability to process what the algorithm was surfacing."</p>
       </div>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">The pattern was consistent across interview subjects: a user would open Netflix with genuine intent to watch something, spend fifteen to twenty minutes browsing, feel increasingly overwhelmed, and either settle for something already seen or close the app. The content was there. The decision was the problem.</p>
     </div>
+  </section>
 
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Prioritisation</div>
+  <!-- Section: The Gap -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">THE GAP</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Taste problem vs. context problem.</h2>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">The recommendation system operates on revealed preference: what you have watched and rated before. It asks: given everything this person has chosen in the past, what should they choose next? That is a reasonable question. But it is the wrong question when what a user needs is: <strong>given how I feel right now and how much time I have, what should I watch tonight?</strong></p>
+      <div class="bg-stone-100 border-l-4 border-primary p-6 my-8 rounded-r-xl">
+        <p class="text-stone-700 italic text-lg leading-relaxed">"Netflix solves taste well. Nobody solves context. That gap is the specific failure mode Quick Shortcut was designed to close."</p>
+      </div>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Users who know roughly what kind of experience they want — something light, under 90 minutes, low concentration — cannot efficiently surface it because the interface is organised around historical taste rather than present-moment state.</p>
+    </div>
+  </section>
+
+  <!-- Section: Prioritisation -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">PRIORITISATION</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
       <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">RICE scoring. Four solutions. One dropped.</h2>
-      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
-        <p>Four solutions were evaluated across Reach, Impact, Confidence, and Effort. Review Integration scored 4. Explore Toggle and Swipeable Reels both scored 9. AI Chat scored 2 and was deprioritised: effort was high, confidence in user adoption was low, and it addressed a different problem than the validated P0.</p>
-        <p>Adding a conversational interface to a platform people open wanting to relax was solving for a persona that did not appear strongly in the research.</p>
-      </div>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Four solutions were evaluated across Reach, Impact, Confidence, and Effort. Review Integration scored 4. Explore Toggle and Swipeable Reels both scored 9. AI Chat scored 2 and was deprioritised: effort was high, confidence in user adoption was low, and it addressed a different problem than the validated P0.</p>
+      <p class="text-stone-700 text-lg leading-relaxed">Adding a conversational interface to a platform people open wanting to relax was solving for a persona that did not appear strongly in the research.</p>
     </div>
+  </section>
 
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Solutions</div>
+  <!-- Section: Solutions -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">SOLUTIONS</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
       <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Three solutions targeting the moment before play.</h2>
-      <div class="font-body text-lg text-stone-700 leading-relaxed flex flex-col gap-4">
-        <p><strong>Review Integration</strong> pulls social proof signals into the browsing experience. A user sees aggregated ratings and short reviews from people with similar watch history before committing to a title. It reduces the uncertainty of choosing something unknown without requiring the user to leave the platform.</p>
-        <p><strong>Explore Toggle</strong> gives users two modes: Quick Pick for users who want the algorithm to make a fast recommendation based on their current session, and Browse All for users who want to scan. The mode selection itself is a signal the algorithm can learn from over time.</p>
-        <p><strong>Swipeable Reels</strong> introduces a micro-preview format. Users swipe through short clips rather than reading synopses. Left swipe is an explicit negative signal, which is data Netflix currently does not collect systematically. The format reduces cognitive load by replacing text-based decision-making with immediate, visceral response.</p>
-      </div>
-    </div>
-
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Metrics</div>
-      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Before, after, and what we guard against.</h2>
+      <p class="text-stone-700 text-lg leading-relaxed mb-6">Three solutions, each reducing a different kind of friction at a different point in the same journey.</p>
       
-      <div class="bg-white/60 border border-white rounded-3xl p-8 shadow-lg flex flex-col gap-6">
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
-          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">North Star</div>
-          <div class="text-stone-800 font-medium"><strong>Time to Watch-Start</strong> - session open to play button press</div>
+      <div class="space-y-8 my-10">
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <h3 class="font-headline text-2xl font-bold text-stone-900 mb-4">Internal Social Proof</h3>
+          <p class="text-stone-700 leading-relaxed">Pulls engagement signals into the browsing experience — trending this week, completion rates, save counts — sourced entirely from Netflix-owned data. No external APIs. A user sees aggregated signals before committing to a title, reducing the uncertainty of choosing something unknown.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
-          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Before</div>
-          <div class="text-stone-800">20 min average browse time / 20% watch-start rate / 35% abandonment</div>
+        
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <h3 class="font-headline text-2xl font-bold text-stone-900 mb-4">Swipeable Reels</h3>
+          <p class="text-stone-700 leading-relaxed">Introduces a micro-preview format. Users swipe through content cards rather than reading synopses. Left swipe is an explicit negative signal, which is data Netflix currently does not collect systematically. The format reduces cognitive load by replacing text-based decision-making with immediate, visceral response.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 border-b border-stone-200 pb-4">
-          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Target</div>
-          <div class="text-stone-800"><strong>Under 5 min</strong> browse time / <strong>40%+</strong> watch-start rate / <strong>under 20%</strong> abandonment</div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
-          <div class="font-label text-primary uppercase text-xs font-bold tracking-widest">Guardrails</div>
-          <div class="text-stone-800">Long-form completion rate must not drop. Rewatch rate must not rise disproportionately.</div>
+        
+        <div class="bg-primary/5 border border-primary/30 p-8 rounded-2xl">
+          <h3 class="font-headline text-2xl font-bold text-stone-900 mb-4">AI Quick Shortcut</h3>
+          <p class="text-stone-700 leading-relaxed mb-4">A context-aware discovery layer that sits between the user's stated intent and Netflix's catalog. It is not a search bar. It is not a chatbot. It is not a replacement for existing recommendation rows. It is a lightweight intent-capture and matching engine that asks one question: <strong>what kind of session is this?</strong></p>
+          <p class="text-stone-700 leading-relaxed">The design principle is removal, not addition. The goal is not to give users more options. It is to give them fewer, better ones, calibrated to right now rather than to their entire watch history.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div>
-      <div class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">Roadmap</div>
-      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">12 months. 5 phases. One bet.</h2>
+  <!-- Section: Design Decision -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">DESIGN DECISION</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Why two structured questions beat a text box.</h2>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">The first instinct when designing an intent-capture system is to give users a text box. That feels more powerful and more flexible. The prototype made a different call: three structured questions instead of an open prompt.</p>
       
-      <div class="flex flex-col gap-4">
-        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
-          <div class="font-headline text-2xl font-black text-primary">1</div>
-          <div>
-            <div class="font-bold text-lg text-stone-900 mb-1">Months 1-2: P0 Foundation</div>
-            <div class="text-stone-600 font-body text-sm">Instrument session abandonment tracking, establish baselines, run qualitative validation with a small cohort.</div>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+        <div class="bg-white/50 border border-stone-200 p-6 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-3">QUESTION 1</div>
+          <h3 class="font-headline text-lg font-bold text-stone-900 mb-3">How much time do you have?</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Quick (under 30 min) / One episode (30–60 min) / Settling in (90 min+) / Not sure</p>
         </div>
-        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
-          <div class="font-headline text-2xl font-black text-primary">2</div>
-          <div>
-            <div class="font-bold text-lg text-stone-900 mb-1">Months 3-5: Review Integration</div>
-            <div class="text-stone-600 font-body text-sm">Build and launch review panels for the top 20% of catalog by viewing volume. Measure before expanding.</div>
-          </div>
+        <div class="bg-white/50 border border-stone-200 p-6 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-3">QUESTION 2</div>
+          <h3 class="font-headline text-lg font-bold text-stone-900 mb-3">How are you feeling?</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Happy / Calm / Tense / Sad / Excited / Tired / Curious / Romantic</p>
         </div>
-        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
-          <div class="font-headline text-2xl font-black text-primary">3</div>
-          <div>
-            <div class="font-bold text-lg text-stone-900 mb-1">Months 4-6: Explore Toggle</div>
-            <div class="text-stone-600 font-body text-sm">Launch Quick Pick and Browse All modes. Instrument mode selection as a behavioural signal.</div>
-          </div>
-        </div>
-        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
-          <div class="font-headline text-2xl font-black text-primary">4</div>
-          <div>
-            <div class="font-bold text-lg text-stone-900 mb-1">Months 6-9: Swipeable Reels</div>
-            <div class="text-stone-600 font-body text-sm">Launch micro-preview format for a content subset. Collect left-swipe data and validate as negative signal.</div>
-          </div>
-        </div>
-        <div class="bg-white/60 border border-white p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-6 shadow-sm">
-          <div class="font-headline text-2xl font-black text-primary">5</div>
-          <div>
-            <div class="font-bold text-lg text-stone-900 mb-1">Months 9-12: Integration and Scale</div>
-            <div class="text-stone-600 font-body text-sm">Combine signals from all three solutions into a unified contextual layer. Expand to full catalog.</div>
-          </div>
+        <div class="bg-white/50 border border-stone-200 p-6 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-3">QUESTION 3</div>
+          <h3 class="font-headline text-lg font-bold text-stone-900 mb-3">What kind of story?</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">A gripping story / Something funny / True stories / Action & spectacle / Romance & relationships / Mind-bending / Something light / Surprise me</p>
         </div>
       </div>
-      <div class="mt-8 bg-primary/5 border-l-4 border-primary p-6 rounded-r-2xl">
-        <p class="font-headline italic text-xl text-stone-800">"Reducing decision friction before playback will unlock more user and business value than adding more content or deepening personalisation."</p>
+      
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Three reasons this was the right call. First, most users arriving at a streaming platform do not have a precisely articulated intent — they have a rough feeling. Structured options meet them where they are. Second, free text creates enormous variance in how people express intent, making AI matching less reliable. Third, <strong>the three-question flow takes under 30 seconds</strong> versus the friction of a thoughtful text prompt.</p>
+    </div>
+  </section>
+
+  <!-- Section: What Was Built -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">WHAT WAS BUILT</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">A live system, not a mockup.</h2>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">The prototype was built in React and TypeScript, deployed on Vercel. Users move through three-step intent capture — time, emotion, story type — see an AI scanning transition, and arrive at a results page surfacing a hero recommendation with context chips showing exactly what they chose, a row of best matches, and a stretch row for deliberate discovery outside the stated mood.</p>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">The Reels feature sits alongside the shortcut flow as a separate entry point — swipe left to pass, swipe right to save, keyboard navigation supported for demos. Social proof badges appear on the browse homepage only, not on results rows, where the AI pick is the signal.</p>
+      <div class="bg-stone-100 border-l-4 border-primary p-6 my-8 rounded-r-xl">
+        <p class="text-stone-700 italic text-lg leading-relaxed">"AI picked these based on your moment."</p>
+      </div>
+      <p class="text-stone-700 text-lg leading-relaxed">The framing on every result reinforces the core promise: this is not your history speaking, it is your right now.</p>
+    </div>
+  </section>
+
+  <!-- Section: Metrics -->
+  <section class="mt-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">METRICS</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">What success looks like and what it cannot cost.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-primary mb-4">NORTH STAR</div>
+          <h3 class="font-headline text-2xl font-bold text-stone-900 mb-3">Decision Time</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-3">Session open to play. Target: 20 min to under 3 min.</p>
+        </div>
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-4">INTENT CAPTURE</div>
+          <p class="text-stone-600 text-sm leading-relaxed">% of sessions where user engages with Quick Shortcut prompt rather than dismissing it</p>
+        </div>
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-4">PREDICTION QUALITY</div>
+          <p class="text-stone-600 text-sm leading-relaxed">Accuracy across mood and story type combinations, validated via post-session ratings</p>
+        </div>
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-4">FALLBACK RATE</div>
+          <p class="text-stone-600 text-sm leading-relaxed">% engaging with Quick Shortcut then returning to manual browse — clearest signal that filtering is failing</p>
+        </div>
+        <div class="bg-white/50 border border-stone-200 p-8 rounded-2xl col-span-full">
+          <div class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-400 mb-4">GUARDRAIL</div>
+          <p class="text-stone-600 text-sm leading-relaxed">Long-form completion rate must not drop. Quick Shortcut cannot optimise for low-commitment picks.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-
-  <!-- NEXT PROJECT (Glassmorphic) -->
-  <a href="netflix-quickshortcut.html" class="block w-full mt-32 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/60 transition-colors relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-      <div>
-        <div class="font-label uppercase tracking-widest text-primary font-bold text-xs mb-4">Next Project</div>
-        <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-stone-900">Netflix Quick Shortcut</h3>
-      </div>
-      <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+  <!-- Section: The Bigger Picture -->
+  <section class="mt-32 mb-32">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">THE BIGGER PICTURE</span>
+    </div>
+    <div class="prose prose-lg max-w-none">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-stone-900 mb-6">Quick Shortcut completes what the roadmap started.</h2>
+      <p class="text-stone-700 text-lg leading-relaxed mb-4">Quick Shortcut is not a parallel product. It is the intelligent evolution of the discovery system. The explicit feedback signals from Swipeable Reels feed the matching layer. The intent signals from the shortcut flow reveal which sessions are high-certainty versus exploratory.</p>
+      <p class="text-stone-700 text-lg leading-relaxed mb-6">The three features work as a system: Reels collects what users reject, Social Proof reduces uncertainty at the point of choice, and Quick Shortcut eliminates the browse phase for users who already know roughly what they want. Each one reduces a different kind of friction at a different point in the same journey.</p>
+      <div class="bg-stone-100 border-l-4 border-primary p-6 my-8 rounded-r-xl">
+        <p class="text-stone-700 italic text-lg leading-relaxed">"Reducing decision friction before playback will unlock more user and business value than adding more content or deepening personalisation."</p>
       </div>
     </div>
-  </a>
+  </section>
 
 </main>
 
