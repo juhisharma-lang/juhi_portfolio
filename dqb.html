@@ -16,21 +16,53 @@ darkMode: "class",
 theme: {
 extend: {
 "colors": {
-"primary": "#b8110c",
-"primary-container": "#dd3123",
-"on-primary": "#ffffff",
-"secondary": "#755b00",
-"secondary-container": "#fed977",
-"on-secondary-container": "#785d00",
-"surface": "#fef9f0",
-"surface-container": "#f3ede5",
-"surface-container-high": "#ede7df",
-"surface-container-highest": "#e7e2da",
-"on-surface": "#1d1b17",
-"on-surface-variant": "#5c403c",
-"tertiary": "#5d5c5b",
+"error-container": "#ffdad6",
 "outline": "#906f6a",
+"surface-container-lowest": "#ffffff",
+"tertiary-fixed": "#e5e2e1",
+"on-tertiary-fixed": "#1c1b1b",
+"inverse-surface": "#32302b",
+"background": "#fef9f0",
+"secondary-container": "#fed977",
+"on-surface": "#1d1b17",
+"primary-fixed-dim": "#ffb4a9",
 "outline-variant": "#e5bdb7",
+"surface-tint": "#bc150e",
+"surface-variant": "#e7e2da",
+"on-secondary-fixed-variant": "#584400",
+"surface-container-high": "#ede7df",
+"tertiary": "#5d5c5b",
+"on-tertiary-fixed-variant": "#474646",
+"error": "#ba1a1a",
+"inverse-on-surface": "#f5f0e8",
+"secondary-fixed": "#ffe08f",
+"on-background": "#1d1b17",
+"on-primary-fixed-variant": "#930002",
+"on-surface-variant": "#5c403c",
+"on-secondary-container": "#785d00",
+"secondary": "#755b00",
+"on-primary-container": "#fffbff",
+"inverse-primary": "#ffb4a9",
+"on-secondary-fixed": "#241a00",
+"surface-container": "#f3ede5",
+"surface-container-low": "#f8f3eb",
+"on-secondary": "#ffffff",
+"on-tertiary": "#ffffff",
+"on-primary-fixed": "#410000",
+"on-primary": "#ffffff",
+"primary": "#b8110c",
+"surface": "#fef9f0",
+"surface-bright": "#fef9f0",
+"surface-dim": "#ded9d2",
+"primary-fixed": "#ffdad5",
+"surface-container-highest": "#e7e2da",
+"on-error-container": "#93000a",
+"primary-container": "#dd3123",
+"on-error": "#ffffff",
+"secondary-fixed-dim": "#e6c364",
+"tertiary-fixed-dim": "#c9c6c5",
+"tertiary-container": "#767474",
+"on-tertiary-container": "#f7feff"
 },
 "fontFamily": {
 "headline": ["Space Grotesk"],
@@ -44,97 +76,103 @@ extend: {
 <style>
 body { font-family: 'Inter', sans-serif; }
 .material-symbols-outlined {
-font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 .mesh-gradient {
-background-color: #0d0d0d;
-background-image:
-radial-gradient(at 0% 0%, hsla(0, 80%, 15%, 0.6) 0, transparent 50%),
-radial-gradient(at 100% 0%, hsla(220, 60%, 12%, 0.5) 0, transparent 50%),
-radial-gradient(at 0% 100%, hsla(240, 40%, 10%, 0.4) 0, transparent 50%),
-radial-gradient(at 100% 100%, hsla(0, 60%, 12%, 0.5) 0, transparent 50%);
+  background-color: #fef9f0;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
+  background-size: 100% 100%;
 }
-.grid-bg {
-background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size: 40px 40px;
+.noise-overlay::before {
+  content: "";
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.04; z-index: -1; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 .prose-custom h2 {
-font-family: 'Space Grotesk', sans-serif;
-font-weight: 700;
-font-size: 1.75rem;
-letter-spacing: -0.02em;
-color: #ffffff;
-margin-top: 3rem;
-margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  color: #1d1b17;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 .prose-custom p {
-color: rgba(255,255,255,0.7);
-line-height: 1.8;
-margin-bottom: 1.25rem;
-font-size: 1.0625rem;
+  color: #44403c;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
 }
 .prose-custom strong {
-color: rgba(255,255,255,0.9);
-font-weight: 600;
+  color: #1d1b17;
+  font-weight: 600;
 }
 .pill {
-display: inline-flex;
-align-items: center;
-gap: 6px;
-padding: 4px 12px;
-border-radius: 9999px;
-font-family: 'Be Vietnam Pro', sans-serif;
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 0.15em;
-text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
-.pill-red { background: rgba(184,17,12,0.2); border: 1px solid rgba(184,17,12,0.4); color: #f87171; }
-.pill-white { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
-.pill-green { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: #4ade80; }
+.pill-red { background: rgba(184,17,12,0.1); border: 1px solid rgba(184,17,12,0.3); color: #b8110c; }
+.pill-stone { background: rgba(28,25,23,0.06); border: 1px solid rgba(28,25,23,0.12); color: #57534e; }
+.pill-green { background: rgba(21,128,61,0.08); border: 1px solid rgba(21,128,61,0.2); color: #15803d; }
 .metric-card {
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.08);
-border-radius: 1.5rem;
-padding: 2rem;
-transition: background 0.2s;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  transition: background 0.2s;
 }
-.metric-card:hover { background: rgba(255,255,255,0.07); }
+.metric-card:hover { background: rgba(255,255,255,0.7); }
 .version-card {
-background: rgba(255,255,255,0.03);
-border: 1px solid rgba(255,255,255,0.08);
-border-radius: 1.25rem;
-padding: 1.5rem 2rem;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 1.25rem;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(12px);
 }
 .version-card.active {
-background: rgba(184,17,12,0.12);
-border-color: rgba(184,17,12,0.3);
+  background: rgba(184,17,12,0.06);
+  border-color: rgba(184,17,12,0.2);
 }
 .decision-row {
-display: flex;
-gap: 1rem;
-padding: 1.25rem 0;
-border-bottom: 1px solid rgba(255,255,255,0.06);
-align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(28,25,23,0.08);
+  align-items: flex-start;
 }
 .decision-row:last-child { border-bottom: none; }
-.eval-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 9999px; height: 8px; overflow: hidden; }
+.eval-bar-wrap { background: rgba(28,25,23,0.08); border-radius: 9999px; height: 8px; overflow: hidden; }
 .eval-bar { height: 100%; border-radius: 9999px; background: #b8110c; }
 </style>
 </head>
-<body class="mesh-gradient grid-bg text-white overflow-x-hidden min-h-screen">
+<body class="mesh-gradient noise-overlay text-on-surface overflow-x-hidden min-h-screen">
 
 <!-- Nav -->
-<nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-2xl border-b border-white/10">
-<div class="flex justify-between items-center w-full px-8 py-5 max-w-[1200px] mx-auto">
-<a href="index.html" class="flex items-center gap-3 text-white/60 hover:text-white transition font-label uppercase tracking-widest text-xs font-bold">
-<span class="material-symbols-outlined text-[16px]">arrow_back</span> Portfolio
-</a>
-<div class="flex items-center gap-3">
-<span class="pill pill-red">RAG Prototype</span>
-<span class="pill pill-white">Local Build</span>
-</div>
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/30">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1200px] mx-auto">
+  <a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">JS</a>
+  <div class="flex items-center gap-3">
+    <span class="pill pill-red">RAG Prototype</span>
+    <span class="pill pill-stone">Local Build</span>
+  </div>
 </div>
 </nav>
 
@@ -142,46 +180,48 @@ align-items: flex-start;
 
 <!-- Hero -->
 <div class="mb-20">
-<p class="font-label text-white/30 uppercase tracking-[0.3em] text-[11px] font-bold mb-6">01 &middot; AI Product &middot; Internal Tooling</p>
-<h1 class="font-headline text-[15vw] md:text-[9rem] font-black uppercase leading-[0.82] tracking-tighter mb-8">
-<span class="text-white">D</span><span class="text-white/20">elivery</span><br/>
-<span class="text-white">Q</span><span class="text-white/20">uery</span><br/>
-<span class="text-primary">B</span><span class="text-primary/40">ot</span>
-</h1>
-<div class="max-w-2xl mt-12">
-<p class="text-white/60 text-xl leading-relaxed font-body">
-A RAG-based internal knowledge assistant built from a real proposal I made at Paychex. Veridian Technologies is the fictional wrapper. The problem, the architecture, and the product decisions are real.
-</p>
-</div>
-<!-- Tech stack pills -->
-<div class="flex flex-wrap gap-2 mt-8">
-<span class="pill pill-white">Python</span>
-<span class="pill pill-white">ChromaDB</span>
-<span class="pill pill-white">all-MiniLM-L6-v2</span>
-<span class="pill pill-white">Claude API</span>
-<span class="pill pill-white">Flask</span>
-<span class="pill pill-white">Confluence-themed UI</span>
-</div>
+  <div class="flex items-center gap-4 mb-8">
+    <a href="index.html" class="font-label uppercase text-[10px] tracking-widest font-bold text-stone-500 hover:text-primary transition">← All Projects</a>
+    <span class="text-stone-300">/</span>
+    <span class="font-label uppercase text-[10px] tracking-widest font-bold text-primary">00 · AI Product · Internal Tooling</span>
+  </div>
+  <h1 class="font-headline text-[15vw] md:text-[9rem] font-black uppercase leading-[0.82] tracking-tighter mb-8 text-on-surface">
+    Delivery<br/>Query<br/><span class="text-primary">Bot</span>
+  </h1>
+  <div class="max-w-2xl mt-12">
+    <p class="text-stone-600 text-xl leading-relaxed font-body">
+      A RAG-based internal knowledge assistant built from a real proposal I made at Paychex. Veridian Technologies is the fictional wrapper. The problem, the architecture, and the product decisions are real.
+    </p>
+  </div>
+  <!-- Tech stack pills -->
+  <div class="flex flex-wrap gap-2 mt-8">
+    <span class="pill pill-stone">Python</span>
+    <span class="pill pill-stone">ChromaDB</span>
+    <span class="pill pill-stone">all-MiniLM-L6-v2</span>
+    <span class="pill pill-stone">Claude API</span>
+    <span class="pill pill-stone">Flask</span>
+    <span class="pill pill-stone">Confluence-themed UI</span>
+  </div>
 </div>
 
 <!-- Top metrics strip -->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
-<div class="metric-card text-center">
-<div class="font-headline text-5xl font-black text-primary mb-2">57</div>
-<div class="font-label text-[10px] uppercase tracking-[0.2em] text-white/50 font-bold">Semantic Chunks</div>
-</div>
-<div class="metric-card text-center">
-<div class="font-headline text-5xl font-black text-white mb-2">12/15</div>
-<div class="font-label text-[10px] uppercase tracking-[0.2em] text-white/50 font-bold">Eval Pass Rate</div>
-</div>
-<div class="metric-card text-center">
-<div class="font-headline text-5xl font-black text-white mb-2">3</div>
-<div class="font-label text-[10px] uppercase tracking-[0.2em] text-white/50 font-bold">Confidence States</div>
-</div>
-<div class="metric-card text-center">
-<div class="font-headline text-5xl font-black text-white mb-2">V1</div>
-<div class="font-label text-[10px] uppercase tracking-[0.2em] text-white/50 font-bold">Prototype Stage</div>
-</div>
+  <div class="metric-card text-center">
+    <div class="font-headline text-5xl font-black text-primary mb-2">57</div>
+    <div class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-500 font-bold">Semantic Chunks</div>
+  </div>
+  <div class="metric-card text-center">
+    <div class="font-headline text-5xl font-black text-on-surface mb-2">12/15</div>
+    <div class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-500 font-bold">Eval Pass Rate</div>
+  </div>
+  <div class="metric-card text-center">
+    <div class="font-headline text-5xl font-black text-on-surface mb-2">3</div>
+    <div class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-500 font-bold">Confidence States</div>
+  </div>
+  <div class="metric-card text-center">
+    <div class="font-headline text-5xl font-black text-on-surface mb-2">V1</div>
+    <div class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-500 font-bold">Prototype Stage</div>
+  </div>
 </div>
 
 <!-- Two column layout: main content + sidebar -->
@@ -213,48 +253,48 @@ A RAG-based internal knowledge assistant built from a real proposal I made at Pa
 
   <div class="not-prose mt-6 mb-8">
     <div class="decision-row">
-      <div class="w-6 h-6 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <div class="w-6 h-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
         <span class="text-primary text-[10px] font-black">1</span>
       </div>
       <div>
-        <div class="font-label uppercase tracking-widest text-[11px] text-white/80 font-bold mb-1">Metadata in every response</div>
-        <p class="text-white/50 text-sm leading-relaxed m-0">Source page name, author, and last-modified date travel with every chunk through the pipeline. Users making process decisions need to verify the source and judge how current it is. It also creates accountability: page owners can see when their content is being cited.</p>
+        <div class="font-label uppercase tracking-widest text-[11px] text-on-surface font-bold mb-1">Metadata in every response</div>
+        <p class="text-stone-500 text-sm leading-relaxed m-0">Source page name, author, and last-modified date travel with every chunk through the pipeline. Users making process decisions need to verify the source and judge how current it is. It also creates accountability: page owners can see when their content is being cited.</p>
       </div>
     </div>
     <div class="decision-row">
-      <div class="w-6 h-6 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <div class="w-6 h-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
         <span class="text-primary text-[10px] font-black">2</span>
       </div>
       <div>
-        <div class="font-label uppercase tracking-widest text-[11px] text-white/80 font-bold mb-1">Three-state confidence signal</div>
-        <p class="text-white/50 text-sm leading-relaxed m-0">High (answer fully grounded), Partial (related content found but incomplete, state this clearly), Unknown (no relevant match, do not call the LLM, return an escalation directly). A partial answer presented as complete is actively harmful. This is a trust mechanism, not just a technical feature.</p>
+        <div class="font-label uppercase tracking-widest text-[11px] text-on-surface font-bold mb-1">Three-state confidence signal</div>
+        <p class="text-stone-500 text-sm leading-relaxed m-0">High (answer fully grounded), Partial (related content found but incomplete, state this clearly), Unknown (no relevant match, do not call the LLM, return an escalation directly). A partial answer presented as complete is actively harmful. This is a trust mechanism, not just a technical feature.</p>
       </div>
     </div>
     <div class="decision-row">
-      <div class="w-6 h-6 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <div class="w-6 h-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
         <span class="text-primary text-[10px] font-black">3</span>
       </div>
       <div>
-        <div class="font-label uppercase tracking-widest text-[11px] text-white/80 font-bold mb-1">Freshness flag at 12 months</div>
-        <p class="text-white/50 text-sm leading-relaxed m-0">A 90-day threshold would flag stable, valid content as stale and erode trust in the warning itself. 12 months catches genuinely overdue content while leaving stable pages untouched.</p>
+        <div class="font-label uppercase tracking-widest text-[11px] text-on-surface font-bold mb-1">Freshness flag at 12 months</div>
+        <p class="text-stone-500 text-sm leading-relaxed m-0">A 90-day threshold would flag stable, valid content as stale and erode trust in the warning itself. 12 months catches genuinely overdue content while leaving stable pages untouched.</p>
       </div>
     </div>
     <div class="decision-row">
-      <div class="w-6 h-6 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <div class="w-6 h-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
         <span class="text-primary text-[10px] font-black">4</span>
       </div>
       <div>
-        <div class="font-label uppercase tracking-widest text-[11px] text-white/80 font-bold mb-1">Semantic chunking at heading boundaries</div>
-        <p class="text-white/50 text-sm leading-relaxed m-0">Fixed token splits create chunks that mix unrelated topics. CoE wiki pages are structured with headings where each section covers one coherent topic. Splitting at headings means each chunk maps to how users actually ask questions.</p>
+        <div class="font-label uppercase tracking-widest text-[11px] text-on-surface font-bold mb-1">Semantic chunking at heading boundaries</div>
+        <p class="text-stone-500 text-sm leading-relaxed m-0">Fixed token splits create chunks that mix unrelated topics. CoE wiki pages are structured with headings where each section covers one coherent topic. Splitting at headings means each chunk maps to how users actually ask questions.</p>
       </div>
     </div>
     <div class="decision-row">
-      <div class="w-6 h-6 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <div class="w-6 h-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
         <span class="text-primary text-[10px] font-black">5</span>
       </div>
       <div>
-        <div class="font-label uppercase tracking-widest text-[11px] text-white/80 font-bold mb-1">Calibrated distance thresholds from real queries</div>
-        <p class="text-white/50 text-sm leading-relaxed m-0">Initial thresholds (below 0.8 = High) were wrong for all-MiniLM-L6-v2. The model operates in a higher distance range. A timesheet query returned a correct answer at 0.9366. Thresholds were recalibrated from actual results, not assumptions.</p>
+        <div class="font-label uppercase tracking-widest text-[11px] text-on-surface font-bold mb-1">Calibrated distance thresholds from real queries</div>
+        <p class="text-stone-500 text-sm leading-relaxed m-0">Initial thresholds (below 0.8 = High) were wrong for all-MiniLM-L6-v2. The model operates in a higher distance range. A timesheet query returned a correct answer at 0.9366. Thresholds were recalibrated from actual results, not assumptions.</p>
       </div>
     </div>
   </div>
@@ -275,15 +315,15 @@ A RAG-based internal knowledge assistant built from a real proposal I made at Pa
   <!-- Eval bar chart -->
   <div class="not-prose mt-6 mb-2">
     <div class="flex items-center justify-between mb-2">
-      <span class="font-label text-[11px] uppercase tracking-widest text-white/50 font-bold">Pass rate</span>
-      <span class="font-headline text-2xl font-black text-white">80%</span>
+      <span class="font-label text-[11px] uppercase tracking-widest text-stone-500 font-bold">Pass rate</span>
+      <span class="font-headline text-2xl font-black text-on-surface">80%</span>
     </div>
     <div class="eval-bar-wrap">
       <div class="eval-bar" style="width: 80%;"></div>
     </div>
     <div class="flex justify-between mt-2">
-      <span class="font-label text-[10px] text-white/30">12 passed</span>
-      <span class="font-label text-[10px] text-white/30">3 documented failures</span>
+      <span class="font-label text-[10px] text-stone-400">12 passed</span>
+      <span class="font-label text-[10px] text-stone-400">3 documented failures</span>
     </div>
   </div>
 
@@ -305,116 +345,114 @@ A RAG-based internal knowledge assistant built from a real proposal I made at Pa
 
   <!-- Version roadmap -->
   <div>
-    <p class="font-label text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-4">Roadmap</p>
+    <p class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-400 font-bold mb-4">Roadmap</p>
     <div class="flex flex-col gap-3">
       <div class="version-card active">
         <div class="flex items-center justify-between mb-2">
-          <span class="font-headline text-lg font-bold text-white">V1</span>
+          <span class="font-headline text-lg font-bold text-on-surface">V1</span>
           <span class="pill pill-green">Built</span>
         </div>
-        <p class="font-label text-[11px] text-white/50 leading-relaxed">Standard RAG. Natural language Q&amp;A, source citation, confidence signalling, freshness flag, escalation path.</p>
+        <p class="font-label text-[11px] text-stone-500 leading-relaxed">Standard RAG. Natural language Q&amp;A, source citation, confidence signalling, freshness flag, escalation path.</p>
       </div>
       <div class="version-card">
         <div class="flex items-center justify-between mb-2">
-          <span class="font-headline text-lg font-bold text-white/60">V2</span>
-          <span class="pill pill-white">Designed</span>
+          <span class="font-headline text-lg font-bold text-stone-400">V2</span>
+          <span class="pill pill-stone">Designed</span>
         </div>
-        <p class="font-label text-[11px] text-white/30 leading-relaxed">Agentic RAG. Multi-source retrieval, conflict detection, clarifying questions, repeat query digest to CoE.</p>
+        <p class="font-label text-[11px] text-stone-400 leading-relaxed">Agentic RAG. Multi-source retrieval, conflict detection, clarifying questions, repeat query digest to CoE.</p>
       </div>
       <div class="version-card">
         <div class="flex items-center justify-between mb-2">
-          <span class="font-headline text-lg font-bold text-white/40">V3</span>
-          <span class="pill pill-white">Strategic</span>
+          <span class="font-headline text-lg font-bold text-stone-300">V3</span>
+          <span class="pill pill-stone">Strategic</span>
         </div>
-        <p class="font-label text-[11px] text-white/30 leading-relaxed">Wiki gap detection, auto-draft suggestions, usage analytics, guided onboarding paths, JIRA integration.</p>
+        <p class="font-label text-[11px] text-stone-300 leading-relaxed">Wiki gap detection, auto-draft suggestions, usage analytics, guided onboarding paths, JIRA integration.</p>
       </div>
     </div>
   </div>
 
   <!-- Architecture -->
   <div class="metric-card">
-    <p class="font-label text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-4">Architecture</p>
+    <p class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-400 font-bold mb-4">Architecture</p>
     <div class="flex flex-col gap-3">
       <div class="flex gap-3 items-start">
         <div class="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0"></div>
         <div>
-          <div class="font-label text-[11px] text-white/70 font-bold uppercase tracking-wider">Embedding</div>
-          <div class="font-body text-[12px] text-white/40 mt-0.5">all-MiniLM-L6-v2 via ChromaDB</div>
+          <div class="font-label text-[11px] text-on-surface font-bold uppercase tracking-wider">Embedding</div>
+          <div class="font-body text-[12px] text-stone-400 mt-0.5">all-MiniLM-L6-v2 via ChromaDB</div>
         </div>
       </div>
       <div class="flex gap-3 items-start">
-        <div class="w-2 h-2 rounded-full bg-white/30 mt-1.5 flex-shrink-0"></div>
+        <div class="w-2 h-2 rounded-full bg-stone-300 mt-1.5 flex-shrink-0"></div>
         <div>
-          <div class="font-label text-[11px] text-white/70 font-bold uppercase tracking-wider">Vector DB</div>
-          <div class="font-body text-[12px] text-white/40 mt-0.5">ChromaDB (local) / Azure AI Search in production</div>
+          <div class="font-label text-[11px] text-on-surface font-bold uppercase tracking-wider">Vector DB</div>
+          <div class="font-body text-[12px] text-stone-400 mt-0.5">ChromaDB (local) / Azure AI Search in production</div>
         </div>
       </div>
       <div class="flex gap-3 items-start">
-        <div class="w-2 h-2 rounded-full bg-white/30 mt-1.5 flex-shrink-0"></div>
+        <div class="w-2 h-2 rounded-full bg-stone-300 mt-1.5 flex-shrink-0"></div>
         <div>
-          <div class="font-label text-[11px] text-white/70 font-bold uppercase tracking-wider">Generation</div>
-          <div class="font-body text-[12px] text-white/40 mt-0.5">Claude via Anthropic API</div>
+          <div class="font-label text-[11px] text-on-surface font-bold uppercase tracking-wider">Generation</div>
+          <div class="font-body text-[12px] text-stone-400 mt-0.5">Claude via Anthropic API</div>
         </div>
       </div>
       <div class="flex gap-3 items-start">
-        <div class="w-2 h-2 rounded-full bg-white/30 mt-1.5 flex-shrink-0"></div>
+        <div class="w-2 h-2 rounded-full bg-stone-300 mt-1.5 flex-shrink-0"></div>
         <div>
-          <div class="font-label text-[11px] text-white/70 font-bold uppercase tracking-wider">Server</div>
-          <div class="font-body text-[12px] text-white/40 mt-0.5">Flask + Confluence-themed HTML frontend</div>
+          <div class="font-label text-[11px] text-on-surface font-bold uppercase tracking-wider">Server</div>
+          <div class="font-body text-[12px] text-stone-400 mt-0.5">Flask + Confluence-themed HTML frontend</div>
         </div>
       </div>
       <div class="flex gap-3 items-start">
-        <div class="w-2 h-2 rounded-full bg-white/30 mt-1.5 flex-shrink-0"></div>
+        <div class="w-2 h-2 rounded-full bg-stone-300 mt-1.5 flex-shrink-0"></div>
         <div>
-          <div class="font-label text-[11px] text-white/70 font-bold uppercase tracking-wider">Knowledge Base</div>
-          <div class="font-body text-[12px] text-white/40 mt-0.5">10 fabricated wiki pages, 57 semantic chunks</div>
+          <div class="font-label text-[11px] text-on-surface font-bold uppercase tracking-wider">Knowledge Base</div>
+          <div class="font-body text-[12px] text-stone-400 mt-0.5">10 fabricated wiki pages, 57 semantic chunks</div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Context callout -->
-  <div class="rounded-2xl p-5 border border-white/10 bg-white/[0.03]">
-    <p class="font-label text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-3">Context</p>
-    <p class="font-body text-[13px] text-white/50 leading-relaxed">This project is a local prototype built to implement a proposal I made at work. Veridian Technologies is a fictional company used to avoid confidentiality issues. The product thinking, architecture decisions, and evaluation methodology are directly transferable to a real deployment.</p>
+  <div class="rounded-2xl p-5 border border-white/50 bg-white/40 backdrop-blur-sm">
+    <p class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-400 font-bold mb-3">Context</p>
+    <p class="font-body text-[13px] text-stone-500 leading-relaxed">This project is a local prototype built to implement a proposal I made at work. Veridian Technologies is a fictional company used to avoid confidentiality issues. The product thinking, architecture decisions, and evaluation methodology are directly transferable to a real deployment.</p>
   </div>
-
-  <!-- Back nav -->
-  <a href="index.html" class="flex items-center gap-3 text-white/40 hover:text-white transition font-label uppercase tracking-widest text-[11px] font-bold mt-2">
-    <span class="material-symbols-outlined text-[16px]">arrow_back</span> Back to portfolio
-  </a>
 
 </aside>
 </div>
 
   <!-- NEXT PROJECT -->
-  <div class="max-w-6xl mx-auto px-6 md:px-12">
-    <a href="momentumbuddy.html" class="block w-full mt-32 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/20 transition-colors relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div>
-          <div class="font-label uppercase tracking-widest text-white/50 font-bold text-xs mb-4">Next Project</div>
-          <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">Learners Buddy</h3>
-        </div>
-        <div class="w-16 h-16 rounded-full bg-white text-stone-900 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-          <span class="material-symbols-outlined text-xl">arrow_forward</span>
-        </div>
+  <a href="momentumbuddy.html" class="block w-full mt-32 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-12 md:p-20 shadow-2xl group hover:bg-white/60 transition-colors relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+        <div class="font-label uppercase tracking-widest text-primary font-bold text-xs mb-4">Next Project</div>
+        <h3 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-stone-900">Learners Buddy</h3>
       </div>
-    </a>
-  </div>
+      <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </div>
+    </div>
+  </a>
 
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-white/10 mt-16">
-<div class="max-w-[1200px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="font-headline font-black text-2xl text-white/20 italic tracking-tighter">JUHI SHARMA</div>
-<div class="flex gap-8">
-<a href="mailto:juhi.sharma2911@gmail.com" class="font-label uppercase tracking-widest text-[11px] text-white/30 hover:text-white transition font-bold">Email</a>
-<a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank" class="font-label uppercase tracking-widest text-[11px] text-white/30 hover:text-white transition font-bold">LinkedIn</a>
-<a href="index.html" class="font-label uppercase tracking-widest text-[11px] text-white/30 hover:text-white transition font-bold">Portfolio</a>
-</div>
-</div>
+<footer class="w-full mt-10 bg-white/30 backdrop-blur-2xl border-t border-white/40">
+  <div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
+    <div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+      <div class="text-4xl font-black text-stone-900 tracking-tighter italic">JUHI SHARMA</div>
+      <div class="text-stone-600 font-medium font-body">Bengaluru</div>
+      <div class="flex gap-8">
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="index.html">Home</a>
+        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 items-start md:items-end">
+      <a href="mailto:juhi.sharma2911@gmail.com" class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition-colors active:scale-95 duration-150">Email</a>
+    </div>
+  </div>
 </footer>
 
 </body>
