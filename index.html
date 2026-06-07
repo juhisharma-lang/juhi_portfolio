@@ -12,391 +12,388 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
 tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      "colors": {
-              "error-container": "#ffdad6",
-              "outline": "#906f6a",
-              "surface-container-lowest": "#ffffff",
-              "tertiary-fixed": "#e5e2e1",
-              "on-tertiary-fixed": "#1c1b1b",
-              "inverse-surface": "#32302b",
-              "background": "#fef9f0",
-              "secondary-container": "#fed977",
-              "on-surface": "#1d1b17",
-              "primary-fixed-dim": "#ffb4a9",
-              "outline-variant": "#e5bdb7",
-              "surface-tint": "#bc150e",
-              "surface-variant": "#e7e2da",
-              "on-secondary-fixed-variant": "#584400",
-              "surface-container-high": "#ede7df",
-              "tertiary": "#5d5c5b",
-              "on-tertiary-fixed-variant": "#474646",
-              "error": "#ba1a1a",
-              "inverse-on-surface": "#f5f0e8",
-              "secondary-fixed": "#ffe08f",
-              "on-background": "#1d1b17",
-              "on-primary-fixed-variant": "#930002",
-              "on-surface-variant": "#5c403c",
-              "on-secondary-container": "#785d00",
-              "secondary": "#755b00",
-              "on-primary-container": "#fffbff",
-              "inverse-primary": "#ffb4a9",
-              "on-secondary-fixed": "#241a00",
-              "surface-container": "#f3ede5",
-              "surface-container-low": "#f8f3eb",
-              "on-secondary": "#ffffff",
-              "on-tertiary": "#ffffff",
-              "on-primary-fixed": "#410000",
-              "on-primary": "#ffffff",
-              "primary": "#b8110c",
-              "surface": "#fef9f0",
-              "surface-bright": "#fef9f0",
-              "surface-dim": "#ded9d2",
-              "primary-fixed": "#ffdad5",
-              "surface-container-highest": "#e7e2da",
-              "on-error-container": "#93000a",
-              "primary-container": "#dd3123",
-              "on-error": "#ffffff",
-              "secondary-fixed-dim": "#e6c364",
-              "tertiary-fixed-dim": "#c9c6c5",
-              "tertiary-container": "#767474",
-              "on-tertiary-container": "#f7feff"
-      },
-      "borderRadius": {
-              "DEFAULT": "0.25rem",
-              "lg": "0.5rem",
-              "xl": "0.75rem",
-              "full": "9999px"
-      },
-      "fontFamily": {
-              "headline": ["Space Grotesk"],
-              "body": ["Inter"],
-              "label": ["Be Vietnam Pro"]
-      }
-    },
-  },
+darkMode: "class",
+theme: {
+extend: {
+"colors": {
+"error-container": "#ffdad6",
+"outline": "#906f6a",
+"surface-container-lowest": "#ffffff",
+"tertiary-fixed": "#e5e2e1",
+"on-tertiary-fixed": "#1c1b1b",
+"inverse-surface": "#32302b",
+"background": "#fef9f0",
+"secondary-container": "#fed977",
+"on-surface": "#1d1b17",
+"primary-fixed-dim": "#ffb4a9",
+"outline-variant": "#e5bdb7",
+"surface-tint": "#bc150e",
+"surface-variant": "#e7e2da",
+"on-secondary-fixed-variant": "#584400",
+"surface-container-high": "#ede7df",
+"tertiary": "#5d5c5b",
+"on-tertiary-fixed-variant": "#474646",
+"error": "#ba1a1a",
+"inverse-on-surface": "#f5f0e8",
+"secondary-fixed": "#ffe08f",
+"on-background": "#1d1b17",
+"on-primary-fixed-variant": "#930002",
+"on-surface-variant": "#5c403c",
+"on-secondary-container": "#785d00",
+"secondary": "#755b00",
+"on-primary-container": "#fffbff",
+"inverse-primary": "#ffb4a9",
+"on-secondary-fixed": "#241a00",
+"surface-container": "#f3ede5",
+"surface-container-low": "#f8f3eb",
+"on-secondary": "#ffffff",
+"on-tertiary": "#ffffff",
+"on-primary-fixed": "#410000",
+"on-primary": "#ffffff",
+"primary": "#b8110c",
+"surface": "#fef9f0",
+"surface-bright": "#fef9f0",
+"surface-dim": "#ded9d2",
+"primary-fixed": "#ffdad5",
+"surface-container-highest": "#e7e2da",
+"on-error-container": "#93000a",
+"primary-container": "#dd3123",
+"on-error": "#ffffff",
+"secondary-fixed-dim": "#e6c364",
+"tertiary-fixed-dim": "#c9c6c5",
+"tertiary-container": "#767474",
+"on-tertiary-container": "#f7feff"
+},
+"borderRadius": {
+"DEFAULT": "0.25rem",
+"lg": "0.5rem",
+"xl": "0.75rem",
+"full": "9999px"
+},
+"fontFamily": {
+"headline": ["Space Grotesk"],
+"body": ["Inter"],
+"label": ["Be Vietnam Pro"]
+}
+},
+},
 }
 </script>
 <style>
-  body { font-family: 'Inter', sans-serif; }
-  .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
-  .text-outline {
-      -webkit-text-stroke: 1px currentColor;
-      color: transparent;
-  }
-  
-  /* Vibrant Gradient Mesh Background */
-  .mesh-gradient {
-      background-color: #fef9f0;
-      background-image: 
-          radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%), 
-          radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%), 
-          radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%), 
-          radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%), 
-          radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%), 
-          radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%), 
-          radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%), 
-          radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
-      background-size: 100% 100%;
-  }
-
-  /* Noise Texture */
-  .noise-overlay::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.04;
-      z-index: -1;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
-
-  .nav-dropdown {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(6px);
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-  }
-  .nav-dropdown.open {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0);
-  }
-
-  #modal-overlay {
-    position: fixed; inset: 0; z-index: 9000;
-    background: rgba(0,0,0,0.5); backdrop-filter: blur(12px);
-    display: none; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.3s;
-  }
-  #modal-overlay.open { display: flex; }
-  #modal-overlay.visible { opacity: 1; }
-  #modal-frame-wrap { width: 92vw; height: 88vh; position: relative; display: flex; flex-direction: column; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
-  #modal-topbar { height: 52px; background: white; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
-  #modal-title { font-family: 'Be Vietnam Pro', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #5d5c5b; font-weight: 600; }
-  #modal-close { font-family: 'Be Vietnam Pro', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #b8110c; background: none; border: none; padding: 6px 12px; font-weight: 600; transition: color 0.2s; cursor: pointer; }
-  #modal-close:hover { opacity: 0.8; }
-  #modal-frame { flex: 1; background: white; width: 100%; height: 100%; }
+body { font-family: 'Inter', sans-serif; }
+.material-symbols-outlined {
+font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.text-outline {
+-webkit-text-stroke: 1px currentColor;
+color: transparent;
+}
+.mesh-gradient {
+background-color: #fef9f0;
+background-image:
+radial-gradient(at 0% 0%, hsla(20, 100%, 90%, 1) 0, transparent 50%),
+radial-gradient(at 50% 0%, hsla(160, 40%, 90%, 1) 0, transparent 50%),
+radial-gradient(at 100% 0%, hsla(280, 50%, 92%, 1) 0, transparent 50%),
+radial-gradient(at 0% 50%, hsla(50, 100%, 92%, 1) 0, transparent 50%),
+radial-gradient(at 100% 50%, hsla(10, 100%, 92%, 1) 0, transparent 50%),
+radial-gradient(at 0% 100%, hsla(180, 50%, 92%, 1) 0, transparent 50%),
+radial-gradient(at 50% 100%, hsla(300, 40%, 94%, 1) 0, transparent 50%),
+radial-gradient(at 100% 100%, hsla(45, 100%, 90%, 1) 0, transparent 50%);
+background-size: 100% 100%;
+}
+.noise-overlay::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0.04;
+z-index: -1;
+pointer-events: none;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+.nav-dropdown {
+opacity: 0;
+pointer-events: none;
+transform: translateY(6px);
+transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+.nav-dropdown.open {
+opacity: 1;
+pointer-events: all;
+transform: translateY(0);
+}
+#modal-overlay {
+position: fixed; inset: 0; z-index: 9000;
+background: rgba(0,0,0,0.5); backdrop-filter: blur(12px);
+display: none; align-items: center; justify-content: center;
+opacity: 0; transition: opacity 0.3s;
+}
+#modal-overlay.open { display: flex; }
+#modal-overlay.visible { opacity: 1; }
+#modal-frame-wrap { width: 92vw; height: 88vh; position: relative; display: flex; flex-direction: column; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+#modal-topbar { height: 52px; background: white; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+#modal-title { font-family: 'Be Vietnam Pro', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #5d5c5b; font-weight: 600; }
+#modal-close { font-family: 'Be Vietnam Pro', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #b8110c; background: none; border: none; padding: 6px 12px; font-weight: 600; transition: color 0.2s; cursor: pointer; }
+#modal-close:hover { opacity: 0.8; }
+#modal-frame { flex: 1; background: white; width: 100%; height: 100%; }
 </style>
 </head>
 <body class="mesh-gradient noise-overlay text-on-surface selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
 
-<!-- Modal (from original) -->
+<!-- Modal -->
 <div id="modal-overlay">
-  <div id="modal-frame-wrap">
-    <div id="modal-topbar">
-      <span id="modal-title">Viewing</span>
-      <button id="modal-close">✕ Close</button>
-    </div>
-    <iframe id="modal-frame" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
+<div id="modal-frame-wrap">
+<div id="modal-topbar">
+<span id="modal-title">Viewing</span>
+<button id="modal-close">&#x2715; Close</button>
+</div>
+<iframe id="modal-frame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-stone-900/40 backdrop-blur-2xl border-b border-white/30">
-  <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
-    <a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">
-        JS
-    </a>
-    <div class="hidden md:flex gap-12 items-center relative">
-      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-black underline underline-offset-8 decoration-2 text-red-700" href="#about">About</a>
-      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 hover:scale-105 transition-transform duration-300 ease-out" href="#projects">Case Studies</a>
-      <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 hover:scale-105 transition-transform duration-300 ease-out" href="#collab">Let's Think</a>
-      <div class="relative">
-        <button id="connect-btn" class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 hover:scale-105 transition-transform duration-300 ease-out flex items-center gap-1">
-          Connect <span class="text-[10px]">▼</span>
-        </button>
-        <div id="connect-dd" class="nav-dropdown absolute top-full mt-4 right-0 min-w-[240px] bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl shadow-2xl p-2 flex flex-col gap-1 z-50">
-          <a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-white/50 text-stone-700 transition-colors font-label uppercase text-[10px] tracking-widest font-bold">
-            <span class="text-primary font-black text-xs">in</span> LinkedIn <span class="ml-auto opacity-50">↗</span>
-          </a>
-          <a href="mailto:juhi.sharma2911@gmail.com" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-white/50 text-stone-700 transition-colors font-label uppercase text-[10px] tracking-widest font-bold">
-            <span class="text-primary font-black text-xs">@</span> juhi.sharma2911@gmail.com
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- Resume button removed - kept for reference
-    <a href="Juhi_Sharma_Resume.pdf" download class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-['Space_Grotesk'] uppercase tracking-widest text-xs font-bold hover:scale-105 transition-transform duration-300 ease-out shadow-lg shadow-primary/20 flex items-center gap-2">
-        Resume <span class="material-symbols-outlined text-[14px]" style="font-size: 14px;">download</span>
-    </a>
-    -->
-  </div>
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<a href="index.html" class="text-3xl font-black italic tracking-tighter text-stone-900 hover:text-red-700 transition">
+JS
+</a>
+<div class="hidden md:flex gap-12 items-center relative">
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-black underline underline-offset-8 decoration-2 text-red-700" href="#about">About</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 hover:scale-105 transition-transform duration-300 ease-out" href="#projects">Case Studies</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 hover:scale-105 transition-transform duration-300 ease-out" href="#collab">Let's Think</a>
+<div class="relative">
+<button id="connect-btn" class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-medium hover:text-red-700 text-stone-700 hover:scale-105 transition-transform duration-300 ease-out flex items-center gap-1">
+Connect <span class="text-[10px]">&#x25BC;</span>
+</button>
+<div id="connect-dd" class="nav-dropdown absolute top-full mt-4 right-0 min-w-[240px] bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl shadow-2xl p-2 flex flex-col gap-1 z-50">
+<a href="https://www.linkedin.com/in/juhisharma2911/" target="_blank" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-white/50 text-stone-700 transition-colors font-label uppercase text-[10px] tracking-widest font-bold">
+<span class="text-primary font-black text-xs">in</span> LinkedIn <span class="ml-auto opacity-50">&#x2197;</span>
+</a>
+<a href="mailto:juhi.sharma2911@gmail.com" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-white/50 text-stone-700 transition-colors font-label uppercase text-[10px] tracking-widest font-bold">
+<span class="text-primary font-black text-xs">@</span> juhi.sharma2911@gmail.com
+</a>
+</div>
+</div>
+</div>
+</div>
 </nav>
 
 <main class="relative min-h-screen pt-32 overflow-hidden">
-  
-  <!-- Geometric Accents -->
-  <div class="absolute -top-24 -right-24 w-[600px] h-[600px] bg-secondary-container/30 rounded-full blur-[120px] -z-10 mix-blend-multiply"></div>
-  <div class="absolute top-[30%] -left-48 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10 mix-blend-overlay"></div>
+<div class="absolute -top-24 -right-24 w-[600px] h-[600px] bg-secondary-container/30 rounded-full blur-[120px] -z-10 mix-blend-multiply"></div>
+<div class="absolute top-[30%] -left-48 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10 mix-blend-overlay"></div>
 
-  <!-- Hero Section -->
-  <section id="about" class="max-w-[1920px] mx-auto px-8 md:px-16 grid grid-cols-12 gap-8 relative mt-12 md:mt-24 scroll-mt-40">
-    
-    <!-- Headline Container -->
-    <div class="col-span-12 lg:col-span-7 relative z-20 flex flex-col justify-center">
-      <p class="font-label text-secondary font-bold tracking-[0.3em] uppercase mb-6 md:mb-8 ml-2">Product Portfolio</p>
-      <h1 class="font-headline text-[13vw] lg:text-[10vw] leading-[0.85] font-black italic tracking-tighter uppercase text-on-surface drop-shadow-sm">
-          Juhi<br/>
-          <span class="text-primary pr-4">Sharma</span>
-      </h1>
-      
-      <div class="mt-8 md:mt-12 bg-white/40 p-8 md:p-10 rounded-[2rem] backdrop-blur-xl shadow-2xl shadow-on-surface/5 border border-white/40 max-w-xl">
-        <p class="font-body text-lg md:text-xl text-on-surface font-medium leading-relaxed">
-            I think about <strong>why products break down before they reach users</strong>, and what it takes to fix that. Here you'll find research, prototypes, and a 0-to-1 build.
-        </p>
-        <div class="flex items-center gap-4 mt-8 group cursor-pointer" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary group-hover:scale-110 transition-transform shadow-lg shadow-primary/20">
-            <span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
-          </div>
-          <span class="font-headline font-bold uppercase tracking-widest text-sm text-on-surface">View Work</span>
-        </div>
-      </div>
-    </div>
+<!-- Hero Section -->
+<section id="about" class="max-w-[1920px] mx-auto px-8 md:px-16 grid grid-cols-12 gap-8 relative mt-12 md:mt-24 scroll-mt-40">
+<div class="col-span-12 lg:col-span-7 relative z-20 flex flex-col justify-center">
+<p class="font-label text-secondary font-bold tracking-[0.3em] uppercase mb-6 md:mb-8 ml-2">Product Portfolio</p>
+<h1 class="font-headline text-[13vw] lg:text-[10vw] leading-[0.85] font-black italic tracking-tighter uppercase text-on-surface drop-shadow-sm">
+Juhi<br/>
+<span class="text-primary pr-4">Sharma</span>
+</h1>
+<div class="mt-8 md:mt-12 bg-white/40 p-8 md:p-10 rounded-[2rem] backdrop-blur-xl shadow-2xl shadow-on-surface/5 border border-white/40 max-w-xl">
+<p class="font-body text-lg md:text-xl text-on-surface font-medium leading-relaxed">
+I think about <strong>why products break down before they reach users</strong>, and what it takes to fix that. Here you'll find research, prototypes, and a 0-to-1 build.
+</p>
+<div class="flex items-center gap-4 mt-8 group cursor-pointer" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary group-hover:scale-110 transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+</div>
+<span class="font-headline font-bold uppercase tracking-widest text-sm text-on-surface">View Work</span>
+</div>
+</div>
+</div>
 
-    <!-- 3D Stage / Hero Image / Stats -->
-    <div class="col-span-12 lg:col-span-5 relative mt-16 lg:mt-0">
-      <div class="relative w-full aspect-[4/5] max-h-[700px] rounded-[3rem] overflow-hidden group shadow-2xl z-10 border border-white/40">
-        <img class="w-full h-full object-cover grayscale-[0.1] contrast-[1.05] group-hover:scale-105 transition-transform duration-1000" src="portfolio logo.png" alt="Juhi Sharma Profile Photo"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-overlay"></div>
-      </div>
-      
-      <!-- Stats Floating Glass Cards -->
-      <div class="absolute -left-6 top-12 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden md:flex hover:scale-105 transition">
-        <span class="font-headline text-3xl font-black text-primary">170+</span>
-        <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Research Respondents</span>
-      </div>
-      
-        <div class="absolute -right-8 top-1/3 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden xl:flex hover:scale-105 transition">
-        <span class="font-headline text-3xl font-black text-primary">1</span>
-        <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">HR Tech Project<br/>in Pipeline</span>
-      </div>
+<!-- Hero Stats -->
+<div class="col-span-12 lg:col-span-5 relative mt-16 lg:mt-0">
+<div class="relative w-full aspect-[4/5] max-h-[700px] rounded-[3rem] overflow-hidden group shadow-2xl z-10 border border-white/40">
+<img class="w-full h-full object-cover grayscale-[0.1] contrast-[1.05] group-hover:scale-105 transition-transform duration-1000" src="portfolio logo.png" alt="Juhi Sharma Profile Photo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-overlay"></div>
+</div>
+<!-- Stat cards: honest framing -->
+<div class="absolute -left-6 top-12 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden md:flex hover:scale-105 transition">
+<span class="font-headline text-3xl font-black text-primary">170+</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Research Respondents</span>
+</div>
+<div class="absolute -right-8 top-1/3 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden xl:flex hover:scale-105 transition">
+<span class="font-headline text-3xl font-black text-primary">4</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Portfolio<br/>Projects</span>
+</div>
+<div class="absolute -left-12 bottom-1/4 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden lg:flex hover:scale-105 transition">
+<span class="font-headline text-3xl font-black text-primary">1</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Working<br/>RAG Build</span>
+</div>
+<div class="absolute bottom-8 -right-4 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden md:flex hover:scale-105 transition">
+<span class="font-headline text-3xl font-black text-primary">3</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Live on the Web<br/>(no active users)</span>
+</div>
+</div>
+</section>
 
-      <div class="absolute -left-12 bottom-1/4 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden lg:flex hover:scale-105 transition">
-        <span class="font-headline text-3xl font-black text-primary">3</span>
-        <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Live on the Web</span>
-      </div>
-
-      <div class="absolute bottom-8 -right-4 bg-white/70 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-xl z-20 flex flex-col gap-1 hidden md:flex hover:scale-105 transition">
-        <span class="font-headline text-3xl font-black text-primary">1</span>
-        <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface font-bold">Solo 0-to-1 Shipped</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects Grid (Bento Style) -->
-  <section id="projects" class="max-w-[1920px] mx-auto px-8 md:px-16 mt-32 md:mt-48 mb-32 relative z-30 scroll-mt-40">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-      <div>
-        <p class="font-label text-primary font-bold tracking-[0.3em] uppercase mb-4">Selected Work</p>
-        <h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-on-surface drop-shadow-sm">
-            Three Projects.<br/><span class="text-outline">One Thread.</span>
-        </h2>
-      </div>
-      <p class="font-label text-on-surface/50 text-right uppercase tracking-widest font-black text-sm">
-          01 - 03
-      </p>
-    </div>
+<!-- Projects Grid -->
+<section id="projects" class="max-w-[1920px] mx-auto px-8 md:px-16 mt-32 md:mt-48 mb-32 relative z-30 scroll-mt-40">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<p class="font-label text-primary font-bold tracking-[0.3em] uppercase mb-4">Selected Work</p>
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-on-surface drop-shadow-sm">
+Four Projects.<br/><span class="text-outline">One Thread.</span>
+</h2>
+</div>
+<p class="font-label text-on-surface/50 text-right uppercase tracking-widest font-black text-sm">
+01 - 04
+</p>
+</div>
 
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
 
-  <!-- Project 01 (LearnersBuddy - Lead) -->
-  <a href="momentumbuddy.html" class="md:col-span-8 bg-secondary-container/40 backdrop-blur-md rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-between group border border-white/30 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-secondary-container/60 transition-colors h-[500px]">
-    <div class="relative z-10">
-      <div class="font-label uppercase tracking-widest text-[10px] text-on-secondary-container font-bold mb-6">01 · 0-to-1 Build</div>
-      <h3 class="font-headline text-5xl md:text-6xl font-bold uppercase leading-tight mb-6 text-on-secondary-container">LearnersBuddy</h3>
-      <p class="font-body text-on-secondary-container/80 font-medium text-lg max-w-xl">Started with an AI prioritisation hypothesis. Research killed it. Pivoted to behavioural re-entry support. Built a 4-state recovery model, chose recovery speed over completion rate as the north star. V2 shipped with journey templates, plant-based emotional feedback, and background push notifications via Supabase Edge Functions.</p>
-    </div>
-    <div class="flex items-center justify-between border-t border-on-secondary-container/20 pt-6 mt-8 relative z-10">
-      <span class="font-label font-bold uppercase tracking-widest text-[10px] text-on-secondary-container">View Case Study</span>
-      <div class="w-10 h-10 rounded-full bg-on-secondary-container text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-      </div>
-    </div>
-  </a>
+<!-- Project 01: DQB (new lead) -->
+<a href="dqb.html" class="md:col-span-8 bg-stone-900 backdrop-blur-md rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-between group border border-white/10 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-stone-800 transition-colors h-[500px]">
+<!-- Subtle grid pattern background -->
+<div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- Glow accent -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/30 rounded-full blur-[80px]"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<div class="font-label uppercase tracking-widest text-[10px] text-white/50 font-bold">01 &middot; RAG Prototype &middot; AI Product</div>
+<span class="bg-primary/20 border border-primary/30 text-primary text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-full font-label">Local Build</span>
+</div>
+<h3 class="font-headline text-5xl md:text-6xl font-bold uppercase leading-tight mb-6 text-white">Delivery<br/>Query Bot</h3>
+<p class="font-body text-white/70 font-medium text-lg max-w-xl">Internal teams waste hours navigating fragmented wikis. DQB is a RAG-based knowledge assistant built from a real proposal I made at work: 57 semantic chunks, calibrated confidence signals, a three-version roadmap, and a 15-question eval set running 12/15 at launch.</p>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-6 mt-8 relative z-10">
+<div class="flex items-center gap-3">
+<span class="font-label font-bold uppercase tracking-widest text-[10px] text-white/60">Python &middot; ChromaDB &middot; Claude API &middot; Flask</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</a>
 
-  <!-- Project 02 (Netflix) -->
-  <a href="netflix-discovery.html" class="md:col-span-4 bg-surface-container rounded-[2.5rem] overflow-hidden group relative h-[500px] shadow-xl block cursor-pointer">
-    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="netflix-cover.png" alt="Project background 1">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-    <div class="absolute top-8 right-8 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-      <span class="font-label uppercase tracking-widest text-[10px] text-white font-bold">02 · Discovery, Prototype</span>
-    </div>
-    <div class="absolute bottom-12 left-10 text-white pr-6">
-      <h3 class="font-headline text-3xl font-bold uppercase mb-3 drop-shadow-lg">Netflix Content Discovery</h3>
-      <p class="font-body text-sm text-white/90 font-medium max-w-xs mb-6">The algorithm knows your history. It has no mechanism for your present moment.</p>
-      <div class="inline-flex w-12 h-12 rounded-full bg-white text-on-surface items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shadow-lg">
-        <span class="material-symbols-outlined" data-icon="east">east</span>
-      </div>
-    </div>
-  </a>
+<!-- Project 02: LearnersBuddy -->
+<a href="momentumbuddy.html" class="md:col-span-4 bg-secondary-container/40 backdrop-blur-md rounded-[2.5rem] p-10 flex flex-col justify-between group border border-white/30 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-secondary-container/60 transition-colors h-[500px]">
+<div class="relative z-10">
+<div class="font-label uppercase tracking-widest text-[10px] text-on-secondary-container font-bold mb-6">02 &middot; 0-to-1 Build</div>
+<h3 class="font-headline text-4xl md:text-5xl font-bold uppercase leading-tight mb-6 text-on-secondary-container">Learners<br/>Buddy</h3>
+<p class="font-body text-on-secondary-container/80 font-medium text-base max-w-xl">Research killed the original hypothesis. Pivoted to behavioural re-entry. Built a 4-state recovery model with push nudges via Supabase Edge Functions.</p>
+</div>
+<div class="flex items-center justify-between border-t border-on-secondary-container/20 pt-6 mt-8 relative z-10">
+<span class="font-label font-bold uppercase tracking-widest text-[10px] text-on-secondary-container">View Case Study</span>
+<div class="w-10 h-10 rounded-full bg-on-secondary-container text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</a>
 
-  <!-- Project 03 (Smart Travel) -->
-  <a href="smart-travel-groups.html" class="md:col-span-12 bg-surface-container-highest rounded-[2.5rem] relative overflow-hidden group h-[400px] shadow-xl block cursor-pointer">
-    <img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" src="smart-travel-cover.png" alt="Project background 3">
-    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 to-transparent"></div>
-    <div class="absolute inset-0 p-10 flex flex-col justify-end">
-      <div class="font-label uppercase tracking-widest text-[10px] text-white/70 font-bold mb-3">03 · Team Research, Design</div>
-      <h3 class="font-headline text-3xl font-bold uppercase mb-3 text-white drop-shadow-md">Smart Travel Groups</h3>
-      <p class="font-body text-white/80 text-sm max-w-sm mb-6">170 respondents confirmed it: the hardest part of group travel isn't finding a destination. It's committing to the people.</p>
-      <div class="flex items-center gap-2 text-primary font-label uppercase text-[10px] tracking-widest font-bold">
-        Read Case <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-      </div>
-    </div>
-  </a>
+<!-- Project 03: Netflix -->
+<a href="netflix-discovery.html" class="md:col-span-4 bg-surface-container rounded-[2.5rem] overflow-hidden group relative h-[500px] shadow-xl block cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="netflix-cover.png" alt="Project background 1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="absolute top-8 right-8 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+<span class="font-label uppercase tracking-widest text-[10px] text-white font-bold">03 &middot; Discovery, Prototype</span>
+</div>
+<div class="absolute bottom-12 left-10 text-white pr-6">
+<h3 class="font-headline text-3xl font-bold uppercase mb-3 drop-shadow-lg">Netflix Content Discovery</h3>
+<p class="font-body text-sm text-white/90 font-medium max-w-xs mb-6">The algorithm knows your history. It has no mechanism for your present moment.</p>
+<div class="inline-flex w-12 h-12 rounded-full bg-white text-on-surface items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shadow-lg">
+<span class="material-symbols-outlined" data-icon="east">east</span>
+</div>
+</div>
+</a>
+
+<!-- Project 04: Smart Travel -->
+<a href="smart-travel-groups.html" class="md:col-span-8 bg-surface-container-highest rounded-[2.5rem] relative overflow-hidden group h-[500px] shadow-xl block cursor-pointer">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" src="smart-travel-cover.png" alt="Project background 3">
+<div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 to-transparent"></div>
+<div class="absolute inset-0 p-10 flex flex-col justify-end">
+<div class="font-label uppercase tracking-widest text-[10px] text-white/70 font-bold mb-3">04 &middot; Team Research, Design</div>
+<h3 class="font-headline text-3xl font-bold uppercase mb-3 text-white drop-shadow-md">Smart Travel Groups</h3>
+<p class="font-body text-white/80 text-sm max-w-sm mb-6">170 respondents confirmed it: the hardest part of group travel isn't finding a destination. It's committing to the people.</p>
+<div class="flex items-center gap-2 text-primary font-label uppercase text-[10px] tracking-widest font-bold">
+Read Case <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+</a>
 
 </div>
-  </section>
+</section>
 
-  <!-- Collaboration Section -->
-  <section id="collab" class="max-w-[1920px] mx-auto px-8 md:px-16 mb-24 scroll-mt-40">
-    <div class="bg-surface-container border border-white/40 rounded-[3rem] p-10 md:p-20 shadow-2xl backdrop-blur-sm mx-auto overflow-hidden relative">
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10 mix-blend-overlay"></div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <div class="font-label uppercase tracking-widest text-[10px] font-bold text-primary mb-6">Open to Collaboration</div>
-          <h2 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-on-surface mb-8">
-              Let's think through<br/>hard problems<br/><span class="text-primary italic">together.</span>
-          </h2>
-          <p class="font-body text-lg text-on-surface/80 mb-4 max-w-lg">If something here sparked a thought: a sharper framing, a metric you'd challenge, a direction you'd have pushed differently. <strong>I want to hear it.</strong></p>
-          <p class="font-body text-lg text-on-surface/80 mb-10 max-w-lg">Open to critique, career conversations, or just a good exchange of ideas. No agenda needed.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSfsTmuD6VPdheTJiEVMmZkedUnNbrFO5mm_C7TtzavhSxDQ/viewform" target="_blank" class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-label uppercase tracking-widest text-xs font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-              Start a Conversation <span class="material-symbols-outlined text-sm">chat</span>
-          </a>
-        </div>
-        
-        <div class="flex flex-col gap-4 justify-center">
-          <div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
-            <span class="text-primary material-symbols-outlined">east</span> Challenge a research gap or reframe a finding
-          </div>
-          <div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
-            <span class="text-primary material-symbols-outlined">east</span> Share a prioritisation call you'd have made differently
-          </div>
-          <div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
-            <span class="text-primary material-symbols-outlined">east</span> Question a metric you think misses the point
-          </div>
-          <div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
-            <span class="text-primary material-symbols-outlined">east</span> Or just say hi. That works too
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<!-- Collaboration Section -->
+<section id="collab" class="max-w-[1920px] mx-auto px-8 md:px-16 mb-24 scroll-mt-40">
+<div class="bg-surface-container border border-white/40 rounded-[3rem] p-10 md:p-20 shadow-2xl backdrop-blur-sm mx-auto overflow-hidden relative">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10 mix-blend-overlay"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<div class="font-label uppercase tracking-widest text-[10px] font-bold text-primary mb-6">Open to Collaboration</div>
+<h2 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-on-surface mb-8">
+Let's think through<br/>hard problems<br/><span class="text-primary italic">together.</span>
+</h2>
+<p class="font-body text-lg text-on-surface/80 mb-4 max-w-lg">If something here sparked a thought: a sharper framing, a metric you'd challenge, a direction you'd have pushed differently. <strong>I want to hear it.</strong></p>
+<p class="font-body text-lg text-on-surface/80 mb-10 max-w-lg">Open to critique, career conversations, or just a good exchange of ideas. No agenda needed.</p>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdSfsTmuD6VPdheTJiEVMmZkedUnNbrFO5mm_C7TtzavhSxDQ/viewform" target="_blank" class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-label uppercase tracking-widest text-xs font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+Start a Conversation <span class="material-symbols-outlined text-sm">chat</span>
+</a>
+</div>
+<div class="flex flex-col gap-4 justify-center">
+<div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
+<span class="text-primary material-symbols-outlined">east</span> Challenge a research gap or reframe a finding
+</div>
+<div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
+<span class="text-primary material-symbols-outlined">east</span> Share a prioritisation call you'd have made differently
+</div>
+<div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
+<span class="text-primary material-symbols-outlined">east</span> Question a metric you think misses the point
+</div>
+<div class="bg-white/50 border border-white/50 backdrop-blur-sm p-5 rounded-2xl flex items-center gap-4 text-sm font-medium text-stone-700 hover:bg-white/80 transition-colors">
+<span class="text-primary material-symbols-outlined">east</span> Or just say hi. That works too
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
 
 <!-- Footer -->
 <footer class="w-full rounded-t-[3rem] mt-10 bg-white/30 backdrop-blur-2xl border-t border-white/40">
-  <div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
-    <div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
-      <div class="text-4xl font-black text-stone-900 tracking-tighter italic">
-          JUHI SHARMA
-      </div>
-      <div class="text-stone-600 font-medium font-body">Bengaluru</div>
-      <div class="flex gap-8">
-        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition-colors active:scale-95 duration-150" href="mailto:juhi.sharma2911@gmail.com">Email</a>
-        <a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition-colors active:scale-95 duration-150" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </div>
+<div class="flex flex-col md:flex-row justify-between items-end w-full px-12 py-16 max-w-[1920px] mx-auto">
+<div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+<div class="text-4xl font-black text-stone-900 tracking-tighter italic">JUHI SHARMA</div>
+<div class="text-stone-600 font-medium font-body">Bengaluru</div>
+<div class="flex gap-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition-colors active:scale-95 duration-150" href="mailto:juhi.sharma2911@gmail.com">Email</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tight text-stone-700 font-bold hover:text-red-700 transition-colors active:scale-95 duration-150" href="https://www.linkedin.com/in/juhisharma2911/" target="_blank">LinkedIn</a>
+</div>
+</div>
+</div>
 </footer>
 
 <script>
-  // Connect Dropdown
-  const connectBtn = document.getElementById('connect-btn');
-  const connectDd  = document.getElementById('connect-dd');
-  connectBtn.addEventListener('click', e => { 
-    e.stopPropagation(); 
-    connectDd.classList.toggle('open'); 
-  });
-  document.addEventListener('click', () => connectDd.classList.remove('open'));
+const connectBtn = document.getElementById('connect-btn');
+const connectDd = document.getElementById('connect-dd');
+connectBtn.addEventListener('click', e => {
+e.stopPropagation();
+connectDd.classList.toggle('open');
+});
+document.addEventListener('click', () => connectDd.classList.remove('open'));
 
-  // Modals for Resume or nested frames
-  const overlay = document.getElementById('modal-overlay');
-  const frame = document.getElementById('modal-frame');
-  const modalTitle = document.getElementById('modal-title');
-  function openModal(url, title) { 
-    frame.src = url; 
-    modalTitle.textContent = title; 
-    overlay.style.display = 'flex'; 
-    requestAnimationFrame(() => overlay.classList.add('visible')); 
-  }
-  function closeModal() { 
-    overlay.classList.remove('visible'); 
-    setTimeout(() => { overlay.style.display = 'none'; frame.src = ''; }, 300); 
-  }
-  document.getElementById('modal-close').addEventListener('click', closeModal);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  window.openModal = openModal;
+const overlay = document.getElementById('modal-overlay');
+const frame = document.getElementById('modal-frame');
+const modalTitle = document.getElementById('modal-title');
+function openModal(url, title) {
+frame.src = url;
+modalTitle.textContent = title;
+overlay.style.display = 'flex';
+requestAnimationFrame(() => overlay.classList.add('visible'));
+}
+function closeModal() {
+overlay.classList.remove('visible');
+setTimeout(() => { overlay.style.display = 'none'; frame.src = ''; }, 300);
+}
+document.getElementById('modal-close').addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+window.openModal = openModal;
 </script>
 </body>
 </html>
