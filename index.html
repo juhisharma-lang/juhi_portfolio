@@ -247,73 +247,299 @@ Four Projects.<br/><span class="text-outline">One Thread.</span>
 
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
 
-<!-- Project 01: DQB (new lead) -->
-<a href="dqb.html" class="md:col-span-8 bg-stone-900 backdrop-blur-md rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-between group border border-white/10 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-stone-800 transition-colors h-[500px]">
-<!-- Subtle grid pattern background -->
-<div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 32px 32px;"></div>
-<!-- Glow accent -->
-<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/30 rounded-full blur-[80px]"></div>
-<div class="relative z-10">
-<div class="flex items-center gap-3 mb-6">
-<div class="font-label uppercase tracking-widest text-[10px] text-white/50 font-bold">01 &middot; RAG Prototype &middot; AI Product</div>
-<span class="bg-primary/20 border border-primary/30 text-primary text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-full font-label">Local Build</span>
-</div>
-<h3 class="font-headline text-5xl md:text-6xl font-bold uppercase leading-tight mb-6 text-white">Delivery<br/>Query Bot</h3>
-<p class="font-body text-white/70 font-medium text-lg max-w-xl">Internal teams waste hours navigating fragmented wikis. DQB is a RAG-based knowledge assistant built from a real proposal I made at work: 57 semantic chunks, calibrated confidence signals, a three-version roadmap, and a 15-question eval set running 12/15 at launch.</p>
-</div>
-<div class="flex items-center justify-between border-t border-white/10 pt-6 mt-8 relative z-10">
-<div class="flex items-center gap-3">
-<span class="font-label font-bold uppercase tracking-widest text-[10px] text-white/60">Python &middot; ChromaDB &middot; Claude API &middot; Flask</span>
-</div>
-<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
+<!-- Project 01: DQB — text left, chatbot illustration right -->
+<a href="dqb.html" class="md:col-span-8 bg-stone-900 rounded-[2.5rem] group border border-white/10 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-stone-800 transition-colors h-[500px]">
+  <!-- SVG illustration pinned to right -->
+  <div class="absolute right-0 top-0 h-full w-[52%]">
+    <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="idx-g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#003AA3"/>
+          <stop offset="100%" stop-color="#0055D4"/>
+        </linearGradient>
+      </defs>
+      <rect width="420" height="280" fill="url(#idx-g1)"/>
+      <g transform="rotate(-11, 54, 88)" opacity="0.2"><rect x="16" y="38" width="76" height="98" rx="6" fill="#FFE566"/></g>
+      <g transform="rotate(7, 368, 200)" opacity="0.16"><rect x="332" y="152" width="72" height="96" rx="6" fill="#FFE566"/></g>
+      <circle cx="182" cy="20" r="2" fill="rgba(255,229,100,0.28)"/>
+      <circle cx="248" cy="14" r="1.5" fill="rgba(255,229,100,0.2)"/>
+      <circle cx="384" cy="58" r="2" fill="rgba(255,229,100,0.22)"/>
+      <circle cx="38" cy="196" r="1.5" fill="rgba(255,229,100,0.2)"/>
+      <rect x="66" y="22" width="288" height="220" rx="16" fill="white" opacity="0.97"/>
+      <rect x="66" y="22" width="288" height="40" rx="16" fill="#EEF2FF"/>
+      <rect x="66" y="44" width="288" height="18" fill="#EEF2FF"/>
+      <circle cx="89" cy="42" r="5.5" fill="#FF6057"/>
+      <circle cx="107" cy="42" r="5.5" fill="#FFBE2E"/>
+      <circle cx="125" cy="42" r="5.5" fill="#27C93F"/>
+      <rect x="170" y="38" width="76" height="8" rx="4" fill="#C5CFF0"/>
+      <rect x="174" y="72" width="148" height="38" rx="12" fill="#FFE566"/>
+      <rect x="186" y="83" width="94" height="6" rx="3" fill="rgba(0,0,0,0.2)"/>
+      <rect x="186" y="95" width="68" height="5" rx="2.5" fill="rgba(0,0,0,0.14)"/>
+      <circle cx="158" cy="91" r="11" fill="#D8E2FF"/>
+      <circle cx="154" cy="89" r="1.5" fill="#0052CC"/>
+      <circle cx="161" cy="89" r="1.5" fill="#0052CC"/>
+      <path d="M153,95 Q157.5,99 162,95" stroke="#0052CC" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <rect x="96" y="122" width="170" height="48" rx="12" fill="#EEF2FF"/>
+      <rect x="110" y="133" width="112" height="6" rx="3" fill="rgba(0,82,204,0.28)"/>
+      <rect x="110" y="145" width="140" height="5" rx="2.5" fill="rgba(0,82,204,0.2)"/>
+      <rect x="110" y="155" width="86" height="5" rx="2.5" fill="rgba(0,82,204,0.2)"/>
+      <circle cx="286" cy="146" r="16" fill="#0052CC"/>
+      <rect x="284" y="138" width="4" height="16" rx="2" fill="white"/>
+      <rect x="277" y="145" width="16" height="4" rx="2" fill="white"/>
+      <rect x="200" y="182" width="122" height="34" rx="12" fill="#FFE566"/>
+      <rect x="212" y="193" width="80" height="6" rx="3" fill="rgba(0,0,0,0.2)"/>
+      <rect x="212" y="203" width="56" height="5" rx="2.5" fill="rgba(0,0,0,0.14)"/>
+      <circle cx="184" cy="199" r="11" fill="#D8E2FF"/>
+      <circle cx="180" cy="197" r="1.5" fill="#0052CC"/>
+      <circle cx="187" cy="197" r="1.5" fill="#0052CC"/>
+      <path d="M179,202 Q183.5,207 188,202" stroke="#0052CC" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <circle cx="106" cy="228" r="5.5" fill="#CDD7F5"/>
+      <circle cx="122" cy="228" r="5.5" fill="#C2CDF0"/>
+      <circle cx="138" cy="228" r="5.5" fill="#B8C4EC"/>
+      <g transform="rotate(8, 355, 234)" opacity="0.85">
+        <rect x="336" y="212" width="38" height="52" rx="5" fill="#FFE566"/>
+        <rect x="343" y="223" width="22" height="4" rx="2" fill="rgba(0,50,160,0.3)"/>
+        <rect x="343" y="231" width="16" height="4" rx="2" fill="rgba(0,50,160,0.25)"/>
+        <rect x="343" y="239" width="20" height="4" rx="2" fill="rgba(0,50,160,0.25)"/>
+        <rect x="343" y="247" width="13" height="4" rx="2" fill="rgba(0,50,160,0.2)"/>
+      </g>
+    </svg>
+    <!-- Fade the SVG into the dark card on the left edge -->
+    <div class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/50 to-transparent"></div>
+  </div>
+  <!-- Text content on left -->
+  <div class="relative z-10 h-full flex flex-col justify-between p-10 md:p-12 md:w-[55%]">
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="font-label uppercase tracking-widest text-[10px] text-white/50 font-bold">01 &middot; RAG Prototype &middot; AI Product</div>
+        <span class="bg-primary/20 border border-primary/30 text-primary text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-full font-label">Local Build</span>
+      </div>
+      <h3 class="font-headline text-5xl md:text-6xl font-bold uppercase leading-tight mb-6 text-white">Delivery<br/>Query Bot</h3>
+      <p class="font-body text-white/70 font-medium text-lg max-w-xl">Internal teams waste hours navigating fragmented wikis. DQB is a RAG-based knowledge assistant built from a real proposal I made at work: 57 semantic chunks, calibrated confidence signals, a three-version roadmap, and a 15-question eval set running 12/15 at launch.</p>
+    </div>
+    <div class="flex items-center justify-between border-t border-white/10 pt-6 mt-8">
+      <span class="font-label font-bold uppercase tracking-widest text-[10px] text-white/60">Python &middot; ChromaDB &middot; Claude API &middot; Flask</span>
+      <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </div>
+    </div>
+  </div>
 </a>
 
-<!-- Project 02: LearnersBuddy -->
-<a href="momentumbuddy.html" class="md:col-span-4 bg-secondary-container/40 backdrop-blur-md rounded-[2.5rem] p-10 flex flex-col justify-between group border border-white/30 shadow-xl relative overflow-hidden block cursor-pointer hover:bg-secondary-container/60 transition-colors h-[500px]">
-<div class="relative z-10">
-<div class="font-label uppercase tracking-widest text-[10px] text-on-secondary-container font-bold mb-6">02 &middot; 0-to-1 Build</div>
-<h3 class="font-headline text-4xl md:text-5xl font-bold uppercase leading-tight mb-6 text-on-secondary-container">Learners<br/>Buddy</h3>
-<p class="font-body text-on-secondary-container/80 font-medium text-base max-w-xl">Research killed the original hypothesis. Pivoted to behavioural re-entry. Built a 4-state recovery model with push nudges via Supabase Edge Functions.</p>
-</div>
-<div class="flex items-center justify-between border-t border-on-secondary-container/20 pt-6 mt-8 relative z-10">
-<span class="font-label font-bold uppercase tracking-widest text-[10px] text-on-secondary-container">View Case Study</span>
-<div class="w-10 h-10 rounded-full bg-on-secondary-container text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
+<!-- Project 02: LearnersBuddy — full-bleed illustration -->
+<a href="momentumbuddy.html" class="md:col-span-4 rounded-[2.5rem] overflow-hidden group shadow-xl relative h-[500px] block cursor-pointer">
+  <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-110" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="idx-g2" x1="0" y1="0" x2="0.8" y2="1">
+        <stop offset="0%" stop-color="#3B1178"/>
+        <stop offset="100%" stop-color="#5B21B6"/>
+      </linearGradient>
+    </defs>
+    <rect width="420" height="280" fill="url(#idx-g2)"/>
+    <circle cx="36" cy="44" r="1.5" fill="rgba(255,255,255,0.5)"/>
+    <circle cx="72" cy="20" r="1" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="388" cy="36" r="1.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="362" cy="72" r="1" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="46" cy="188" r="1.5" fill="rgba(255,255,255,0.32)"/>
+    <circle cx="398" cy="218" r="1" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="20" cy="256" r="1" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="200" cy="12" r="2" fill="rgba(255,255,255,0.28)"/>
+    <rect x="152" y="22" width="116" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <rect x="152" y="22" width="68" height="8" rx="4" fill="rgba(196,181,253,0.78)"/>
+    <circle cx="220" cy="26" r="7" fill="#A78BFA"/>
+    <circle cx="136" cy="116" r="36" fill="white" opacity="0.96"/>
+    <ellipse cx="124" cy="110" rx="5.5" ry="6" fill="#3B1178"/>
+    <ellipse cx="148" cy="110" rx="5.5" ry="6" fill="#3B1178"/>
+    <circle cx="126" cy="108" r="2.2" fill="white"/>
+    <circle cx="150" cy="108" r="2.2" fill="white"/>
+    <path d="M122,126 Q136,138 150,126" stroke="#3B1178" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="115" cy="122" rx="9" ry="5.5" fill="rgba(252,165,165,0.5)"/>
+    <ellipse cx="157" cy="122" rx="9" ry="5.5" fill="rgba(252,165,165,0.5)"/>
+    <rect x="112" y="154" width="48" height="60" rx="14" fill="white" opacity="0.93"/>
+    <rect x="84" y="158" width="30" height="15" rx="7.5" fill="white" opacity="0.88"/>
+    <circle cx="84" cy="165" r="10.5" fill="white" opacity="0.88"/>
+    <rect x="62" y="153" width="24" height="32" rx="4" fill="#A78BFA"/>
+    <line x1="74" y1="155" x2="74" y2="183" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+    <rect x="63" y="161" width="9" height="3" rx="1.5" fill="rgba(255,255,255,0.38)"/>
+    <rect x="63" y="168" width="7" height="3" rx="1.5" fill="rgba(255,255,255,0.38)"/>
+    <rect x="63" y="175" width="8" height="3" rx="1.5" fill="rgba(255,255,255,0.38)"/>
+    <rect x="159" y="160" width="48" height="15" rx="7.5" fill="white" opacity="0.88"/>
+    <circle cx="207" cy="167.5" r="10" fill="white" opacity="0.88"/>
+    <path d="M218,156 Q232,141 246,156" stroke="#C4B5FD" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <rect x="213" y="154" width="38" height="30" rx="6" fill="#C4B5FD"/>
+    <rect x="249" y="165" width="28" height="8" rx="4" fill="#C4B5FD" transform="rotate(18, 249, 169)"/>
+    <circle cx="277" cy="183" r="8" fill="#C4B5FD"/>
+    <circle cx="274" cy="180" r="2" fill="#5B21B6"/>
+    <circle cx="280" cy="180" r="2" fill="#5B21B6"/>
+    <circle cx="274" cy="186" r="2" fill="#5B21B6"/>
+    <circle cx="280" cy="186" r="2" fill="#5B21B6"/>
+    <circle cx="277" cy="183" r="2" fill="#5B21B6"/>
+    <ellipse cx="288" cy="196" rx="3" ry="4" fill="#BAE6FD" opacity="0.9"/>
+    <ellipse cx="298" cy="191" rx="2.5" ry="3.5" fill="#BAE6FD" opacity="0.8"/>
+    <ellipse cx="308" cy="190" rx="3" ry="4" fill="#BAE6FD" opacity="0.9"/>
+    <ellipse cx="318" cy="192" rx="2.5" ry="3.5" fill="#BAE6FD" opacity="0.8"/>
+    <ellipse cx="327" cy="198" rx="2" ry="3" fill="#BAE6FD" opacity="0.7"/>
+    <polygon points="330,256 362,256 356,232 336,232" fill="#7C3AED" opacity="0.72"/>
+    <rect x="330" y="228" width="32" height="10" rx="4" fill="#A78BFA" opacity="0.9"/>
+    <rect x="332" y="232" width="28" height="4" rx="2" fill="#4C1D95" opacity="0.5"/>
+    <path d="M346,228 Q344,204 346,168" stroke="#4ADE80" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="326" cy="208" rx="24" ry="10" fill="#4ADE80" transform="rotate(-40, 326, 208)"/>
+    <ellipse cx="366" cy="192" rx="24" ry="10" fill="#4ADE80" transform="rotate(40, 366, 192)"/>
+    <circle cx="346" cy="158" r="9" fill="#FDE68A" opacity="0.9"/>
+    <circle cx="359" cy="152" r="7" fill="#FDE68A" opacity="0.9"/>
+    <circle cx="333" cy="152" r="7" fill="#FDE68A" opacity="0.9"/>
+    <circle cx="363" cy="165" r="7" fill="#FDE68A" opacity="0.9"/>
+    <circle cx="329" cy="165" r="7" fill="#FDE68A" opacity="0.9"/>
+    <circle cx="346" cy="158" r="9" fill="#FBBF24"/>
+    <circle cx="346" cy="158" r="4" fill="#F59E0B"/>
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/30"></div>
+  <div class="absolute top-8 left-8 right-8 z-10">
+    <div class="font-label uppercase tracking-widest text-[10px] text-white/60 font-bold mb-3">02 &middot; 0-to-1 Build</div>
+    <h3 class="font-headline text-4xl md:text-5xl font-bold uppercase leading-tight text-white">Learners<br/>Buddy</h3>
+  </div>
+  <div class="absolute bottom-8 left-8 right-8 z-10">
+    <p class="font-body text-white/80 text-sm mb-5">Research killed the original hypothesis. Pivoted to behavioural re-entry. Built a 4-state recovery model with push nudges via Supabase Edge Functions.</p>
+    <div class="flex items-center justify-between border-t border-white/20 pt-5">
+      <span class="font-label font-bold uppercase tracking-widest text-[10px] text-white/60">View Case Study</span>
+      <div class="w-10 h-10 rounded-full bg-white text-stone-900 flex items-center justify-center group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </div>
+    </div>
+  </div>
 </a>
 
-<!-- Project 03: Netflix -->
-<a href="netflix-discovery.html" class="md:col-span-4 bg-surface-container rounded-[2.5rem] overflow-hidden group relative h-[500px] shadow-xl block cursor-pointer">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="netflix-cover.png" alt="Project background 1">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-<div class="absolute top-8 right-8 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-<span class="font-label uppercase tracking-widest text-[10px] text-white font-bold">03 &middot; Discovery, Prototype</span>
-</div>
-<div class="absolute bottom-12 left-10 text-white pr-6">
-<h3 class="font-headline text-3xl font-bold uppercase mb-3 drop-shadow-lg">Netflix Content Discovery</h3>
-<p class="font-body text-sm text-white/90 font-medium max-w-xs mb-6">The algorithm knows your history. It has no mechanism for your present moment.</p>
-<div class="inline-flex w-12 h-12 rounded-full bg-white text-on-surface items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shadow-lg">
-<span class="material-symbols-outlined" data-icon="east">east</span>
-</div>
-</div>
+<!-- Project 03: Netflix — full-bleed illustration -->
+<a href="netflix-discovery.html" class="md:col-span-4 rounded-[2.5rem] overflow-hidden group relative h-[500px] shadow-xl block cursor-pointer">
+  <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-110" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="idx-g3" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1A1A1A"/>
+        <stop offset="100%" stop-color="#070707"/>
+      </linearGradient>
+      <radialGradient id="idx-g3glow" cx="50%" cy="46%" r="36%">
+        <stop offset="0%" stop-color="#E50914" stop-opacity="0.42"/>
+        <stop offset="100%" stop-color="#E50914" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="420" height="280" fill="url(#idx-g3)"/>
+    <rect width="420" height="280" fill="url(#idx-g3glow)"/>
+    <rect x="14" y="14" width="72" height="44" rx="5" fill="#2A2A2A"/>
+    <rect x="94" y="14" width="72" height="44" rx="5" fill="#222"/>
+    <rect x="174" y="14" width="72" height="44" rx="5" fill="#282828"/>
+    <rect x="254" y="14" width="72" height="44" rx="5" fill="#222"/>
+    <rect x="334" y="14" width="72" height="44" rx="5" fill="#2A2A2A"/>
+    <rect x="14" y="14" width="72" height="3" rx="1.5" fill="#E50914" opacity="0.7"/>
+    <rect x="334" y="14" width="72" height="3" rx="1.5" fill="#E50914" opacity="0.45"/>
+    <rect x="20" y="30" width="54" height="4" rx="2" fill="#333"/>
+    <rect x="20" y="40" width="36" height="3" rx="1.5" fill="#2E2E2E"/>
+    <rect x="100" y="30" width="54" height="4" rx="2" fill="#2C2C2C"/>
+    <rect x="340" y="30" width="54" height="4" rx="2" fill="#333"/>
+    <circle cx="210" cy="140" r="62" fill="#E50914" opacity="0.08"/>
+    <circle cx="210" cy="140" r="50" fill="#E50914" opacity="0.10"/>
+    <circle cx="210" cy="140" r="40" fill="#E50914"/>
+    <polygon points="200,124 200,156 233,140" fill="white"/>
+    <circle cx="138" cy="122" r="20" fill="#1E1E1E" stroke="#E50914" stroke-width="1.5" stroke-opacity="0.6"/>
+    <polygon points="131,115 131,129 146,122" fill="#E50914" opacity="0.72"/>
+    <circle cx="282" cy="122" r="20" fill="#1E1E1E" stroke="#E50914" stroke-width="1.5" stroke-opacity="0.6"/>
+    <polygon points="275,115 275,129 290,122" fill="#E50914" opacity="0.72"/>
+    <circle cx="138" cy="170" r="20" fill="#1E1E1E" stroke="#E50914" stroke-width="1.5" stroke-opacity="0.42"/>
+    <polygon points="131,163 131,177 146,170" fill="#E50914" opacity="0.58"/>
+    <circle cx="282" cy="170" r="20" fill="#1E1E1E" stroke="#E50914" stroke-width="1.5" stroke-opacity="0.42"/>
+    <polygon points="275,163 275,177 290,170" fill="#E50914" opacity="0.58"/>
+    <rect x="21" y="216" width="58" height="38" rx="5" fill="#222"/>
+    <rect x="85" y="216" width="58" height="38" rx="5" fill="#1E1E1E"/>
+    <rect x="149" y="216" width="58" height="38" rx="5" fill="#252525"/>
+    <rect x="213" y="216" width="58" height="38" rx="5" fill="#1E1E1E"/>
+    <rect x="277" y="216" width="58" height="38" rx="5" fill="#222"/>
+    <rect x="341" y="216" width="58" height="38" rx="5" fill="#252525"/>
+    <rect x="213" y="216" width="58" height="3" rx="1.5" fill="#E50914" opacity="0.85"/>
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+  <div class="absolute top-8 right-8 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+    <span class="font-label uppercase tracking-widest text-[10px] text-white font-bold">03 &middot; Discovery, Prototype</span>
+  </div>
+  <div class="absolute bottom-12 left-10 text-white pr-6">
+    <h3 class="font-headline text-3xl font-bold uppercase mb-3 drop-shadow-lg">Netflix Content Discovery</h3>
+    <p class="font-body text-sm text-white/90 font-medium max-w-xs mb-6">The algorithm knows your history. It has no mechanism for your present moment.</p>
+    <div class="inline-flex w-12 h-12 rounded-full bg-white text-on-surface items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shadow-lg">
+      <span class="material-symbols-outlined">east</span>
+    </div>
+  </div>
 </a>
 
-<!-- Project 04: Smart Travel -->
-<a href="smart-travel-groups.html" class="md:col-span-8 bg-surface-container-highest rounded-[2.5rem] relative overflow-hidden group h-[500px] shadow-xl block cursor-pointer">
-<img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" src="smart-travel-cover.png" alt="Project background 3">
-<div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 to-transparent"></div>
-<div class="absolute inset-0 p-10 flex flex-col justify-end">
-<div class="font-label uppercase tracking-widest text-[10px] text-white/70 font-bold mb-3">04 &middot; Team Research, Design</div>
-<h3 class="font-headline text-3xl font-bold uppercase mb-3 text-white drop-shadow-md">Smart Travel Groups</h3>
-<p class="font-body text-white/80 text-sm max-w-sm mb-6">170 respondents confirmed it: the hardest part of group travel isn't finding a destination. It's committing to the people.</p>
-<div class="flex items-center gap-2 text-primary font-label uppercase text-[10px] tracking-widest font-bold">
-Read Case <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</div>
-</div>
+<!-- Project 04: Smart Travel — full-bleed illustration -->
+<a href="smart-travel-groups.html" class="md:col-span-8 rounded-[2.5rem] relative overflow-hidden group h-[500px] shadow-xl block cursor-pointer">
+  <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-110" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="idx-g4" x1="0" y1="0" x2="0.4" y2="1">
+        <stop offset="0%" stop-color="#0EA5E9"/>
+        <stop offset="100%" stop-color="#0369A1"/>
+      </linearGradient>
+    </defs>
+    <rect width="420" height="280" fill="url(#idx-g4)"/>
+    <g stroke="rgba(255,255,255,0.13)" stroke-width="1">
+      <line x1="0" y1="70" x2="420" y2="70"/>
+      <line x1="0" y1="140" x2="420" y2="140"/>
+      <line x1="0" y1="210" x2="420" y2="210"/>
+      <line x1="84" y1="0" x2="84" y2="280"/>
+      <line x1="168" y1="0" x2="168" y2="280"/>
+      <line x1="252" y1="0" x2="252" y2="280"/>
+      <line x1="336" y1="0" x2="336" y2="280"/>
+    </g>
+    <path d="M116,196 Q194,86 314,108" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" fill="none" stroke-dasharray="7,5"/>
+    <circle cx="116" cy="188" r="18" fill="#FDE68A"/>
+    <polygon points="116,206 107,224 125,224" fill="#FDE68A"/>
+    <circle cx="116" cy="188" r="7.5" fill="#0369A1"/>
+    <circle cx="314" cy="100" r="23" fill="#FDE68A"/>
+    <polygon points="314,123 303,144 325,144" fill="#FDE68A"/>
+    <circle cx="314" cy="100" r="9.5" fill="#0369A1"/>
+    <circle cx="206" cy="138" r="13" fill="rgba(255,255,255,0.88)"/>
+    <polygon points="206,151 198,167 214,167" fill="rgba(255,255,255,0.88)"/>
+    <circle cx="206" cy="138" r="5" fill="#0369A1"/>
+    <g transform="translate(222, 128) rotate(-30)">
+      <ellipse cx="0" cy="0" rx="30" ry="7.5" fill="white"/>
+      <polygon points="-2,-7.5 22,-7.5 14,0" fill="white"/>
+      <polygon points="-2,7.5 22,7.5 14,0" fill="white"/>
+      <polygon points="-20,-7.5 -30,-20 -12,0" fill="white"/>
+      <polygon points="-20,7.5 -30,20 -12,0" fill="white"/>
+      <ellipse cx="27" cy="0" rx="5" ry="4" fill="#BAE6FD"/>
+    </g>
+    <circle cx="52" cy="230" r="14" fill="white" opacity="0.92"/>
+    <rect x="40" y="246" width="24" height="22" rx="10" fill="white" opacity="0.92"/>
+    <circle cx="78" cy="233" r="12" fill="#BAE6FD" opacity="0.88"/>
+    <rect x="67" y="247" width="22" height="20" rx="9" fill="#BAE6FD" opacity="0.88"/>
+    <circle cx="102" cy="232" r="10" fill="rgba(255,255,255,0.7)"/>
+    <rect x="92" y="244" width="20" height="18" rx="8" fill="rgba(255,255,255,0.7)"/>
+    <g transform="translate(378, 42)">
+      <circle cx="0" cy="0" r="22" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"/>
+      <polygon points="0,-18 -4,-9 4,-9" fill="white"/>
+      <polygon points="0,18 -4,9 4,9" fill="rgba(255,255,255,0.4)"/>
+      <polygon points="18,0 9,-4 9,4" fill="rgba(255,255,255,0.4)"/>
+      <polygon points="-18,0 -9,-4 -9,4" fill="rgba(255,255,255,0.4)"/>
+      <circle cx="0" cy="0" r="3.5" fill="white"/>
+      <text x="0" y="-20" text-anchor="middle" fill="white" font-size="8" font-family="system-ui" font-weight="700">N</text>
+    </g>
+    <g opacity="0.30">
+      <circle cx="334" cy="238" r="15" fill="white"/>
+      <circle cx="352" cy="238" r="13" fill="white"/>
+      <circle cx="343" cy="228" r="13" fill="white"/>
+    </g>
+    <g opacity="0.20">
+      <circle cx="56" cy="58" r="10" fill="white"/>
+      <circle cx="71" cy="58" r="9" fill="white"/>
+      <circle cx="64" cy="50" r="9" fill="white"/>
+    </g>
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 to-transparent"></div>
+  <div class="absolute inset-0 p-10 flex flex-col justify-end">
+    <div class="font-label uppercase tracking-widest text-[10px] text-white/70 font-bold mb-3">04 &middot; Team Research, Design</div>
+    <h3 class="font-headline text-3xl font-bold uppercase mb-3 text-white drop-shadow-md">Smart Travel Groups</h3>
+    <p class="font-body text-white/80 text-sm max-w-sm mb-6">170 respondents confirmed it: the hardest part of group travel isn't finding a destination. It's committing to the people.</p>
+    <div class="flex items-center gap-2 text-primary font-label uppercase text-[10px] tracking-widest font-bold">
+      Read Case <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+    </div>
+  </div>
 </a>
 
 </div>
